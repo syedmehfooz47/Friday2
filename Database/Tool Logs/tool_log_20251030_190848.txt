@@ -1,0 +1,19 @@
+[2025-10-30 19:10:18] TOOL_STATUS: telegram_get_updates | Status: WORKING | Details: Tool execution started
+[2025-10-30 19:10:18] TOOL_CALL: telegram_get_updates | Args: {
+  "limit": 10
+}
+[2025-10-30 19:10:18] TOOL_RESULT: telegram_get_updates | Result: {
+  "status": "error",
+  "message": "'TelegramHandler' object has no attribute '_run_async'"
+}
+[2025-10-30 19:10:18] TOOL_STATUS: telegram_get_updates | Status: FAILURE | Details: 'TelegramHandler' object has no attribute '_run_async'
+[2025-10-30 19:10:51] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-30 19:10:51] TOOL_CALL: telegram_send_message | Args: {
+  "recipient_name": "MK",
+  "message_prompt": "Hi"
+}
+[2025-10-30 19:10:52] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to MK on Telegram, Boss."
+}
+[2025-10-30 19:10:52] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully

@@ -1,0 +1,230 @@
+[2025-10-15 16:18:12] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:18:12] TOOL_CALL: internet_search | Args: {
+  "query": "latest news in Bangalore"
+}
+[2025-10-15 16:18:15] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "latest news in Bangalore",
+  "answer": "Bengaluru has a new semi-automated waste sorting hub. Commuters face road issues in Panathur. A delayed investigation into an accident death is ongoing.",
+  "results": [
+    {
+      "title": "Bengaluru News: Latest Bangalore News Headlines ... - Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/bangalore",
+      "content": "Check out the latest news in Bengaluru on The Times of India with a wide range of topics including Bengaluru's politics, Bengaluru crime, sports, fashion,"
+    },
+    {
+      "title": "Latest and Breaking Bengaluru News \u2013 NDTV.com",
+      "url": "https://www.ndtv.com/bangalore-news",
+      "content": "Bengaluru News \u00b7 Big Relief For Property Owners In Bengaluru Seeking To Legitimise Documents \u00b7 Expert Panel Expresses Concerns Over Bengaluru Tunnel's Project"
+    },
+    {
+      "title": "Bangalore News: Latest & Breaking City News Headlines ...",
+      "url": "https://bangaloremirror.indiatimes.com/",
+      "content": "Bengaluru gets first ever semi automated waste sorting hub. 6 hours ago The city's first semi-automated Dry Waste Collection Centre in Adugodi, launched by"
+    },
+    {
+      "title": "Bengaluru News, Today's Bangalore News on Politics ... - The Hindu",
+      "url": "https://www.thehindu.com/news/cities/bangalore/",
+      "content": "Commuters face hardship due to the poor condition of Panathur Main Road at Kadubeesanahalli in Bengaluru \u00b7 Bengaluru residents demand halt on property tax"
+    },
+    {
+      "title": "Latest Bengaluru News, Karnataka Bangalore ... - The Indian Express",
+      "url": "https://indianexpress.com/section/cities/bangalore/",
+      "content": "'Accident death' in Bengaluru investigated after 2 months as victim's father suspects he was killed \u00b7 Seemant Kumar Singh, Commissioner of Police, Bengaluru,"
+    }
+  ]
+}
+[2025-10-15 16:18:15] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:18:15] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:18:15] TOOL_CALL: internet_search | Args: {
+  "query": "latest news in New York"
+}
+[2025-10-15 16:18:18] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "latest news in New York",
+  "answer": "A fashion show recently raised funds for artists after a warehouse fire; a prominent surgeon was accused of a serious crime in NYC; a Trump administration analysis froze or canceled nearly $28 billion in Democratic-led districts.",
+  "results": [
+    {
+      "title": "ABC7 Eyewitness News - WABC-TV New York",
+      "url": "https://abc7ny.com/",
+      "content": "Fashion show raises money for artists after warehouse fire \u00b7 41-year-old man stabbing in Midtown; police investigating \u00b7 Ex-Jets star Nick Mangold makes appeal"
+    },
+    {
+      "title": "New York Post \u2013 Breaking News, Top Headlines, Photos & Videos",
+      "url": "https://nypost.com/",
+      "content": "Metro \u00b7 Maniac who allegedly killed, burned elderly NYC couple snatched Yankees ball from inside their home \u00b7 NYC transit slasher cut loose by judge, then"
+    },
+    {
+      "title": "NBC 4 New York \u2013 NY local news, breaking news, weather",
+      "url": "https://www.nbcnewyork.com/",
+      "content": "Prominent surgeon accused of raping woman at gunpoint in his NYC apartment: Prosecutors \u00b7 Suspect in killing of Queens couple also allegedly tried to drain"
+    },
+    {
+      "title": "The New York Times - Breaking News, US News, World News and ...",
+      "url": "https://www.nytimes.com/",
+      "content": "The Trump administration has frozen or canceled nearly $28 billion primarily located in Democratic-led districts, according to an analysis by The Times."
+    },
+    {
+      "title": "New York News",
+      "url": "https://www.cbsnews.com/newyork/local-news/new-york/",
+      "content": "New York News \u00b7 Homeowners near Forest Hills Stadium in Queens sue city over street closures \u00b7 Brooklyn Mirage owners file permit for demolition of outdoor stage."
+    }
+  ]
+}
+[2025-10-15 16:18:18] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:21:41] TOOL_STATUS: generate_excel | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:21:41] TOOL_CALL: generate_excel | Args: {
+  "topic": "electronic products including pricing and specifications"
+}
+[2025-10-15 16:21:43] TOOL_RESULT: generate_excel | Result: {
+  "status": "success",
+  "message": "I've generated an Excel spreadsheet with 20 rows on 'electronic products including pricing and specifications' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\electronic_products_including_pricing_and_specific_20251015_162143.xlsx"
+}
+[2025-10-15 16:21:43] TOOL_STATUS: generate_excel | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:22:36] TOOL_STATUS: switch_groq_key | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:22:36] TOOL_CALL: switch_groq_key | Args: {
+  "key_number": 1
+}
+[2025-10-15 16:22:36] TOOL_STATUS: switch_groq_key | Status: FAILURE | Details: Error executing switch_groq_key: 'LLMHandler' object has no attribute 'switch_to_key'
+[2025-10-15 16:22:36] TOOL_STATUS: switch_google_key | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:22:36] TOOL_CALL: switch_google_key | Args: {
+  "key_number": 1
+}
+[2025-10-15 16:22:36] TOOL_RESULT: switch_google_key | Result: {
+  "status": "success",
+  "message": "Switched to GOOGLE_API_KEY_1. Restart required for changes to take effect."
+}
+[2025-10-15 16:22:36] TOOL_STATUS: switch_google_key | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:22:57] TOOL_STATUS: switch_groq_key | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:22:57] TOOL_CALL: switch_groq_key | Args: {
+  "key_number": 1
+}
+[2025-10-15 16:22:57] TOOL_STATUS: switch_groq_key | Status: FAILURE | Details: Error executing switch_groq_key: 'LLMHandler' object has no attribute 'switch_to_key'
+[2025-10-15 16:23:21] TOOL_STATUS: control_smart_device | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:23:21] TOOL_CALL: control_smart_device | Args: {
+  "device_name": "Wipro RGB",
+  "action": "turn_on"
+}
+[2025-10-15 16:23:21] TOOL_RESULT: control_smart_device | Result: {
+  "status": "error",
+  "message": "Google Home not initialized"
+}
+[2025-10-15 16:23:21] TOOL_STATUS: control_smart_device | Status: FAILURE | Details: Google Home not initialized
+[2025-10-15 16:24:20] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:24:20] TOOL_CALL: open_app | Args: {
+  "app_name": "Canva"
+}
+[2025-10-15 16:24:20] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened Canva website, Boss."
+}
+[2025-10-15 16:24:20] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:24:30] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:24:30] TOOL_CALL: open_app | Args: {
+  "app_name": "Settings"
+}
+[2025-10-15 16:24:30] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opening Settings, Boss."
+}
+[2025-10-15 16:24:30] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:24:40] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:24:40] TOOL_CALL: open_app | Args: {
+  "app_name": "Telegram"
+}
+[2025-10-15 16:24:40] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened Telegram website, Boss."
+}
+[2025-10-15 16:24:40] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:25:08] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:25:08] TOOL_CALL: open_app | Args: {
+  "app_name": "YouTube"
+}
+[2025-10-15 16:25:08] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened YouTube website, Boss."
+}
+[2025-10-15 16:25:08] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:25:25] TOOL_STATUS: play_youtube | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:25:25] TOOL_CALL: play_youtube | Args: {
+  "query": "best of Alan Walker"
+}
+[2025-10-15 16:25:26] TOOL_RESULT: play_youtube | Result: {
+  "status": "success",
+  "message": "Playing best of Alan Walker on YouTube, Boss."
+}
+[2025-10-15 16:25:26] TOOL_STATUS: play_youtube | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:25:39] TOOL_STATUS: set_volume | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:25:39] TOOL_CALL: set_volume | Args: {
+  "level": 20
+}
+[2025-10-15 16:25:40] TOOL_RESULT: set_volume | Result: {
+  "status": "success",
+  "message": "Volume set to 20%, Boss."
+}
+[2025-10-15 16:25:40] TOOL_STATUS: set_volume | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:25:51] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:25:51] TOOL_CALL: set_brightness | Args: {
+  "level": 0
+}
+[2025-10-15 16:25:54] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 0%, Boss."
+}
+[2025-10-15 16:25:54] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:26:10] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:26:10] TOOL_CALL: set_brightness | Args: {
+  "level": 100
+}
+[2025-10-15 16:26:13] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 100%, Boss."
+}
+[2025-10-15 16:26:13] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:26:15] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:26:15] TOOL_CALL: set_brightness | Args: {
+  "level": 0
+}
+[2025-10-15 16:26:18] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 0%, Boss."
+}
+[2025-10-15 16:26:18] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:26:33] TOOL_STATUS: change_theme | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:26:33] TOOL_CALL: change_theme | Args: {
+  "mode": "light"
+}
+[2025-10-15 16:26:33] TOOL_RESULT: change_theme | Result: {
+  "status": "success",
+  "message": "Switched to light mode, Boss."
+}
+[2025-10-15 16:26:33] TOOL_STATUS: change_theme | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:26:43] TOOL_STATUS: change_theme | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:26:43] TOOL_CALL: change_theme | Args: {
+  "mode": "dark"
+}
+[2025-10-15 16:26:43] TOOL_RESULT: change_theme | Result: {
+  "status": "success",
+  "message": "Switched to dark mode, Boss."
+}
+[2025-10-15 16:26:43] TOOL_STATUS: change_theme | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:27:02] TOOL_STATUS: type_formatted_text | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:27:02] TOOL_CALL: type_formatted_text | Args: {
+  "prompt": "formal leave letter"
+}
+[2025-10-15 16:27:13] TOOL_RESULT: type_formatted_text | Result: {
+  "status": "success",
+  "message": "Typed formatted formal leave letter, Boss."
+}
+[2025-10-15 16:27:13] TOOL_STATUS: type_formatted_text | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-15 16:27:48] TOOL_STATUS: google_search | Status: WORKING | Details: Tool execution started
+[2025-10-15 16:27:48] TOOL_CALL: google_search | Args: {
+  "query": "ResellersPanel sell domains"
+}
+[2025-10-15 16:27:48] TOOL_RESULT: google_search | Result: {
+  "status": "success",
+  "message": "Searching Google for ResellersPanel sell domains, Boss."
+}
+[2025-10-15 16:27:48] TOOL_STATUS: google_search | Status: SUCCESS | Details: Tool completed successfully

@@ -1,0 +1,33 @@
+[2025-10-31 18:05:09] TOOL_STATUS: add_contact | Status: WORKING | Details: Tool execution started
+[2025-10-31 18:05:09] TOOL_CALL: add_contact | Args: {
+  "telegram_id": "Unknown",
+  "phone": "Unknown",
+  "names": [
+    "Boss"
+  ]
+}
+[2025-10-31 18:05:09] TOOL_RESULT: add_contact | Result: {
+  "status": "error",
+  "message": "Contact with name 'Boss' already exists"
+}
+[2025-10-31 18:05:09] TOOL_STATUS: add_contact | Status: FAILURE | Details: Contact with name 'Boss' already exists
+[2025-10-31 18:05:09] TOOL_STATUS: update_contact | Status: WORKING | Details: Tool execution started
+[2025-10-31 18:05:09] TOOL_CALL: update_contact | Args: {
+  "name": "Boss",
+  "names": [
+    "Boss"
+  ]
+}
+[2025-10-31 18:05:09] TOOL_RESULT: update_contact | Result: {
+  "status": "success",
+  "message": "Contact 'Boss' updated successfully",
+  "contact": {
+    "names": [
+      "Boss"
+    ],
+    "phone": null,
+    "telegram_id": null,
+    "email": "mkcs8080@gmail.com"
+  }
+}
+[2025-10-31 18:05:09] TOOL_STATUS: update_contact | Status: SUCCESS | Details: Tool completed successfully

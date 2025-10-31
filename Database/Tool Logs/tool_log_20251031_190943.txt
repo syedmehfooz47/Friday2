@@ -1,0 +1,37 @@
+[2025-10-31 19:10:47] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 19:10:47] TOOL_CALL: internet_search | Args: {
+  "query": "Avengers: Doomsday release date"
+}
+[2025-10-31 19:10:50] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Avengers: Doomsday release date",
+  "answer": "Avengers: Doomsday is scheduled for release on December 18, 2026. The film is part of Phase Six in the MCU.",
+  "results": [
+    {
+      "title": "Avengers: Doomsday - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Avengers:_Doomsday",
+      "content": "Jump to content ## Contents * Download QR code * Download as PDF *Avengers: Doomsday* is scheduled to be released in the United States on December 18, 2026, as part of Phase Six of the MCU. Additional actors slated to reprise their MCU roles in the film include Jeremy Renner as Clint Barton / Hawkeye \"Clint Barton (Marvel Cinematic Universe)\"),*[better\u00a0source\u00a0needed*] Benedict Cumberbatch as Dr. Stephen Strange \"Stephen Strange (Marvel Cinematic Universe)\"), Tom Holland as Peter Parker / Spider-Man \"Peter Parker (Marvel Cinematic Universe)\"), Hayley Atwell as Peggy Carter \"Peggy Carter (Marvel Cinematic Universe)\"), Benedict Wong as Wong \"Wong (Marvel Cinematic Universe)\"), Mabel Cadena as Namora \"Namora (Marvel Cinematic Universe)\"), and Alex Livinalli as Attuma \"Attuma (Marvel Cinematic Universe)\"). * 2020s English-language films"
+    },
+    {
+      "title": "Avengers: Doomsday now set to be released on the exact same day ...",
+      "url": "https://www.reddit.com/r/ChristopherNolan/comments/1ktei5g/avengers_doomsday_now_set_to_be_released_on_the/",
+      "content": "Marvel Studios has just decided to delay Avengers: Doomsday release date from May to December 2026, where it'll now be competing with Shrek 5, Dune: Messiah"
+    },
+    {
+      "title": "Avengers: Doomsday (2026) - IMDb",
+      "url": "https://www.imdb.com/title/tt21357150/",
+      "content": "Release date \u00b7 December 18, 2026 (United States) ; Also known as. Avengers 5 ; Filming locations \u00b7 London, England, UK(Pinewood Studios) ; Production companies."
+    },
+    {
+      "title": "Avengers Doomsday is officially releasing on December 18 next ...",
+      "url": "https://www.facebook.com/MarvelUniverseAssemble/posts/avengers-doomsday-is-officially-releasing-on-december-18-next-year-the-wait-for-/1120152656943632/",
+      "content": "## Marvel Fans's Post ### **Marvel Fans** Avengers Doomsday is officially releasing on December 18 next year the wait for Marvel\u2019s biggest showdown is getting closer and this might just be one of the greatest movies ever made 23K 1K comments The only person I think that has a chance to defeat Dr. Doom is Doctor Strange in my opinion. Now we need an Avengers Doomsday super villians only movie poster. Here\u2019s an avengers movie with everyone in it.\u2019 Robert Simmons I think the Avengers lose in DoomsDay, Battle World starts in the first part of Secret Wars and then like in Endgame, there will be a second Secret Wars where the heroes defeat Doom and restore a new universe Robert Malcolm"
+    },
+    {
+      "title": "Official Avengers: Doomsday Teaser Reveals 2 Major X-Men In the ...",
+      "url": "https://thedirect.com/article/avengers-doomsday-x-men-movie",
+      "content": "Avengers: Doomsday arrives in theaters on December 18, 2026. Avengers: Doomsday X-Men Leaders Revealed? In reminding audiences of the X-Men's"
+    }
+  ]
+}
+[2025-10-31 19:10:50] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully

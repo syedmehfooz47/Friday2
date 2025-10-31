@@ -1,0 +1,259 @@
+[2025-10-31 16:25:32] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:25:32] TOOL_CALL: internet_search | Args: {
+  "query": "Solana price in USD"
+}
+[2025-10-31 16:25:33] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Solana price in USD",
+  "answer": "As of October 31, 2025, Solana's price is $204.01. This is the latest known value. For real-time updates, check cryptocurrency exchanges.",
+  "results": [
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "# Solana Price (SOL) The live price of\u00a0Solana\u00a0is\u00a0$191.42\u00a0per (SOL / USD) with a current market cap of $104.64B USD. ## What Can You Do With Solana (SOL)? ## What is Solana (SOL)? It is primarily used for staking, which secures the blockchain and supports the validation process, and for paying transaction fees on activities like peer-to-peer (P2P) payments, DeFi interactions, NFT trades, and other Solana-based dApp operations. ### What is Solana (SOL) Used For? Solana price updates can be viewed on Binance. ### Who Founded Solana (SOL)? Solana (SOL) can be purchased directly from Binance using a debit or credit card. Solana (SOL) can also be traded for other cryptocurrencies on the Binance exchange. Live Solana price is updated in real-time on Binance."
+    },
+    {
+      "title": "Solana USD PRICE (SOL-USD) - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/SOL-USD/",
+      "content": "Skip to navigation  Skip to main content  Skip to right column     CCC - CoinMarketCap \u2022 USD # Solana USD Price (SOL-USD) View all cryptocurrencies Market Open. View all cryptocurrencies (left-click to pin tooltip)\u00a0\u00a0\u00a0(right-click to deleteright-click to manage)(long-press to drag)(drag to change anchor time) | Date |  | | Close |  | | Open |  | * Previous Close 200.02 * Open 200.02 * 52 Week Range 96.59 - 294.33 * Start Date 2020-04-10 The last known price of Solana is 199.35096234 USD and is up 3.50 over the last 24 hours. View More   ### Will BTQ Technologies (NEOE:BTQ) Shape a Quantum-Safe Future for Blockchain Security Standards? Shape a Quantum-Safe Future for Blockchain Security Standards?\") View More"
+    },
+    {
+      "title": "Solana price today, SOL to USD live price, marketcap and chart",
+      "url": "https://coinmarketcap.com/currencies/solana/",
+      "content": "![Image 68: SOL](https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png) | 3 | [![Image 80: Bybit logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/521.png) Bybit](https://coinmarketcap.com/exchanges/bybit/) | [SOL/USDT](https://www.bybit.com/en-US/trade/spot/SOL/USDT)[](https://www.bybit.com/en-US/trade/spot/SOL/USDT) | $200.73 | $4,571,411 | $3,870,089 | $228,248,403 | 3.59% | High | 680 | Recently | | 6 | [![Image 83: OKX logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png) OKX](https://coinmarketcap.com/exchanges/okx/) | [SOL/USDT](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175)[](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175) | $200.98 | $5,813,364 | $6,091,837 | $195,769,807 | 3.08% | High | 801 | Recently | *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) [What is Solana (SOL)?](https://coinmarketcap.com/cmc-ai/solana/what-is/) [Latest Solana (SOL) Price Analysis](https://coinmarketcap.com/cmc-ai/solana/price-analysis/) [Solana (SOL) Price Prediction](https://coinmarketcap.com/cmc-ai/solana/price-prediction/) [Latest Solana (SOL) News Update](https://coinmarketcap.com/cmc-ai/solana/latest-updates/)"
+    },
+    {
+      "title": "Solana Crypto Coin Price Today (SOL) - Investing.com",
+      "url": "https://www.investing.com/crypto/solana",
+      "content": "# Solana Solana (SOL) coin is a type of digital cryptocurrency, utilizing peer-to-peer transactions, mining and other technological feats into a modern day asset. Use this page to follow news and updates regarding Solana live price, create alerts, follow analysis and opinion and get real time market data. |  | SOL/USD | \u00b7 | Investing.com | \u00b7 | USD | Real-time | |  | SOL/USD | \u00b7 | Binance | \u00b7 | USD | Real-time | |  | SOL/USD | \u00b7 | US Dollar | Solana :   SOL549.58M :   SOL549.58M * SOL Strategies partners with Netcoins for Solana staking services * SOL Strategies partners with Netcoins for Solana staking services #### What is Solana crypto? #### Where to buy Solana crypto 1M 6M"
+    },
+    {
+      "title": "Solana Price is $184.90 today. See SOL price chart and stats",
+      "url": "https://metamask.io/price/solana",
+      "content": "## About Solana (SOL) Its native cryptocurrency is a token that is also called Solana, aka SOL which is pronounced \u201cSo-uhl.\u201d You can use SOL to trade and stake digital currencies, as well as participate in the network. Select from thousands of your favorite tokens to buy on over 15 networks including Ethereum, Solana, Linea, Base, and more. Today, October 27, 2025, the price of Solana (SOL) is $204.01. * #### What is the Solana (SOL) price today? Today, October 27, 2025, the price of Solana (SOL) is $204.01. * #### How do I swap Solana (SOL)? With Solana, you can send and receive SOL, the network\u2019s native token, and use it to pay transaction fees or stake for rewards."
+    }
+  ]
+}
+[2025-10-31 16:25:33] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:25:51] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:25:51] TOOL_CALL: internet_search | Args: {
+  "query": "Solana price on Binance"
+}
+[2025-10-31 16:25:53] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Solana price on Binance",
+  "answer": "As of 2025-10-31, Solana price on Binance is $186.50 per SOL/USDT. This price reflects real-time trading on Binance.",
+  "results": [
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "# Solana Price (SOL) The live price of\u00a0Solana\u00a0is\u00a0$191.42\u00a0per (SOL / USD) with a current market cap of $104.64B USD. ## What Can You Do With Solana (SOL)? ## What is Solana (SOL)? It is primarily used for staking, which secures the blockchain and supports the validation process, and for paying transaction fees on activities like peer-to-peer (P2P) payments, DeFi interactions, NFT trades, and other Solana-based dApp operations. ### What is Solana (SOL) Used For? Solana price updates can be viewed on Binance. ### Who Founded Solana (SOL)? Solana (SOL) can be purchased directly from Binance using a debit or credit card. Solana (SOL) can also be traded for other cryptocurrencies on the Binance exchange. Live Solana price is updated in real-time on Binance."
+    },
+    {
+      "title": "SOL to BNB: Live Solana to Binance Coin Rate - CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/solana/sol/bnb/",
+      "content": "The price of 1 Solana (SOL) in Binance Coin (BNB) is currently about 0.1754 BNB. How much Solana (SOL) can I buy for 1 BNB?"
+    },
+    {
+      "title": "183.54 | SOLUSDT | Binance Spot",
+      "url": "https://www.binance.com/en-GB/trade/SOL_USDT",
+      "content": "Binance Will Support the Maker (MKR) Token Swap, Redenomination, and Rebranding to Sky (SKY). (07-29). SOL. Solana Price. /USDT. 183.54. -14.78. -7.45%."
+    },
+    {
+      "title": "184.91 | SOL USDC | Solana to USDC \u2013 Binance Spot",
+      "url": "https://www.binance.com/en/trade/SOL_USDC",
+      "content": "201.11 | SOL USDC | Solana to USDC - Binance Spot Trade Binance Will Add BFUSD on Buy Crypto, Convert & Margin (08-13)Participate in the Exclusive Reveel (REVA) Pre-Token Generation Event (Pre-TGE) and Booster Program on Binance Wallet (08-13)Binance Futures Will Launch USD\u24c8-Margined AIOUSDT and XNYUSDT Perpetual Contracts (2025-08-13) (08-13) Price (USDC) 1H 4H Vol(SOL):1.761M Vol(USDC)350.523M 1.008M 853.238K SOL/USDC 24h Volume(SOL) 24h Volume(USDC) Max Buy Market Trades My Trades Price (USDC) Cookie Preference You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. - [x] Functional Cookies  - [x] Targeting Cookies  Targeting cookies may be set through our site by ourselves and our advertising partners. - [x] Performance Cookies  Remove Drawings"
+    },
+    {
+      "title": "186.50 | SOL USDT | Solana to USDT \u2013 Binance Spot",
+      "url": "https://www.binance.com/en/trade/SOL_USDT",
+      "content": "Binance Square: Complete Tasks in the CreatorPad to Unlock 3,600,500 LINEA Token Voucher Rewards! (10-28)MENA and South Asia Limited-Time Exclusive: Buy Crypto to Win Up to 300 USDT in Token Vouchers! (10-28)APE Locked Products: Enjoy Up to 20% APR in Rewards! Market Trades My Trades ## Privacy Preference Center Click on the different category headings to find out more and change our default settings. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance."
+    }
+  ]
+}
+[2025-10-31 16:25:53] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:26:08] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:26:08] TOOL_CALL: internet_search | Args: {
+  "query": "Solana market cap"
+}
+[2025-10-31 16:26:11] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Solana market cap",
+  "answer": "Solana's market cap is approximately $106.33 billion. This figure is subject to change due to market volatility. The latest data reflects current trading conditions.",
+  "results": [
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "# Solana Price (SOL) The live price of\u00a0Solana\u00a0is\u00a0$191.42\u00a0per (SOL / USD) with a current market cap of $104.64B USD. ## What Can You Do With Solana (SOL)? ## What is Solana (SOL)? It is primarily used for staking, which secures the blockchain and supports the validation process, and for paying transaction fees on activities like peer-to-peer (P2P) payments, DeFi interactions, NFT trades, and other Solana-based dApp operations. ### What is Solana (SOL) Used For? Solana price updates can be viewed on Binance. ### Who Founded Solana (SOL)? Solana (SOL) can be purchased directly from Binance using a debit or credit card. Solana (SOL) can also be traded for other cryptocurrencies on the Binance exchange. Live Solana price is updated in real-time on Binance."
+    },
+    {
+      "title": "Solana Price: Live SOL/USD Rate, Market Cap & SOL Price Chart",
+      "url": "https://coincodex.com/crypto/solana/",
+      "content": "## Track Solana Price Today, Live SOL Price Chart & Market Cap The top-performing year for Solana was 2021 when the price of SOL increased by 11,192.42% from $\u202f1.51 to $\u202f170.06. The primary digital asset used as a medium of exchange on the network is the Solana (SOL) token. Although the crypto launched in 2020, the price of SOL quickly elevated Solana past some of the most well-known and long-established projects in the market cap standings. The market cap of Solana stood at about $110 million at the time of the project\u2019s Dutch-type token sale when accounting for the fully diluted supply and the ICO price of $0.22 per token. When Solana launched it had an initial maximum supply of 500 million SOL tokens."
+    },
+    {
+      "title": "Solana Price (SOL), Market Cap, Price Today & Chart History",
+      "url": "https://blockworks.co/price/sol",
+      "content": "The price of SOL is up 0.23% since last hour, down -2.53% since yesterday. The live market cap, measured by multiplying the number of coins by the current price is $118.77B. ## about Solana ### What is Solana? Solana is a high-performance layer 1 blockchain that prioritizes low fees, scalability, and fast transaction finality. #### What is the market cap of Solana? The current market cap of Solanais $106.33B. #### What is the current trading activity of Solana? Currently,40.61M of SOL were traded within 24 hours of time. #### What is the current price of Solana? #### How many Solana are there? Solana(SOL) currently ranks6 among all known cryptocurrency assets. Market Cap Market Cap Rank ## latest Solana news"
+    },
+    {
+      "title": "Solana Price: SOL Live Price Chart, Market Cap & News Today",
+      "url": "https://www.coingecko.com/en/coins/solana",
+      "content": "How is the price of Solana (SOL) calculated? The price of Solana (SOL) is calculated in real-time by aggregating the latest data across 166 exchanges and 403 markets, using a global volume-weighted average formula. ## Solana Price Chart (SOL) ## About Solana (SOL) ### What is the market cap of Solana (SOL)? With a price decline of -3.50% in the last 7 days, Solana (SOL) is underperforming the global cryptocurrency market which is down -2.20%, while underperforming when compared to similar Smart Contract Platform cryptocurrencies which are up 0.20%. ## Solana (SOL) price has declined today. The price of Solana (SOL) is BTC0.001702 today with a 24-hour trading volume of $8,514,103,008.28. With a circulating supply of 550 Million SOL, Solana is valued at a market cap of BTC935,598.9972."
+    },
+    {
+      "title": "Solana price today, SOL to USD live price, marketcap and chart",
+      "url": "https://coinmarketcap.com/currencies/solana/",
+      "content": "![Image 68: SOL](https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png) | 3 | [![Image 80: Bybit logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/521.png) Bybit](https://coinmarketcap.com/exchanges/bybit/) | [SOL/USDT](https://www.bybit.com/en-US/trade/spot/SOL/USDT)[](https://www.bybit.com/en-US/trade/spot/SOL/USDT) | $200.73 | $4,571,411 | $3,870,089 | $228,248,403 | 3.59% | High | 680 | Recently | | 6 | [![Image 83: OKX logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png) OKX](https://coinmarketcap.com/exchanges/okx/) | [SOL/USDT](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175)[](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175) | $200.98 | $5,813,364 | $6,091,837 | $195,769,807 | 3.08% | High | 801 | Recently | *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) [What is Solana (SOL)?](https://coinmarketcap.com/cmc-ai/solana/what-is/) [Latest Solana (SOL) Price Analysis](https://coinmarketcap.com/cmc-ai/solana/price-analysis/) [Solana (SOL) Price Prediction](https://coinmarketcap.com/cmc-ai/solana/price-prediction/) [Latest Solana (SOL) News Update](https://coinmarketcap.com/cmc-ai/solana/latest-updates/)"
+    }
+  ]
+}
+[2025-10-31 16:26:11] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:26:44] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:26:44] TOOL_CALL: internet_search | Args: {
+  "query": "Solana volume on Binance"
+}
+[2025-10-31 16:26:46] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Solana volume on Binance",
+  "answer": "Solana's 24-hour trading volume on Binance is 190,223.69 SOL. The current price is $191.42 per SOL. Solana is used for staking, DeFi, and NFT trades.",
+  "results": [
+    {
+      "title": "0.0017022 | SOL BTC | Solana to BTC \u2013 Binance Spot",
+      "url": "https://www.binance.com/en/trade/SOL_BTC",
+      "content": "SOL/BTC ; 24h High. 0.0017858 ; 24h Low. 0.0016787 ; 24h Vol(SOL). 190,223.69 ; 24h Vol(BTC). 329.18."
+    },
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "# Solana Price (SOL) The live price of\u00a0Solana\u00a0is\u00a0$191.42\u00a0per (SOL / USD) with a current market cap of $104.64B USD. ## What Can You Do With Solana (SOL)? ## What is Solana (SOL)? It is primarily used for staking, which secures the blockchain and supports the validation process, and for paying transaction fees on activities like peer-to-peer (P2P) payments, DeFi interactions, NFT trades, and other Solana-based dApp operations. ### What is Solana (SOL) Used For? Solana price updates can be viewed on Binance. ### Who Founded Solana (SOL)? Solana (SOL) can be purchased directly from Binance using a debit or credit card. Solana (SOL) can also be traded for other cryptocurrencies on the Binance exchange. Live Solana price is updated in real-time on Binance."
+    },
+    {
+      "title": "Solana Options Open Interest & Volume | SOLUSDT Options - Binance",
+      "url": "https://www.binance.com/eoptions-data/SOLUSDT/oi-volume",
+      "content": "Dive deep into Solana Options Open Interest and Trading Volume by Expiration and Strike Price. Gain actionable insights, enhance your trading strategies,"
+    },
+    {
+      "title": "$SOL /USDT Current Price: 185.50 24h Change: -4.87% Marke",
+      "url": "https://www.binance.com/en/square/post/31745596779970",
+      "content": "$SOL /USDT. Current Price: 185.50. 24h Change: -4.87%. Market Value: Rs52,513.19. Solana has been one of the most dynamic performers of the"
+    },
+    {
+      "title": "solana (SOL) | Live Price, Interactive Charts, Converter, News",
+      "url": "https://www.binance.us/price/solana",
+      "content": "Price # undefined (BTC) Price This number is calculated by multiplying the asset\u2019s current price with its total circulating supply. Daily volume refers to the total value of trading activity on a particular asset over a 24-hour period. Circulating supply refers to the total number of coins or tokens that are available on the market. Daily Price Change0.00% ## SOL Price Calculator Price # undefined (BTC) Price This number is calculated by multiplying the asset\u2019s current price with its total circulating supply. Daily volume refers to the total value of trading activity on a particular asset over a 24-hour period. Circulating supply refers to the total number of coins or tokens that are available on the market. Daily Price Change0.00%"
+    }
+  ]
+}
+[2025-10-31 16:26:46] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:27:21] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:27:21] TOOL_CALL: internet_search | Args: {
+  "query": "Solana volume on Binance in USDT"
+}
+[2025-10-31 16:27:23] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Solana volume on Binance in USDT",
+  "answer": "Solana (SOL) trading volume on Binance in USDT is $276.883 million. This figure reflects recent trading activity. Current price is $191.42 per SOL.",
+  "results": [
+    {
+      "title": "199.96 Solana (SOL) to USDT Spot Trading - Binance.US",
+      "url": "https://www.binance.us/spot-trade/solusdt",
+      "content": "Trade and convert Solana (SOL) to USDT with advanced trading charts and tools ... Volume. 588,969.69 USDT. Open Orders (0). Order History. Trade History. Funds."
+    },
+    {
+      "title": "183.54 | SOLUSDT | Binance Spot",
+      "url": "https://www.binance.com/en-GB/trade/SOL_USDT",
+      "content": "SOL. Solana Price. /USDT. 183.54. -14.78. -7.45%. 24h High. 198.64. 24h Low. 181.42. 24h Volume ... - USDT. Price. USDT. Amount. SOL. 25%50%75%100%."
+    },
+    {
+      "title": "Binance - Volume Prices and trading pairs available - Stelareum",
+      "url": "https://www.stelareum.io/en/exchange/binance.html",
+      "content": "Available pairs: ; SOL. Solana. SOL/USDT. $ 276.883M \u00b7 L: $ 191.19. H: $ 194.93 ; XRP. Ripple. XRP/USDT. $ 219.664M \u00b7 L: $ 2.5283. H: $ 2.6542 ; BTC. Bitcoin. BTC/"
+    },
+    {
+      "title": "Solana price today, SOL to USD live price, marketcap and chart",
+      "url": "https://coinmarketcap.com/currencies/solana/",
+      "content": "![Image 68: SOL](https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png) | 3 | [![Image 80: Bybit logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/521.png) Bybit](https://coinmarketcap.com/exchanges/bybit/) | [SOL/USDT](https://www.bybit.com/en-US/trade/spot/SOL/USDT)[](https://www.bybit.com/en-US/trade/spot/SOL/USDT) | $200.73 | $4,571,411 | $3,870,089 | $228,248,403 | 3.59% | High | 680 | Recently | | 6 | [![Image 83: OKX logo](https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png) OKX](https://coinmarketcap.com/exchanges/okx/) | [SOL/USDT](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175)[](https://www.okx.com/trade-spot/sol-usdt?channelid=74886175) | $200.98 | $5,813,364 | $6,091,837 | $195,769,807 | 3.08% | High | 801 | Recently | *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) *   [1](https://coinmarketcap.com/currencies/solana/) *   [2](https://coinmarketcap.com/currencies/solana/) *   [3](https://coinmarketcap.com/currencies/solana/) *   [4](https://coinmarketcap.com/currencies/solana/) *   [...](https://coinmarketcap.com/currencies/solana/) *   [82](https://coinmarketcap.com/currencies/solana/) *   [](https://coinmarketcap.com/currencies/solana/) [What is Solana (SOL)?](https://coinmarketcap.com/cmc-ai/solana/what-is/) [Latest Solana (SOL) Price Analysis](https://coinmarketcap.com/cmc-ai/solana/price-analysis/) [Solana (SOL) Price Prediction](https://coinmarketcap.com/cmc-ai/solana/price-prediction/) [Latest Solana (SOL) News Update](https://coinmarketcap.com/cmc-ai/solana/latest-updates/)"
+    },
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "# Solana Price (SOL) The live price of\u00a0Solana\u00a0is\u00a0$191.42\u00a0per (SOL / USD) with a current market cap of $104.64B USD. ## What Can You Do With Solana (SOL)? ## What is Solana (SOL)? It is primarily used for staking, which secures the blockchain and supports the validation process, and for paying transaction fees on activities like peer-to-peer (P2P) payments, DeFi interactions, NFT trades, and other Solana-based dApp operations. ### What is Solana (SOL) Used For? Solana price updates can be viewed on Binance. ### Who Founded Solana (SOL)? Solana (SOL) can be purchased directly from Binance using a debit or credit card. Solana (SOL) can also be traded for other cryptocurrencies on the Binance exchange. Live Solana price is updated in real-time on Binance."
+    }
+  ]
+}
+[2025-10-31 16:27:23] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:28:41] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:28:41] TOOL_CALL: internet_search | Args: {
+  "query": "Bitcoin market cap"
+}
+[2025-10-31 16:28:44] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Bitcoin market cap",
+  "answer": "Bitcoin's market cap is $2.16 trillion as of October 2025. The circulating supply is 19.94 million BTC. Bitcoin's dominance is 57.66%.",
+  "results": [
+    {
+      "title": "Global Cryptocurrency Market Cap Charts - CoinGecko",
+      "url": "https://www.coingecko.com/en/charts",
+      "content": "By Market Cap   Categories   Chains   Crypto Treasuries # Global Cryptocurrency Market Cap Charts As of today, the market cap of  Bitcoin (BTC) is at $2.28 Trillion, representing a Bitcoin dominance of 57.66%. ## Total Crypto Market Cap Chart The chart below shows the total market cap & volume of cryptocurrencies globally, a result of 18,456 cryptocurrencies tracked across 1,410 exchanges. ## DeFi Market Cap Chart The chart below shows the market cap and volume of all  DeFi coins. ## Stablecoin Market Cap Chart The chart below shows the market cap and volume of all  Stablecoins. ## Altcoin Market Cap Chart The chart below shows the market cap and volume of all Altcoins. US Dollar"
+    },
+    {
+      "title": "Market Capitalization of Gold and Bitcoin Chart",
+      "url": "https://ingoldwetrust.report/chart-gold-bitcoin-marketcap/?lang=en",
+      "content": "With Bitcoin's significant price increase since 2013 and the increase in total coins mined, its market capitalization increased from about 1 billion US dollars"
+    },
+    {
+      "title": "Bitcoin Price: BTC Live Price Chart, Market Cap & News Today",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "How is the price of Bitcoin (BTC) calculated? The price of Bitcoin (BTC) is calculated in real-time by aggregating the latest data across 202 exchanges and 2941 markets, using a global volume-weighted average formula. ## Bitcoin Price Chart (BTC) ## About Bitcoin (BTC) To learn more about Bitcoin (BTC), you may: ### What is the market cap of Bitcoin (BTC)? With a price decline of -1.40% in the last 7 days, Bitcoin (BTC) is outperforming the global cryptocurrency market which is down -1.60%. ## Bitcoin (BTC) price has declined today. The price of Bitcoin (BTC) is BTC1.0000 today with a 24-hour trading volume of $78,618,125,077.70. With a circulating supply of 20 Million BTC, Bitcoin is valued at a market cap of BTC19,942,003.0000."
+    },
+    {
+      "title": "Bitcoin price today, BTC to USD live price, marketcap and chart",
+      "url": "https://coinmarketcap.com/currencies/bitcoin/",
+      "content": "*   [](https://coinmarketcap.com/currencies/bitcoin/) *   [1](https://coinmarketcap.com/currencies/bitcoin/) *   [2](https://coinmarketcap.com/currencies/bitcoin/) *   [3](https://coinmarketcap.com/currencies/bitcoin/) *   [4](https://coinmarketcap.com/currencies/bitcoin/) *   [...](https://coinmarketcap.com/currencies/bitcoin/) *   [439](https://coinmarketcap.com/currencies/bitcoin/) *   [](https://coinmarketcap.com/currencies/bitcoin/) *   [](https://coinmarketcap.com/currencies/bitcoin/) Some concepts for a similar type of a decentralized electronic currency precede BTC, but Bitcoin holds the distinction of being the [first-ever cryptocurrency](https://coinmarketcap.com/alexandria/article/a-beginner-s-guide-to-investing-in-cryptocurrencies) to come into actual use. Bitcoin\u2019s [total supply](https://coinmarketcap.com/alexandria/article/what-is-tokenomics) is limited by its software and will never exceed 21,000,000 coins. As of mid-September 2021, the Bitcoin mining reward is capped to 6.25 BTC after the [2020 halving](https://coinmarketcap.com/alexandria/article/bitcoin-halvings-what-they-are-why-they-happen-and-why-you-should-care), which is roughly $299,200 in Bitcoin price today. On the flip side, countries like China have moved to heavily [clamp down](https://coinmarketcap.com/alexandria/article/bitcoin-price-falls-as-china-declares-all-crypto-transactions-are-illegal) on Bitcoin mining and trading activities. [What is Bitcoin (BTC)?](https://coinmarketcap.com/cmc-ai/bitcoin/what-is/) [Latest Bitcoin (BTC) Price Analysis](https://coinmarketcap.com/cmc-ai/bitcoin/price-analysis/) [Bitcoin (BTC) Price Prediction](https://coinmarketcap.com/cmc-ai/bitcoin/price-prediction/) *   [Cookie preferences](https://coinmarketcap.com/currencies/bitcoin/)"
+    },
+    {
+      "title": "CoinMarketCap: Cryptocurrency Prices, Charts And Market ...",
+      "url": "https://coinmarketcap.com/",
+      "content": "|  | 1 | [![Image 84: BTC logo](https://s2.coinmarketcap.com/static/img/coins/64x64/1.png) Bitcoin BTC](https://coinmarketcap.com/currencies/bitcoin/) Buy | $108,088.82 | 2.43% | 4.18% | 0.45% | $2.16T$2,155,491,805,771 | [$62,967,589,097](https://coinmarketcap.com/currencies/bitcoin/#markets) 575.24K | 19.94M BTC | ![Image 85: bitcoin-7d-price-graph](https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg) | |  | 2 | [![Image 86: ETH logo](https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png) Ethereum ETH](https://coinmarketcap.com/currencies/ethereum/) Buy | $3,852.48 | 2.27% | 4.10% | 0.60% | $464.99B$464,987,374,461 | [$36,416,302,019](https://coinmarketcap.com/currencies/ethereum/#markets) 9.41M | 120.69M ETH | ![Image 87: ethereum-7d-price-graph](https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1027.svg) | |  | 12 | [![Image 106: LINK logo](https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png) Chainlink LINK](https://coinmarketcap.com/currencies/chainlink/) Buy | $17.57 | 2.43% | 1.50% | 1.65% | $12.25B$12,250,588,710 | [$1,038,138,937](https://coinmarketcap.com/currencies/chainlink/#markets) 58.39M | 696.84M LINK | ![Image 107: chainlink-7d-price-graph](https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1975.svg) | |  | 13 | [![Image 108: BCH logo](https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png) Bitcoin Cash BCH](https://coinmarketcap.com/currencies/bitcoin-cash/) Buy | $555.60 | 0.93% | 1.24% | 15.10% | $11.08B$11,082,060,438 | [$555,770,706](https://coinmarketcap.com/currencies/bitcoin-cash/#markets) 1.00M | 19.94M BCH | ![Image 109: bitcoin-cash-7d-price-graph](https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1831.svg) |"
+    }
+  ]
+}
+[2025-10-31 16:28:44] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:29:28] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:29:28] TOOL_CALL: internet_search | Args: {
+  "query": "vbitcoin"
+}
+[2025-10-31 16:29:30] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "vbitcoin",
+  "answer": "Bitcoin is a decentralized digital currency, created in 2009, that operates without a central bank. It uses blockchain technology for secure transactions. Bitcoin can be bought, sold, and traded globally.",
+  "results": [
+    {
+      "title": "Bitcoin - The Currency of the Internet - Reddit",
+      "url": "https://www.reddit.com/r/Bitcoin/",
+      "content": "r/Bitcoin: Bitcoin is the currency of the Internet: a distributed, worldwide, decentralized digital money. Unlike traditional currencies such as dollars,"
+    },
+    {
+      "title": "Bitcoin - Open source P2P money",
+      "url": "https://bitcoin.org/",
+      "content": "Bitcoin.org is a community funded project, donations are appreciated and used to improve the website. Donate to Bitcoin.org + Bitcoin Core + Support Bitcoin + Buy Bitcoin + Sell Bitcoin Bitcoin is an innovative payment network and a new kind of money. Get started with Bitcoin Choose your wallet Buy Bitcoin Learn more Businesses Learn more Developers Get started with Bitcoin Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system. Get started with Bitcoin Support Bitcoin.org: Donate * Bitcoin Core * Support Bitcoin * Buy Bitcoin * Sell Bitcoin"
+    },
+    {
+      "title": "Bitcoin Magazine | Bitcoin News, Analysis & Insights",
+      "url": "https://bitcoinmagazine.com/",
+      "content": "*   [MARKETS](https://bitcoinmagazine.com/markets) *   [GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary) *   [BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price) *   [TOOLS](https://bitcoinmagazine.com/#) *   [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator) *   [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator) *   [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator) *   [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker) *   [ABOUT](https://bitcoinmagazine.com/#) *   [ABOUT BITCOIN MAGAZINE](https://bitcoinmagazine.com/about) *   [BTC INC](https://bitcoinmagazine.com/#) *   [![Image 1: Duelbits Icon](https://cdn-ileamcn.nitrocdn.com/BngESKHdyFjXuZbvyAhEMmtQtwLKSKkU/assets/images/optimized/rev-c3df002/bitcoinmagazine.com/wp-content/uploads/2025/06/duelbits-icon.png) WIN BITCOIN](https://bitcoinmagazine.com/duelbits) [![Image 2: Bitcoin Magazine Logo](https://cdn-ileamcn.nitrocdn.com/BngESKHdyFjXuZbvyAhEMmtQtwLKSKkU/assets/images/optimized/rev-c3df002/bitcoinmagazine.com/wp-content/uploads/2024/09/cropped-Bitcoin-Magazine-logo-white-01.png) ==================================================================================================================================================================================================================================](https://bitcoinmagazine.com/) *   [BOOKS](https://bitcoinmagazine.com/bitcoin-magazine-books) [![Image 3: Bitcoin Magazine Logo](https://cdn-ileamcn.nitrocdn.com/BngESKHdyFjXuZbvyAhEMmtQtwLKSKkU/assets/images/optimized/rev-c3df002/bitcoinmagazine.com/wp-content/uploads/2024/09/cropped-Bitcoin-Magazine-logo-white-01.png) ==================================================================================================================================================================================================================================](https://bitcoinmagazine.com/) *   [MARKETS](https://bitcoinmagazine.com/markets) *   [GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary) *   [BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price) *   [TOOLS](https://bitcoinmagazine.com/#) *   [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator) *   [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator) *   [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator) *   [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker) *   [WIN BITCOIN ![Image 5: Duelbits Icon](https://cdn-ileamcn.nitrocdn.com/BngESKHdyFjXuZbvyAhEMmtQtwLKSKkU/assets/images/optimized/rev-c3df002/bitcoinmagazine.com/wp-content/uploads/2025/06/duelbits-icon.png)](https://bitcoinmagazine.com/duelbits) [](https://bitcoinmagazine.com/#) [MARKETS](https://bitcoinmagazine.com/markets) [](https://bitcoinmagazine.com/markets/bitcoin-price-crashes-down-to-106000 \"Bitcoin Price Crashes Down to $106,000\u00a0As Red Week Continues\") [MARKETS](https://bitcoinmagazine.com/markets) [MARKETS](https://bitcoinmagazine.com/markets) [](https://bitcoinmagazine.com/markets/bitcoin-price-crashes-to-109000 \"Bitcoin Price Crashes to $109,000 Then Rebounds as Jerome Powell Stays Neutral on Future Cuts\") [MARKETS](https://bitcoinmagazine.com/markets) [MARKETS](https://bitcoinmagazine.com/markets) [![Image 10](https://bitcoinmagazine.com/wp-content/uploads/2025/05/Bitcoin-Magazine-Follow-Google-News.webp)](https://news.google.com/publications/CAAqMAgKIipDQklTR1FnTWFoVUtFMkpwZEdOdmFXNXRZV2RoZW1sdVpTNWpiMjBvQUFQAQ) [](https://bitcoinmagazine.com/)"
+    },
+    {
+      "title": "Bitcoin - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bitcoin",
+      "content": "[Jump to content](https://en.wikipedia.org/wiki/Bitcoin#bodyContent) *   [Random article](https://en.wikipedia.org/wiki/Special:Random \"Visit a randomly selected article [x]\") [Search](https://en.wikipedia.org/wiki/Special:Search \"Search Wikipedia [f]\") *   [Contributions](https://en.wikipedia.org/wiki/Special:MyContributions \"A list of edits made from this IP address [y]\") *   [(Top)](https://en.wikipedia.org/wiki/Bitcoin#) *   [1.1 Background](https://en.wikipedia.org/wiki/Bitcoin#Background) *   [1.2 2008\u20132009: Creation](https://en.wikipedia.org/wiki/Bitcoin#2008%E2%80%932009:_Creation) *   [1.3 2010\u20132012: Early growth](https://en.wikipedia.org/wiki/Bitcoin#2010%E2%80%932012:_Early_growth) *   [1.4 2013\u20132014: First regulatory actions](https://en.wikipedia.org/wiki/Bitcoin#2013%E2%80%932014:_First_regulatory_actions) *   [1.5 2015\u20132019](https://en.wikipedia.org/wiki/Bitcoin#2015%E2%80%932019) *   [1.6 2020\u2013present](https://en.wikipedia.org/wiki/Bitcoin#2020%E2%80%93present) *   [2.2 Blockchain](https://en.wikipedia.org/wiki/Bitcoin#Blockchain) *   [2.4 Mining](https://en.wikipedia.org/wiki/Bitcoin#Mining) *   [2.6 Wallets](https://en.wikipedia.org/wiki/Bitcoin#Wallets) *   [4 See also](https://en.wikipedia.org/wiki/Bitcoin#See_also) *   [5 Notes](https://en.wikipedia.org/wiki/Bitcoin#Notes) *   [6 References](https://en.wikipedia.org/wiki/Bitcoin#References) *   [7 Further reading](https://en.wikipedia.org/wiki/Bitcoin#Further_reading) *   [Afrikaans](https://af.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Afrikaans\") *   [Aragon\u00e9s](https://an.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Aragonese\") *   [Dansk](https://da.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Danish\") *   [Deutsch](https://de.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 German\") *   [Interlingue](https://ie.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Interlingue\") *   [\u00cdslenska](https://is.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Icelandic\") *   [Italiano](https://it.wikipedia.org/wiki/Bitcoin \"Bitcoin \u2013 Italian\") *   [Bitcoin](https://en.wikipedia.org/wiki/Category:Bitcoin \"Category:Bitcoin\") 133 languages[Add topic](https://en.wikipedia.org/wiki/Bitcoin#)"
+    },
+    {
+      "title": "Buy Bitcoin & cryptocurrency | Wallet, news, education.",
+      "url": "https://www.bitcoin.com/",
+      "content": "Get Bitcoin All you need to buy, own, and manage Bitcoin & crypto - take control of your financial future today. Get Bitcoin # Everything Bitcoin. Get Bitcoin # Everything Bitcoin. Get Bitcoin ## What is Bitcoin? We make Bitcoin & crypto accessible to everyone. ### Bitcoin.com App #### Discover expert reviews on businesses and services that accept crypto #### Discover expert reviews on businesses and services that accept crypto Bitcoin.com is the most convenient app to use for cryptocurrencies such as btc bch and eth.. Great site for checking crypto prices and my preferred mobile app for holding Bitcoin Cash and Bitcoin. Learn everything you need to know about Bitcoin and crypto. Get Bitcoin"
+    }
+  ]
+}
+[2025-10-31 16:29:30] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully

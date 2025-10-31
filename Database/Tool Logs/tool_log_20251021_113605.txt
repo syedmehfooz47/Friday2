@@ -1,0 +1,205 @@
+[2025-10-21 11:36:37] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:36:37] TOOL_CALL: email_send | Args: {
+  "subject": "Test Email Subject",
+  "to": "mkcs4774@gmail.com",
+  "body": "This is a test email with random content."
+}
+[2025-10-21 11:36:37] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0560946db348b",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Test Email Subject"
+}
+[2025-10-21 11:36:37] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:37:25] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:37:25] TOOL_CALL: email_send | Args: {
+  "subject": "Credentials",
+  "to": "mkcs4774@gmail.com",
+  "body": "Credentials: 7845425689"
+}
+[2025-10-21 11:37:26] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a056153b48edaf",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Credentials"
+}
+[2025-10-21 11:37:26] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:38:08] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:38:08] TOOL_CALL: email_send | Args: {
+  "body": "Did you receive the credentials I sent earlier?",
+  "to": "mkcs4774@gmail.com",
+  "subject": "Following up on credentials"
+}
+[2025-10-21 11:38:09] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0561f9f79ee0a",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Following up on credentials"
+}
+[2025-10-21 11:38:09] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:38:39] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:38:39] TOOL_CALL: email_read | Args: {
+  "sender": "mkcs4774@gmail.com",
+  "limit": 1,
+  "folder": "INBOX"
+}
+[2025-10-21 11:38:39] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 0,
+  "emails": []
+}
+[2025-10-21 11:38:39] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:38:50] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:38:50] TOOL_CALL: email_read | Args: {
+  "limit": 1,
+  "sender": "mkcs4774@gmail.com",
+  "folder": "INBOX"
+}
+[2025-10-21 11:38:51] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 1,
+  "emails": [
+    {
+      "id": "19a05628da59dac8",
+      "from": "MK Movies Stream <mkcs4774@gmail.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Re: Following up on credentials",
+      "date": "Tue, 21 Oct 2025 11:38:43 +0530",
+      "snippet": "Yes On Tue, 21 Oct, 2025, 11:38 am , &lt;mehfoozkhancs4774@gmail.com&gt; wrote: Did you receive the credentials I sent earlier?",
+      "unread": true
+    }
+  ]
+}
+[2025-10-21 11:38:51] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:40:11] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:40:11] TOOL_CALL: email_read | Args: {
+  "folder": "INBOX",
+  "limit": 1,
+  "sender": "mkcs4774@gmail.com"
+}
+[2025-10-21 11:40:11] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 1,
+  "emails": [
+    {
+      "id": "19a05628da59dac8",
+      "from": "MK Movies Stream <mkcs4774@gmail.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Re: Following up on credentials",
+      "date": "Tue, 21 Oct 2025 11:38:43 +0530",
+      "snippet": "Yes On Tue, 21 Oct, 2025, 11:38 am , &lt;mehfoozkhancs4774@gmail.com&gt; wrote: Did you receive the credentials I sent earlier?",
+      "unread": false
+    }
+  ]
+}
+[2025-10-21 11:40:11] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-21 11:41:08] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-21 11:41:08] TOOL_CALL: email_read | Args: {
+  "unread_only": true,
+  "limit": 10,
+  "folder": "INBOX"
+}
+[2025-10-21 11:41:13] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 10,
+  "emails": [
+    {
+      "id": "19a03931e156758b",
+      "from": "Kiro Team <no-reply@amazonaws.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "The wait(list) is over, get 500 free Kiro credits",
+      "date": "Mon, 20 Oct 2025 21:42:44 +0000",
+      "snippet": "Credits usable within 30 days. Download the app to get started. \u200c \u200c \u200c \u200c \u200c \u200c The AI IDE for prototype to production We&#39;re excited to announce that as of today, we removed the Kiro waitlist! This",
+      "unread": true
+    },
+    {
+      "id": "19a02e906771d143",
+      "from": "IO Interactive <noreply@news.ioi.dk>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "HITMAN is celebrating its 25 year anniversary \ud83c\udfaf",
+      "date": "Mon, 20 Oct 2025 16:54:13 +0000",
+      "snippet": "Get the limited HITMAN World of Assassination \u2013 Anniversary Box for PS5! View in Browser View in Browser Welcome, Agent Welcome, Agent HITMAN IS CELEBRATING ITS 25 YEAR ANNIVERSARY. The Hitman legacy",
+      "unread": true
+    },
+    {
+      "id": "19a0299a4a6efa1d",
+      "from": "Indie Gala <support@indiegala.com>",
+      "to": "\"mehfoozkhancs4774@gmail.com\" <mehfoozkhancs4774@gmail.com>",
+      "subject": "\ud83c\udf42Save up to 95% OFF with even more Autumn Adventures Deals",
+      "date": "Mon, 20 Oct 2025 17:10:14 +0000",
+      "snippet": "Save even more - get an EXTRA 30% OFF active bundles &amp; 15% OFF your final price when you pay with cryptocurrency on any store purchase! View in browser. IndieGala Exclusive deals, freebies,",
+      "unread": true
+    },
+    {
+      "id": "19a027dbe48a6951",
+      "from": "Groww Digest <noreply@digest.groww.in>",
+      "to": "<mehfoozkhancs4774@gmail.com>",
+      "subject": "Muhurat Trading tomorrow, HDFC Bank profits up 10%, & more - Groww Digest",
+      "date": "Mon, 20 Oct 2025 22:09:46 +0530",
+      "snippet": "All you need to know about the day \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c",
+      "unread": true
+    },
+    {
+      "id": "19a020959ad8ef03",
+      "from": "Lenovo 4-Day Sale <lenovo@ecomm.lenovo.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Our 4-Day Sale event starts now!",
+      "date": "Mon, 20 Oct 2025 14:32:37 +0000 (UTC)",
+      "snippet": "Big savings on laptops, monitors &amp; more \u2013 limited time only \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c",
+      "unread": true
+    },
+    {
+      "id": "19a01f6e3dcd422e",
+      "from": "No-IP <noreply@noip.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Don\u2019t let access vanish: 31% off Enhanced DDNS! \ud83d\udc7b",
+      "date": "Mon, 20 Oct 2025 14:12:27 +0000 (UTC)",
+      "snippet": "Upgrade to Enhanced DDNS and scare away interruptions \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c \u200c No-IP Logo Remote Access Managed DNS Solutions Log in Upgrade to Enhanced DDNS and scare away interruptions",
+      "unread": true
+    },
+    {
+      "id": "19a014e74fdd449b",
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Final reminder: LinkedIn: Jobs & Business News subscription suspended due to payment issue",
+      "date": "Mon, 20 Oct 2025 04:08:29 -0700",
+      "snippet": "Google Play Your LinkedIn: Jobs &amp; Business News subscription needs attention Hello Syed Mehfooz, Your payment from UPI: GPay was declined. To keep your Premium Career Monthly (LinkedIn: Jobs &amp;",
+      "unread": true
+    },
+    {
+      "id": "19a004f853ddb42c",
+      "from": "Zomato <noreply@mailers.zomato.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Do this for Diwali...",
+      "date": "Mon, 20 Oct 2025 06:30:01 +0000 (UTC)",
+      "snippet": "Hard work, goals, discipline \u2014 these things matter. But today, celebrate with the ones who matter the most. Take a pause, celebrate how far you&#39;ve come with loved ones. And then, go further. Happy",
+      "unread": true
+    },
+    {
+      "id": "199fddd6046d157d",
+      "from": "Hostinger <team@emails.hostinger.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Complete your Hostinger purchase",
+      "date": "Sun, 19 Oct 2025 19:06:07 +0000",
+      "snippet": "Check your order \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c \ufeff \u034f \u200c",
+      "unread": true
+    },
+    {
+      "id": "199fca83847e4745",
+      "from": "Zomato Order <noreply@zomato.com>",
+      "to": "Zomato Order <mehfoozkhancs4774@gmail.com>",
+      "subject": "Your Zomato order from Corner House Ice Creams",
+      "date": "Sun, 19 Oct 2025 13:28:26 +0000 (UTC)",
+      "snippet": "Hi Syed Mehfooz CS, Thank you for ordering from Corner House Ice Creams ORDER ID: 7392366237 Delivered Corner House Ice Creams 7/5, Richard&#39;s Park, Clarke Road, Frazer Town, Bangalore 1 X Death By",
+      "unread": true
+    }
+  ]
+}
+[2025-10-21 11:41:13] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully

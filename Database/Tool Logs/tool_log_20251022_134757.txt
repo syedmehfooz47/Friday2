@@ -1,0 +1,446 @@
+[2025-10-22 13:49:26] TOOL_STATUS: generate_pdf | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:49:26] TOOL_CALL: generate_pdf | Args: {
+  "topic": "latest home automation systems"
+}
+[2025-10-22 13:49:29] TOOL_RESULT: generate_pdf | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page PDF document on 'latest home automation systems' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf"
+}
+[2025-10-22 13:49:29] TOOL_STATUS: generate_pdf | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:49:30] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:49:30] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf",
+  "recipient_name": "Boss"
+}
+[2025-10-22 13:49:31] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'latest_home_automation_systems_20251022_134929.pdf' sent to Boss, Boss."
+}
+[2025-10-22 13:49:31] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:49:51] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:49:51] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "pdf"
+}
+[2025-10-22 13:49:51] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf"
+}
+[2025-10-22 13:49:51] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:49:52] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:49:52] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf",
+  "output_format": "docx"
+}
+[2025-10-22 13:49:52] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "Conversion failed: 'Rect' object has no attribute 'get_area'",
+  "file_path": null
+}
+[2025-10-22 13:49:52] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:50:12] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:50:12] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "pdf"
+}
+[2025-10-22 13:50:12] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf"
+}
+[2025-10-22 13:50:12] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:50:13] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:50:13] TOOL_CALL: convert_file_format | Args: {
+  "output_format": "docx",
+  "input_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_134929.pdf"
+}
+[2025-10-22 13:50:13] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "Conversion failed: 'Rect' object has no attribute 'get_area'",
+  "file_path": null
+}
+[2025-10-22 13:50:13] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:50:29] TOOL_STATUS: generate_word | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:50:29] TOOL_CALL: generate_word | Args: {
+  "topic": "latest home automation systems"
+}
+[2025-10-22 13:50:32] TOOL_RESULT: generate_word | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page Word document on 'latest home automation systems' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:50:32] TOOL_STATUS: generate_word | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:50:43] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:50:43] TOOL_CALL: open_app | Args: {
+  "app_name": "Word"
+}
+[2025-10-22 13:50:44] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opening Word, Boss."
+}
+[2025-10-22 13:50:44] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:50:58] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:50:58] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "word"
+}
+[2025-10-22 13:50:58] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:50:58] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:51:00] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:51:00] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:51:00] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx website, Boss."
+}
+[2025-10-22 13:51:00] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:51:17] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:51:17] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "word"
+}
+[2025-10-22 13:51:17] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:51:17] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:51:18] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:51:18] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:51:18] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx website, Boss."
+}
+[2025-10-22 13:51:18] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:51:45] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:51:45] TOOL_CALL: find_contact | Args: {
+  "name": "Boss"
+}
+[2025-10-22 13:51:45] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "Boss"
+    ],
+    "phone": null,
+    "telegram_id": null,
+    "email": "mkcs4774@gmail.com"
+  }
+}
+[2025-10-22 13:51:45] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:51:46] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:51:46] TOOL_CALL: email_send | Args: {
+  "subject": "Latest Home Automation Systems",
+  "body": "Please find attached the document on the latest home automation systems.",
+  "to": "mkcs4774@gmail.com"
+}
+[2025-10-22 13:51:47] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0b02af7d34436",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Latest Home Automation Systems"
+}
+[2025-10-22 13:51:47] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:52:22] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:52:22] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "word"
+}
+[2025-10-22 13:52:22] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 13:52:22] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:52:23] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:52:23] TOOL_CALL: find_contact | Args: {
+  "name": "Boss"
+}
+[2025-10-22 13:52:23] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "Boss"
+    ],
+    "phone": null,
+    "telegram_id": null,
+    "email": "mkcs4774@gmail.com"
+  }
+}
+[2025-10-22 13:52:23] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:52:25] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:52:25] TOOL_CALL: email_send | Args: {
+  "attachments": [
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+  ],
+  "body": "Please find attached the document on the latest home automation systems.",
+  "to": "mkcs4774@gmail.com",
+  "subject": "Latest Home Automation Systems"
+}
+[2025-10-22 13:52:26] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0b0349bb1ba31",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Latest Home Automation Systems"
+}
+[2025-10-22 13:52:26] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:53:20] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:53:20] TOOL_CALL: internet_search | Args: {
+  "query": "web development services and pricing"
+}
+[2025-10-22 13:53:22] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "web development services and pricing",
+  "answer": "Web development services typically range from $25 to $49/hour, with project-based costs starting at $6,000. Simple websites on platforms like Fiverr can cost between $175 and $1000. The average hourly rate for US web developers is $45.95.",
+  "results": [
+    {
+      "title": "Web Development Company Pricing Guide October 2025 - Clutch",
+      "url": "https://clutch.co/web-developers/pricing",
+      "content": "Hourly Web Development Rates: Most agencies charge between $25\u2013$49/hour, though rates can vary based on region and expertise. Web Development Service Pricing"
+    },
+    {
+      "title": "10 Most Affordable Web Design Services in 2025 - Teamtown",
+      "url": "https://www.teamtown.co/blog/affordable-web-design-services",
+      "content": "Straight North offers a simple web development service that starts at $6,000. This price could increase depending on the scope of your project."
+    },
+    {
+      "title": "Website development services by freelance web developers - Fiverr",
+      "url": "https://www.fiverr.com/categories/programming-tech/website-development",
+      "content": "A simple website with a basic design and limited functionality can cost between $175 and $1000. To reduce costs, choose a simple design, use pre-built templates"
+    },
+    {
+      "title": "Outsourcing Web Development Pricing Guide 2025 : Aalpha",
+      "url": "https://www.aalpha.net/articles/outsourcing-web-development-pricing-guide/",
+      "content": "A basic outsourced website can range from $2,500 to $25,000, while enterprise-grade platforms may exceed $100,000. In North America, hourly"
+    },
+    {
+      "title": "Web Development in the USA Pricing Guide 2025 - Techreviewer",
+      "url": "https://techreviewer.co/pricing/web-development-usa-pricing-guide",
+      "content": "+ Web Development Many factors influence the cost of US web development, including project size, features needed, technology integration, etc. #### What Impacts the Cost of Hiring a Web Development Company in the USA? #### What is the hourly rate for web developers in the US? The average hourly rate for web developers in the US is $45.95. Top Web Developers in the USA Top Web Developers in California Top Web Developers in Chicago Top Web Developers in Denver Top Web Developers in Florida Top Web Developers in Illinois Top Web Developers in London Top Web Developers in San Francisco Top Web Developers in Seattle Top Web Developers in Texas"
+    }
+  ]
+}
+[2025-10-22 13:53:22] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:54:19] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:54:19] TOOL_CALL: internet_search | Args: {
+  "query": "detailed web development pricing from multiple agencies"
+}
+[2025-10-22 13:54:21] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "detailed web development pricing from multiple agencies",
+  "answer": "Web development pricing varies widely; hourly rates range from $25-$49 to $100-$250, while project costs can be from $30,000 to $200,000+. Subscription models also exist, like $4,995 per month.",
+  "results": [
+    {
+      "title": "Web Development Company Pricing Guide October 2025 - Clutch",
+      "url": "https://clutch.co/web-developers/pricing",
+      "content": "Hourly Web Development Rates: Most agencies charge between $25\u2013$49/hour ... Scope requirements and request pricing from multiple companies all at once."
+    },
+    {
+      "title": "Website Development Cost Guide [ Full Cost Breakdown]",
+      "url": "https://www.monocubed.com/blog/website-development-cost/",
+      "content": "Web design and development agencies. Hourly rates: $100-$250 (US-based). Project cost: $30,000-$200,000+. Website development agencies offer a"
+    },
+    {
+      "title": "How Much to Charge for a Website: The Ultimate Guide for Agencies",
+      "url": "https://blog.duda.co/how-much-to-charge-for-a-website-the-ultimate-guide-for-agencies",
+      "content": "The average agency or freelancer price point for building a website spans a large range between $12,000 and $150,000. The reason for such a wide"
+    },
+    {
+      "title": "Web design pricing? : r/agency - Reddit",
+      "url": "https://www.reddit.com/r/agency/comments/1juhu3d/web_design_pricing/",
+      "content": "Right now, the standard website package is $150 per month, which includes development, maintenance, hosting, domain, and so on. For an"
+    },
+    {
+      "title": "5 web design pricing packages successful agencies use - Assembly",
+      "url": "https://assembly.com/blog/web-design-pricing-packages",
+      "content": "Designjoy offers \u201cdesign as a subscription\u201d service to startups at a flat rate of $4,995 per month (at the time of writing this). Designjoy"
+    }
+  ]
+}
+[2025-10-22 13:54:21] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:54:23] TOOL_STATUS: generate_excel | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:54:23] TOOL_CALL: generate_excel | Args: {
+  "topic": "Detailed Web Development Pricing"
+}
+[2025-10-22 13:54:24] TOOL_RESULT: generate_excel | Result: {
+  "status": "success",
+  "message": "I've generated an Excel spreadsheet with 20 rows on 'Detailed Web Development Pricing' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_20251022_135424.xlsx"
+}
+[2025-10-22 13:54:24] TOOL_STATUS: generate_excel | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:54:25] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:54:25] TOOL_CALL: open_app | Args: {
+  "app_name": "Excel"
+}
+[2025-10-22 13:54:25] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opening Excel, Boss."
+}
+[2025-10-22 13:54:25] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:54:26] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:54:26] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "excel"
+}
+[2025-10-22 13:54:26] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_20251022_135424.xlsx"
+}
+[2025-10-22 13:54:26] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:54:28] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:54:28] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_20251022_135424.xlsx"
+}
+[2025-10-22 13:54:28] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_20251022_135424.xlsx website, Boss."
+}
+[2025-10-22 13:54:28] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:55:45] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:55:45] TOOL_CALL: internet_search | Args: {
+  "query": "detailed web development pricing from multiple agencies with company names"
+}
+[2025-10-22 13:55:48] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "detailed web development pricing from multiple agencies with company names",
+  "answer": "Web development pricing ranges from $25 to $49 per hour for agencies, and custom websites can cost from $20,000 to over $100,000. Hourly rates for designers are $30 to $80, while developers charge $80 to $180. Overall, costs vary widely from $12,000 to $150,000.",
+  "results": [
+    {
+      "title": "Web Development Company Pricing Guide October 2025 - Clutch",
+      "url": "https://clutch.co/web-developers/pricing",
+      "content": "Hourly Web Development Rates: Most agencies charge between $25\u2013$49/hour ... Scope requirements and request pricing from multiple companies all at once."
+    },
+    {
+      "title": "Website Development Cost USA | Detailed Pricing Guide",
+      "url": "https://aayaninfotech.com/website-cost-usa",
+      "content": "Expect to pay anywhere from $20,000 to over $100,000 for a fully custom-built website. These sites are designed from scratch to meet specific"
+    },
+    {
+      "title": "Website Design Cost: The Complete Breakdown for B2B Companies",
+      "url": "https://oneims.com/blog/website-design-cost",
+      "content": "Generally, you can find a designer for a price range of $30 to $80 per hour while a developer could cost between $80 and $180 per hour. A website designer is"
+    },
+    {
+      "title": "How Much Does It Cost to Develop a Website? - DesignRush",
+      "url": "https://www.designrush.com/agency/web-development-companies/trends/cost-of-web-development",
+      "content": "Generally, web development costs around $12,000 to $150,000, depending on the intricacies of the product. Such expenditures can vary widely"
+    },
+    {
+      "title": "Cost to Hire a Web Design Company: Full Breakdown",
+      "url": "https://appwrk.com/insights/cost-to-hire-a-web-design-company",
+      "content": "Cost to hire a web design company starts at $90 and ranges up to $2000. Discover pricing models, global rates, and tips to save on your next website."
+    }
+  ]
+}
+[2025-10-22 13:55:48] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:55:49] TOOL_STATUS: generate_excel | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:55:49] TOOL_CALL: generate_excel | Args: {
+  "topic": "Detailed Web Development Pricing including Company Names"
+}
+[2025-10-22 13:55:51] TOOL_RESULT: generate_excel | Result: {
+  "status": "success",
+  "message": "I've generated an Excel spreadsheet with 20 rows on 'Detailed Web Development Pricing including Company Names' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135551.xlsx"
+}
+[2025-10-22 13:55:51] TOOL_STATUS: generate_excel | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:55:52] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:55:52] TOOL_CALL: open_app | Args: {
+  "app_name": "Excel"
+}
+[2025-10-22 13:55:52] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opening Excel, Boss."
+}
+[2025-10-22 13:55:52] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:55:53] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:55:53] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "excel"
+}
+[2025-10-22 13:55:53] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135551.xlsx"
+}
+[2025-10-22 13:55:53] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:55:55] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:55:55] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135551.xlsx"
+}
+[2025-10-22 13:55:55] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135551.xlsx website, Boss."
+}
+[2025-10-22 13:55:55] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:56:39] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:56:39] TOOL_CALL: internet_search | Args: {
+  "query": "web development agencies addresses and pricing"
+}
+[2025-10-22 13:56:42] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "web development agencies addresses and pricing",
+  "answer": "Web development agencies typically charge $25-$49 per hour, with projects often under $10,000. Pricing varies based on project type and agency. Top agencies offer comprehensive services including design, development, and maintenance.",
+  "results": [
+    {
+      "title": "Web Development Company Pricing Guide October 2025 - Clutch",
+      "url": "https://clutch.co/web-developers/pricing",
+      "content": "Web development projects on Clutch typically cost less than $10,000, with most agencies charging $25\u2013$49/hour. The average project cost is $66,499.09."
+    },
+    {
+      "title": "Top Web Development Companies - Oct 2025 Rankings | Clutch.co",
+      "url": "https://clutch.co/web-developers",
+      "content": "## Web Development Company FAQs Looking for a web development company but not sure where to start? The top web development companies in 2025 include: Web development companies are dedicated to helping businesses create tailored web solutions for their unique needs. According to data gathered by our team at Clutch, most web development companies charge $25\u2013$49 per hour while most projects reviewed on the platform range cost less than $10,000. Many web development companies maintain cross-industry expertise, but you\u2019ll also find specialists in: Selecting the ideal web development provider for your project is a big commitment. Web development companies offer multidisciplinary teams \u2014 strategists, UI/UX designers, developers, QA testers, and DevOps engineers \u2014 under one roof."
+    },
+    {
+      "title": "Top 9 Web Development Agencies (2025) | Hire The Best One",
+      "url": "https://www.lowcode.agency/blog/best-web-development-agencies",
+      "content": "* **Non-tech entrepreneurs**Even if you don\u2019t know how to code, a no-code web development agency can turn your ideas into working products using tools like Webflow or Bubble. LowCode Agency is the **#1 No-code Web Development Agency** for building modern, scalable web apps that solve real business challenges. ThoughtBot is a U.S.-based product design and development agency that helps businesses build web apps using tried-and-true coding practices. DockYard is a U.S.-based digital product consultancy known for building custom web apps with full-code development and user-focused design. Finding the right web development agency is about more than building a website or app \u2014 it\u2019s about creating a tool that solves real problems and supports your long-term growth. A web development agency helps you design, build, and launch websites or web apps."
+    },
+    {
+      "title": "Top 30 Website Development Companies in USA - Oct 2025 Rankings",
+      "url": "https://www.designrush.com/agency/web-development-companies/us",
+      "content": "As a full-service web development agency, Bilberrry empowers clients to innovate with custom web application development, enterprise ecommerce solutions, and digital transformation partnerships. Synergy Labs is a results-driven mobile app and web development agency helping startups, enterprises, and fast-growing businesses build scalable digital products. eSEOspace provides unique Website Development services combined with design, branding, UX/UI architecture, and responsive web solutions. As a website development firm, our approach at Goji Labs ensures we collaborate closely with startups, businesses, and non-profits to deliver tailored product strategy, UX research, UX/UI design, and web and mobile app development. Top website development companies in the United States help businesses drive online growth, customer engagement, and operational efficiency through scalable, high-performing web platforms tailored to their unique objectives, workflows, and tech stack."
+    },
+    {
+      "title": "Top Web Development Companies 2025 - Capterra",
+      "url": "https://www.capterra.com/services/web-development/",
+      "content": "Website development service prices vary from one agency to another, depending on the type of website, framework and programming software used,"
+    }
+  ]
+}
+[2025-10-22 13:56:42] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:56:43] TOOL_STATUS: generate_excel | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:56:43] TOOL_CALL: generate_excel | Args: {
+  "topic": "Detailed Web Development Pricing including Company Names and Addresses"
+}
+[2025-10-22 13:56:45] TOOL_RESULT: generate_excel | Result: {
+  "status": "success",
+  "message": "I've generated an Excel spreadsheet with 20 rows on 'Detailed Web Development Pricing including Company Names and Addresses' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx"
+}
+[2025-10-22 13:56:45] TOOL_STATUS: generate_excel | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:56:46] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:56:46] TOOL_CALL: open_app | Args: {
+  "app_name": "Excel"
+}
+[2025-10-22 13:56:46] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opening Excel, Boss."
+}
+[2025-10-22 13:56:46] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:56:47] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:56:47] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "excel"
+}
+[2025-10-22 13:56:47] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx"
+}
+[2025-10-22 13:56:47] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 13:56:49] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 13:56:49] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx"
+}
+[2025-10-22 13:56:49] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx website, Boss."
+}
+[2025-10-22 13:56:49] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully

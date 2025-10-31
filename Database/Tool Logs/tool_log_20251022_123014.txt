@@ -1,0 +1,226 @@
+[2025-10-22 12:31:12] TOOL_STATUS: list_contacts | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:31:12] TOOL_CALL: list_contacts | Args: {}
+[2025-10-22 12:31:12] TOOL_RESULT: list_contacts | Result: {
+  "status": "success",
+  "count": 1,
+  "contacts": [
+    {
+      "names": [
+        "Boss"
+      ],
+      "phone": null,
+      "telegram_id": null,
+      "email": "mkcs4774@gmail.com"
+    }
+  ]
+}
+[2025-10-22 12:31:12] TOOL_STATUS: list_contacts | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:32:03] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:32:03] TOOL_CALL: email_send | Args: {
+  "subject": "Very Crucial and Confidential Credentials",
+  "to": "mkcs4774@gmail.com",
+  "body": "569285@6592M5c68594"
+}
+[2025-10-22 12:32:03] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0ab9b2e16c55d",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Very Crucial and Confidential Credentials"
+}
+[2025-10-22 12:32:03] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:34:04] TOOL_STATUS: list_contacts | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:34:04] TOOL_CALL: list_contacts | Args: {}
+[2025-10-22 12:34:04] TOOL_RESULT: list_contacts | Result: {
+  "status": "success",
+  "count": 1,
+  "contacts": [
+    {
+      "names": [
+        "Boss"
+      ],
+      "phone": null,
+      "telegram_id": null,
+      "email": "mkcs4774@gmail.com"
+    }
+  ]
+}
+[2025-10-22 12:34:04] TOOL_STATUS: list_contacts | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:34:14] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:34:14] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "June 8th, 2004",
+  "recipient_name": "Boss"
+}
+[2025-10-22 12:34:16] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to Boss on Telegram, Boss."
+}
+[2025-10-22 12:34:16] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:34:45] TOOL_STATUS: telegram_get_updates | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:34:45] TOOL_CALL: telegram_get_updates | Args: {}
+[2025-10-22 12:34:46] TOOL_RESULT: telegram_get_updates | Result: {
+  "status": "success",
+  "messages": [
+    {
+      "message_id": 148,
+      "from": "MK",
+      "text": "Okay thanks",
+      "date": "2025-10-22T07:04:39+00:00"
+    }
+  ],
+  "count": 1
+}
+[2025-10-22 12:34:46] TOOL_STATUS: telegram_get_updates | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:35:06] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:35:06] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "You are welcome",
+  "recipient_name": "MK"
+}
+[2025-10-22 12:35:06] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Failed to send message to MK, Boss."
+}
+[2025-10-22 12:35:06] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:35:17] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:35:17] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "You are welcome",
+  "recipient_name": "MK"
+}
+[2025-10-22 12:35:18] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to MK on Telegram, Boss."
+}
+[2025-10-22 12:35:18] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:35:41] TOOL_STATUS: generate_image | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:35:41] TOOL_CALL: generate_image | Args: {
+  "prompt": "birthday cake"
+}
+[2025-10-22 12:35:53] TOOL_RESULT: generate_image | Result: {
+  "status": "success",
+  "message": "I've generated 1 image(s) for 'birthday cake' and opened them, Boss.",
+  "image_paths": [
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg"
+  ]
+}
+[2025-10-22 12:35:53] TOOL_STATUS: generate_image | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:35:54] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:35:54] TOOL_CALL: telegram_send_file | Args: {
+  "recipient_name": "Boss",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg"
+}
+[2025-10-22 12:35:54] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "Failed to send file to Boss, Boss."
+}
+[2025-10-22 12:35:54] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:36:06] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:36:06] TOOL_CALL: telegram_send_file | Args: {
+  "recipient_name": "Boss",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg"
+}
+[2025-10-22 12:36:08] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'birthday_cake_20251022_123552.jpg' sent to Boss, Boss."
+}
+[2025-10-22 12:36:08] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:36:47] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:36:47] TOOL_CALL: email_send | Args: {
+  "to": "mkcs4774@gmail.com",
+  "body": "Please find attached the birthday cake image.",
+  "attachments": [
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg"
+  ],
+  "subject": "Birthday Cake Image"
+}
+[2025-10-22 12:36:47] TOOL_RESULT: email_send | Result: {
+  "status": "error",
+  "message": "Failed to send email: [WinError 10053] An established connection was aborted by the software in your host machine"
+}
+[2025-10-22 12:36:47] TOOL_STATUS: email_send | Status: FAILURE | Details: Failed to send email: [WinError 10053] An established connection was aborted by the software in your host machine
+[2025-10-22 12:36:59] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:36:59] TOOL_CALL: email_send | Args: {
+  "attachments": [
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg"
+  ],
+  "body": "Please find attached the birthday cake image.",
+  "subject": "Birthday Cake Image",
+  "to": "mkcs4774@gmail.com"
+}
+[2025-10-22 12:36:59] TOOL_RESULT: email_send | Result: {
+  "status": "error",
+  "message": "Failed to send email: [WinError 10053] An established connection was aborted by the software in your host machine"
+}
+[2025-10-22 12:36:59] TOOL_STATUS: email_send | Status: FAILURE | Details: Failed to send email: [WinError 10053] An established connection was aborted by the software in your host machine
+[2025-10-22 12:37:25] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:37:25] TOOL_CALL: email_send | Args: {
+  "subject": "Test Email",
+  "to": "mkcs4774@gmail.com",
+  "body": "This is a test message."
+}
+[2025-10-22 12:37:25] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0abe9a55ed408",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Test Email"
+}
+[2025-10-22 12:37:25] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:38:34] TOOL_STATUS: control_smart_device | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:38:34] TOOL_CALL: control_smart_device | Args: {
+  "action": "turn_off",
+  "device_name": "light"
+}
+[2025-10-22 12:38:34] TOOL_RESULT: control_smart_device | Result: {
+  "status": "error",
+  "message": "Google Home integration requires Smart Home API setup in Google Cloud Console"
+}
+[2025-10-22 12:38:34] TOOL_STATUS: control_smart_device | Status: FAILURE | Details: Google Home integration requires Smart Home API setup in Google Cloud Console
+[2025-10-22 12:39:14] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:39:14] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "image"
+}
+[2025-10-22 12:39:14] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Water_conservation_20251015_175416.docx"
+}
+[2025-10-22 12:39:14] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:39:16] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:39:16] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Water_conservation_20251015_175416.docx",
+  "output_format": "PNG"
+}
+[2025-10-22 12:39:16] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "Conversion from docx to png not supported, Boss.",
+  "file_path": null
+}
+[2025-10-22 12:39:16] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:39:50] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:39:50] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedImages\\birthday_cake_20251022_123552.jpg",
+  "output_format": "PNG"
+}
+[2025-10-22 12:39:50] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "Converted to PNG, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\ConvertedDocuments\\birthday_cake_20251022_123552_converted.png"
+}
+[2025-10-22 12:39:50] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:40:06] TOOL_STATUS: get_last_converted_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:40:06] TOOL_CALL: get_last_converted_file | Args: {}
+[2025-10-22 12:40:06] TOOL_RESULT: get_last_converted_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\ConvertedDocuments\\birthday_cake_20251022_123552_converted.png"
+}
+[2025-10-22 12:40:06] TOOL_STATUS: get_last_converted_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 12:40:08] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 12:40:08] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\ConvertedDocuments\\birthday_cake_20251022_123552_converted.png",
+  "output_format": "SVG"
+}
+[2025-10-22 12:40:08] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "Conversion from png to svg not supported, Boss.",
+  "file_path": null
+}
+[2025-10-22 12:40:08] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully

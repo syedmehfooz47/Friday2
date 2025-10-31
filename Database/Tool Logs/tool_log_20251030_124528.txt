@@ -1,0 +1,10 @@
+[2025-10-30 12:46:04] TOOL_STATUS: system_power_secure | Status: WORKING | Details: Tool execution started
+[2025-10-30 12:46:04] TOOL_CALL: system_power_secure | Args: {
+  "password": "p@ssw0rd123",
+  "action": "lock"
+}
+[2025-10-30 12:46:04] TOOL_RESULT: system_power_secure | Result: {
+  "status": "success",
+  "message": "System locked, Boss."
+}
+[2025-10-30 12:46:04] TOOL_STATUS: system_power_secure | Status: SUCCESS | Details: Tool completed successfully

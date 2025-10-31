@@ -1,0 +1,268 @@
+[2025-10-30 01:47:55] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:47:55] TOOL_CALL: set_brightness | Args: {
+  "level": 0
+}
+[2025-10-30 01:47:58] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 0%, Boss."
+}
+[2025-10-30 01:47:58] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:48:09] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:48:09] TOOL_CALL: set_brightness | Args: {
+  "level": 10
+}
+[2025-10-30 01:48:13] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 10%, Boss."
+}
+[2025-10-30 01:48:13] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:48:22] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:48:22] TOOL_CALL: set_brightness | Args: {
+  "level": 100
+}
+[2025-10-30 01:48:26] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 100%, Boss."
+}
+[2025-10-30 01:48:26] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:49:07] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:49:07] TOOL_CALL: set_brightness | Args: {
+  "level": 100
+}
+[2025-10-30 01:49:11] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 100%, Boss."
+}
+[2025-10-30 01:49:11] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:49:19] TOOL_STATUS: set_brightness | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:49:19] TOOL_CALL: set_brightness | Args: {
+  "level": 0
+}
+[2025-10-30 01:49:23] TOOL_RESULT: set_brightness | Result: {
+  "status": "success",
+  "message": "Brightness set to 0%, Boss."
+}
+[2025-10-30 01:49:23] TOOL_STATUS: set_brightness | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:50:21] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:50:21] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "Hi",
+  "recipient_name": "Boss"
+}
+[2025-10-30 01:50:22] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to Boss on Telegram, Boss."
+}
+[2025-10-30 01:50:22] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:50:45] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:50:45] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "Are you ready for a meeting tomorrow?",
+  "recipient_name": "Boss"
+}
+[2025-10-30 01:50:45] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to Boss on Telegram, Boss."
+}
+[2025-10-30 01:50:45] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:50:47] TOOL_STATUS: telegram_get_updates | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:50:47] TOOL_CALL: telegram_get_updates | Args: {
+  "limit": 1
+}
+[2025-10-30 01:50:47] TOOL_RESULT: telegram_get_updates | Result: {
+  "status": "error",
+  "message": "'TelegramHandler' object has no attribute '_run_async'"
+}
+[2025-10-30 01:50:47] TOOL_STATUS: telegram_get_updates | Status: FAILURE | Details: 'TelegramHandler' object has no attribute '_run_async'
+[2025-10-30 01:51:17] TOOL_STATUS: telegram_get_updates | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:51:17] TOOL_CALL: telegram_get_updates | Args: {
+  "limit": 1
+}
+[2025-10-30 01:51:17] TOOL_RESULT: telegram_get_updates | Result: {
+  "status": "error",
+  "message": "'TelegramHandler' object has no attribute '_run_async'"
+}
+[2025-10-30 01:51:17] TOOL_STATUS: telegram_get_updates | Status: FAILURE | Details: 'TelegramHandler' object has no attribute '_run_async'
+[2025-10-30 01:51:36] TOOL_STATUS: telegram_get_updates | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:51:36] TOOL_CALL: telegram_get_updates | Args: {
+  "limit": 1
+}
+[2025-10-30 01:51:36] TOOL_RESULT: telegram_get_updates | Result: {
+  "status": "error",
+  "message": "'TelegramHandler' object has no attribute '_run_async'"
+}
+[2025-10-30 01:51:36] TOOL_STATUS: telegram_get_updates | Status: FAILURE | Details: 'TelegramHandler' object has no attribute '_run_async'
+[2025-10-30 01:52:28] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:52:28] TOOL_CALL: email_read | Args: {
+  "subject_filter": "credentials"
+}
+[2025-10-30 01:52:35] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 10,
+  "emails": [
+    {
+      "id": "19a05628da59dac8",
+      "from": "MK Movies Stream <mkcs4774@gmail.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "Re: Following up on credentials",
+      "date": "Tue, 21 Oct 2025 11:38:43 +0530",
+      "snippet": "Yes On Tue, 21 Oct, 2025, 11:38 am , &lt;mehfoozkhancs4774@gmail.com&gt; wrote: Did you receive the credentials I sent earlier?",
+      "unread": false
+    },
+    {
+      "id": "19985e1c9a023d24",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Action required] Your credentials have been compromised",
+      "date": "Fri, 26 Sep 2025 11:56:29 +0000",
+      "snippet": "Your account reuses a password that has been compromised in a data breach from another Internet service. Please reset your password to protect your account. Cloudflare logo Your account reuses a",
+      "unread": true
+    },
+    {
+      "id": "19985e1b0190f9ef",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Action required] Your credentials have been compromised",
+      "date": "Fri, 26 Sep 2025 11:56:23 +0000",
+      "snippet": "Your account reuses a password that has been compromised in a data breach from another Internet service. Please reset your password to protect your account. Cloudflare logo Your account reuses a",
+      "unread": true
+    },
+    {
+      "id": "19910465c50179a8",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Action required] Your credentials have been compromised",
+      "date": "Wed, 03 Sep 2025 15:51:09 +0000",
+      "snippet": "Your account reuses a password that has been compromised in a data breach from another Internet service. Please reset your password to protect your account. Cloudflare logo Your account reuses a",
+      "unread": true
+    },
+    {
+      "id": "198c34d82b276f12",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Action required] Your credentials have been compromised",
+      "date": "Tue, 19 Aug 2025 17:08:12 +0000",
+      "snippet": "Your account reuses a password that has been compromised in a data breach from another Internet service. Please reset your password to protect your account. Cloudflare logo Your account reuses a",
+      "unread": true
+    },
+    {
+      "id": "196c2035ba94d553",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Cloudflare]: Credentials compromised warning",
+      "date": "Mon, 12 May 2025 01:02:00 +0000",
+      "snippet": "Cloudflare Hello, We are sending you this communication because we believe that you are reusing a password to access Cloudflare that has been compromised in an attack on another service on the Internet",
+      "unread": true
+    },
+    {
+      "id": "1962a7b598e3b864",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Cloudflare]: Credentials compromised warning",
+      "date": "Sat, 12 Apr 2025 14:50:47 +0000",
+      "snippet": "Cloudflare Hello, We are sending you this communication because we believe that you are reusing a password to access Cloudflare that has been compromised in an attack on another service on the Internet",
+      "unread": true
+    },
+    {
+      "id": "195620da942a3cdd",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Cloudflare]: Credentials compromised warning",
+      "date": "Tue, 04 Mar 2025 16:46:56 +0000",
+      "snippet": "Cloudflare Hello, We are sending you this communication because we believe that you are reusing a password to access Cloudflare that has been compromised in an attack on another service on the Internet",
+      "unread": true
+    },
+    {
+      "id": "195482ab201f9fae",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Cloudflare]: Credentials compromised warning",
+      "date": "Thu, 27 Feb 2025 16:08:31 +0000",
+      "snippet": "Cloudflare Hello, We are sending you this communication because we believe that you are reusing a password to access Cloudflare that has been compromised in an attack on another service on the Internet",
+      "unread": true
+    },
+    {
+      "id": "1952f58c99294f53",
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "to": "mehfoozkhancs4774@gmail.com",
+      "subject": "[Cloudflare]: Credentials compromised warning",
+      "date": "Sat, 22 Feb 2025 20:28:22 +0000",
+      "snippet": "Cloudflare Hello, We are sending you this communication because we believe that you are reusing a password to access Cloudflare that has been compromised in an attack on another service on the Internet",
+      "unread": true
+    }
+  ]
+}
+[2025-10-30 01:52:35] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:52:52] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:52:52] TOOL_CALL: email_read | Args: {
+  "sender": "mehfoozkhancs@gmail.com",
+  "subject_filter": "credentials"
+}
+[2025-10-30 01:52:52] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 0,
+  "emails": []
+}
+[2025-10-30 01:52:52] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:53:09] TOOL_STATUS: email_read | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:53:09] TOOL_CALL: email_read | Args: {
+  "limit": 1,
+  "subject_filter": "credentials"
+}
+[2025-10-30 01:53:11] TOOL_RESULT: email_read | Result: {
+  "status": "success",
+  "folder": "INBOX",
+  "count": 1,
+  "emails": [
+    {
+      "id": "19a31a2e1d1fd743",
+      "from": "\"MEHFOOZ KHAN C.S\" <mehfoozshaziya@gmail.com>",
+      "to": "Syed Mehfooz C S <mehfoozkhancs4774@gmail.com>",
+      "subject": "Credentials",
+      "date": "Thu, 30 Oct 2025 01:52:16 +0530",
+      "snippet": "28489",
+      "unread": true
+    }
+  ]
+}
+[2025-10-30 01:53:11] TOOL_STATUS: email_read | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:54:08] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:54:08] TOOL_CALL: telegram_send_message | Args: {
+  "recipient_name": "Boss",
+  "message_prompt": "Credentials: 28489"
+}
+[2025-10-30 01:54:08] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to Boss on Telegram, Boss."
+}
+[2025-10-30 01:54:08] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:54:10] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:54:10] TOOL_CALL: find_contact | Args: {
+  "name": "Boss"
+}
+[2025-10-30 01:54:10] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "Boss"
+    ],
+    "phone": null,
+    "telegram_id": null,
+    "email": "mkcs4774@gmail.com"
+  }
+}
+[2025-10-30 01:54:10] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-30 01:54:11] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-30 01:54:11] TOOL_CALL: email_send | Args: {
+  "subject": "Credentials",
+  "to": "mkcs4774@gmail.com",
+  "body": "Credentials: 28489"
+}
+[2025-10-30 01:54:12] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a31a4725ae0994",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Credentials"
+}
+[2025-10-30 01:54:12] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully

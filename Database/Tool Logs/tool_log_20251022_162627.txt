@@ -1,0 +1,34 @@
+[2025-10-22 16:26:40] TOOL_STATUS: control_smart_device | Status: WORKING | Details: Tool execution started
+[2025-10-22 16:26:40] TOOL_CALL: control_smart_device | Args: {
+  "device_name": "light",
+  "action": "turn_on"
+}
+[2025-10-22 16:26:40] TOOL_RESULT: control_smart_device | Result: {
+  "status": "success",
+  "message": "Executed turn_on on light",
+  "result": {
+    "error": "Status code: 404",
+    "details": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}\n  </style>\n  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>\n  <p><b>404.</b> <ins>That\u2019s an error.</ins>\n  <p>The requested URL <code>/v1alpha2/projects/*/devices:execute</code> was not found on this server.  <ins>That\u2019s all we know.</ins>\n"
+  }
+}
+[2025-10-22 16:26:40] TOOL_STATUS: control_smart_device | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 16:29:08] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-22 16:29:08] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "The following error occurred when trying to turn on the light: 404. That\u2019s an error. The requested URL /v1alpha2/projects/*/devices:execute was not found on this server. That\u2019s all we know.",
+  "recipient_name": "boss"
+}
+[2025-10-22 16:29:09] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Failed to send message to boss, Boss."
+}
+[2025-10-22 16:29:09] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 16:29:20] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-10-22 16:29:20] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "The following error occurred when trying to turn on the light: 404. That\u2019s an error. The requested URL /v1alpha2/projects/*/devices:execute was not found on this server. That\u2019s all we know.",
+  "recipient_name": "boss"
+}
+[2025-10-22 16:29:20] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Failed to send message to boss, Boss."
+}
+[2025-10-22 16:29:20] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully

@@ -1,0 +1,303 @@
+[2025-10-22 14:01:17] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:17] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "word"
+}
+[2025-10-22 14:01:17] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 14:01:17] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:17] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:17] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "<call_output>",
+  "output_format": "pdf"
+}
+[2025-10-22 14:01:17] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "File not found: <call_output>",
+  "file_path": null
+}
+[2025-10-22 14:01:17] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:17] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:17] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "excel"
+}
+[2025-10-22 14:01:17] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx"
+}
+[2025-10-22 14:01:17] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:17] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:17] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "<call_output>",
+  "output_format": "pdf"
+}
+[2025-10-22 14:01:17] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "File not found: <call_output>",
+  "file_path": null
+}
+[2025-10-22 14:01:17] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:42] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:42] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "word"
+}
+[2025-10-22 14:01:42] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_home_automation_systems_20251022_135032.docx"
+}
+[2025-10-22 14:01:42] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:43] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:43] TOOL_CALL: convert_file_format | Args: {
+  "input_path": "word_document.docx",
+  "output_format": "pdf"
+}
+[2025-10-22 14:01:43] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "File not found: word_document.docx",
+  "file_path": null
+}
+[2025-10-22 14:01:43] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:43] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:43] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "excel"
+}
+[2025-10-22 14:01:43] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\Detailed_Web_Development_Pricing_including_Company_20251022_135645.xlsx"
+}
+[2025-10-22 14:01:43] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:01:43] TOOL_STATUS: convert_file_format | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:01:43] TOOL_CALL: convert_file_format | Args: {
+  "output_format": "pdf",
+  "input_path": "excel_sheet.xlsx"
+}
+[2025-10-22 14:01:43] TOOL_RESULT: convert_file_format | Result: {
+  "status": "success",
+  "message": "File not found: excel_sheet.xlsx",
+  "file_path": null
+}
+[2025-10-22 14:01:43] TOOL_STATUS: convert_file_format | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:02:01] TOOL_STATUS: access_file_content | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:02:01] TOOL_CALL: access_file_content | Args: {
+  "file_path": "Database/"
+}
+[2025-10-22 14:02:01] TOOL_RESULT: access_file_content | Result: {
+  "status": "success",
+  "content": "File not found: Database/"
+}
+[2025-10-22 14:02:01] TOOL_STATUS: access_file_content | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:03:14] TOOL_STATUS: search_data_folder | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:03:14] TOOL_CALL: search_data_folder | Args: {
+  "keyword": "Generated Documents"
+}
+[2025-10-22 14:03:14] TOOL_RESULT: search_data_folder | Result: {
+  "status": "success",
+  "files": [],
+  "count": 0
+}
+[2025-10-22 14:03:14] TOOL_STATUS: search_data_folder | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:03:53] TOOL_STATUS: generate_excel | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:03:53] TOOL_CALL: generate_excel | Args: {
+  "topic": "latest prices of web development multiple websites"
+}
+[2025-10-22 14:03:54] TOOL_RESULT: generate_excel | Result: {
+  "status": "success",
+  "message": "I've generated an Excel spreadsheet with 20 rows on 'latest prices of web development multiple websites' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140354.xlsx"
+}
+[2025-10-22 14:03:54] TOOL_STATUS: generate_excel | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:03:54] TOOL_STATUS: generate_word | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:03:54] TOOL_CALL: generate_word | Args: {
+  "topic": "latest prices of web development multiple websites"
+}
+[2025-10-22 14:03:58] TOOL_RESULT: generate_word | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page Word document on 'latest prices of web development multiple websites' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140358.docx"
+}
+[2025-10-22 14:03:58] TOOL_STATUS: generate_word | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:03:58] TOOL_STATUS: generate_pdf | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:03:58] TOOL_CALL: generate_pdf | Args: {
+  "topic": "latest prices of web development multiple websites"
+}
+[2025-10-22 14:04:02] TOOL_RESULT: generate_pdf | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page PDF document on 'latest prices of web development multiple websites' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140402.pdf"
+}
+[2025-10-22 14:04:02] TOOL_STATUS: generate_pdf | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:04:03] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:04:03] TOOL_CALL: find_contact | Args: {
+  "name": "boss"
+}
+[2025-10-22 14:04:03] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "Boss"
+    ],
+    "phone": null,
+    "telegram_id": null,
+    "email": "mkcs4774@gmail.com"
+  }
+}
+[2025-10-22 14:04:03] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:04:05] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:04:05] TOOL_CALL: email_send | Args: {
+  "attachments": [
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140354.xlsx",
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140358.docx",
+    "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140402.pdf"
+  ],
+  "to": "mkcs4774@gmail.com",
+  "subject": "Latest Web Development Prices",
+  "body": "Please find attached the latest prices of web development multiple websites."
+}
+[2025-10-22 14:04:07] TOOL_RESULT: email_send | Result: {
+  "status": "success",
+  "message": "Email sent successfully to mkcs4774@gmail.com",
+  "email_id": "19a0b0df81dc5ce9",
+  "recipients": "mkcs4774@gmail.com",
+  "subject": "Latest Web Development Prices"
+}
+[2025-10-22 14:04:07] TOOL_STATUS: email_send | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:04:10] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:04:10] TOOL_CALL: telegram_send_file | Args: {
+  "recipient_name": "Boss",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140354.xlsx"
+}
+[2025-10-22 14:04:11] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'latest_prices_of_web_development_multiple_websites_20251022_140354.xlsx' sent to Boss, Boss."
+}
+[2025-10-22 14:04:11] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:04:11] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:04:11] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140358.docx",
+  "recipient_name": "Boss"
+}
+[2025-10-22 14:04:11] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "Failed to send file to Boss, Boss."
+}
+[2025-10-22 14:04:11] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:04:11] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:04:11] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140402.pdf",
+  "recipient_name": "Boss"
+}
+[2025-10-22 14:04:12] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'latest_prices_of_web_development_multiple_websites_20251022_140402.pdf' sent to Boss, Boss."
+}
+[2025-10-22 14:04:12] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:05:04] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:05:04] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "Generated Documents/Web Development Prices.docx",
+  "recipient_name": "Boss"
+}
+[2025-10-22 14:05:04] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File not found: Generated Documents/Web Development Prices.docx"
+}
+[2025-10-22 14:05:04] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:05:54] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:05:54] TOOL_CALL: telegram_send_file | Args: {
+  "recipient_name": "Boss",
+  "file_path": "Generated Documents/Latest Prices of Web Development Multiple Websites 2025-10-22-1403.docx"
+}
+[2025-10-22 14:05:54] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File not found: Generated Documents/Latest Prices of Web Development Multiple Websites 2025-10-22-1403.docx"
+}
+[2025-10-22 14:05:54] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:06:50] TOOL_STATUS: generate_pdf | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:06:50] TOOL_CALL: generate_pdf | Args: {
+  "topic": "latest prices of web development multiple websites"
+}
+[2025-10-22 14:06:53] TOOL_RESULT: generate_pdf | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page PDF document on 'latest prices of web development multiple websites' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140653.pdf"
+}
+[2025-10-22 14:06:53] TOOL_STATUS: generate_pdf | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:08:40] TOOL_STATUS: generate_pdf | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:08:40] TOOL_CALL: generate_pdf | Args: {
+  "topic": "latest prices of web development multiple websites"
+}
+[2025-10-22 14:08:43] TOOL_RESULT: generate_pdf | Result: {
+  "status": "success",
+  "message": "I've generated a 10-page PDF document on 'latest prices of web development multiple websites' for you, Boss.",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:08:43] TOOL_STATUS: generate_pdf | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:08:45] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:08:45] TOOL_CALL: email_send | Args: {
+  "subject": "Latest Prices of Web Development Multiple Websites",
+  "to": "Boss",
+  "body": "Please find attached the latest prices of web development multiple websites PDF."
+}
+[2025-10-22 14:08:46] TOOL_RESULT: email_send | Result: {
+  "status": "error",
+  "message": "Failed to send email: <HttpError 400 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned \"Invalid To header\". Details: \"[{'message': 'Invalid To header', 'domain': 'global', 'reason': 'invalidArgument'}]\">"
+}
+[2025-10-22 14:08:46] TOOL_STATUS: email_send | Status: FAILURE | Details: Failed to send email: <HttpError 400 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned "Invalid To header". Details: "[{'message': 'Invalid To header', 'domain': 'global', 'reason': 'invalidArgument'}]">
+[2025-10-22 14:08:46] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:08:46] TOOL_CALL: telegram_send_file | Args: {
+  "recipient_name": "Boss",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:08:46] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "Failed to send file to Boss, Boss."
+}
+[2025-10-22 14:08:46] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:09:30] TOOL_STATUS: email_send | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:09:30] TOOL_CALL: email_send | Args: {
+  "to": "Boss",
+  "body": "Please find attached the latest prices of web development multiple websites PDF.",
+  "subject": "Latest Prices of Web Development Multiple Websites"
+}
+[2025-10-22 14:09:31] TOOL_RESULT: email_send | Result: {
+  "status": "error",
+  "message": "Failed to send email: <HttpError 400 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned \"Invalid To header\". Details: \"[{'message': 'Invalid To header', 'domain': 'global', 'reason': 'invalidArgument'}]\">"
+}
+[2025-10-22 14:09:31] TOOL_STATUS: email_send | Status: FAILURE | Details: Failed to send email: <HttpError 400 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/send?alt=json returned "Invalid To header". Details: "[{'message': 'Invalid To header', 'domain': 'global', 'reason': 'invalidArgument'}]">
+[2025-10-22 14:09:31] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:09:31] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "Data/latest_prices_of_web_development_multiple_websites_20251022_140843.pdf",
+  "recipient_name": "Boss"
+}
+[2025-10-22 14:09:31] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File not found: Data/latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:09:31] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:09:31] TOOL_STATUS: access_file_content | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:09:31] TOOL_CALL: access_file_content | Args: {
+  "file_path": "Data/latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:09:31] TOOL_RESULT: access_file_content | Result: {
+  "status": "success",
+  "content": "File not found: Data/latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:09:31] TOOL_STATUS: access_file_content | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:10:02] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:10:02] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "all"
+}
+[2025-10-22 14:10:02] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:10:02] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-22 14:10:24] TOOL_STATUS: open_app | Status: WORKING | Details: Tool execution started
+[2025-10-22 14:10:24] TOOL_CALL: open_app | Args: {
+  "app_name": "C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140843.pdf"
+}
+[2025-10-22 14:10:24] TOOL_RESULT: open_app | Result: {
+  "status": "success",
+  "message": "Opened C:\\Users\\mehfo\\OneDrive\\Documents\\Project Jarvis\\Project Friday\\Beta\\v4\\Data\\GeneratedDocuments\\latest_prices_of_web_development_multiple_websites_20251022_140843.pdf website, Boss."
+}
+[2025-10-22 14:10:24] TOOL_STATUS: open_app | Status: SUCCESS | Details: Tool completed successfully

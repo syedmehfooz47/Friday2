@@ -1,0 +1,67 @@
+# Core Dependencies
+python-dotenv
+requests
+
+# Google AI & Gemini
+google-generativeai
+
+# Google API (Gmail, etc.)
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+
+# Audio Processing
+pyaudio
+
+# Audio Transcription (choose one or both)
+faster-whisper  # Offline, most accurate
+SpeechRecognition  # Online fallback
+pydub  # Audio format conversion
+
+# Search & AI Tools
+tavily-python
+groq
+mem0ai
+
+# Telegram
+python-telegram-bot
+
+# Document Generation
+python-docx
+python-pptx
+openpyxl
+reportlab
+Pillow
+
+# Document Conversion
+pdf2docx
+img2pdf
+pdf2image
+pypdf
+CairoSVG
+
+# Windows specific (Document Conversion & Automation)
+comtypes; sys_platform == 'win32'
+pywin32; sys_platform == 'win32'
+
+# Automation
+pyautogui
+pywhatkit
+AppOpener
+psutil
+PyGetWindow
+screen-brightness-control
+pyperclip
+keyboard
+
+# Home Automation
+glocaltokens
+
+# Utilities
+aiofiles
+aiohttp
+
+# WebSocket Server & Framework
+fastapi
+uvicorn[standard]
+websockets

@@ -1,0 +1,74 @@
+[2025-10-31 16:49:34] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:49:34] TOOL_CALL: internet_search | Args: {
+  "query": "optimized settings for Ghost of Tsushima PC"
+}
+[2025-10-31 16:49:37] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "optimized settings for Ghost of Tsushima PC",
+  "answer": "For optimal Ghost of Tsushima performance on PC, set textures to medium, VSync to off, and enable hardware-accelerated GPU scheduling. Aim for 1280x800 resolution for better frame rates.",
+  "results": [
+    {
+      "title": "Ghost Of Tsushima Director's Cut Best Settings Guide For PC",
+      "url": "https://twistedvoxel.com/ghost-of-tsushima-directors-cut-best-settings-pc/",
+      "content": "Steam Deck Optimized Settings \u00b7 Window Mode: Fullscreen \u00b7 Display Resolution: 1280 x 800 \u00b7 Aspect Ratio: Auto \u00b7 VSync: Off \u00b7 Upscale Method: AMD"
+    },
+    {
+      "title": "Ghost of Tsushima PC: best settings, FSR 3, and more | Digital Trends",
+      "url": "https://www.digitaltrends.com/computing/ghost-of-tsushima-pc-performance-best-settings/",
+      "content": "Best settings for Ghost of Tsushima on PC \u00b7 Motion Blur Strength: 0 \u00b7 Field of View: 5 \u00b7 Texture Quality: Medium \u00b7 Texture Filtering: 4x"
+    },
+    {
+      "title": "Ghost of Tsushima Optimized Settings PC: Every Graphics Option ...",
+      "url": "https://pcoptimizedsettings.com/ghost-of-tsushima-pc-optimized-settings/",
+      "content": "Windows/System Settings to Optimize \u00b7 Enable Resizable BAR. \u00b7 Turn on Game Mode. \u00b7 Enable Hardware-accelerated GPU Scheduling (HAGS) and"
+    },
+    {
+      "title": "Ghost of Tsushima PC optimization guide: Best settings for optimal ...",
+      "url": "https://www.sportskeeda.com/gaming-tech/ghost-tsushima-pc-optimization-guide-best-settings-optimal-performance",
+      "content": "Here's a comprehensive optimization guide for Ghost of Tsushima PC, including the best settings to use for optimal performance."
+    },
+    {
+      "title": "Ghost Of Tsushima - My Optimized Settings - Reddit",
+      "url": "https://www.reddit.com/r/OptimizedGaming/comments/1ctyl1o/ghost_of_tsushima_my_optimized_settings/",
+      "content": "With 8gb, I went from 75-85 fps to 105-115 by turning my textures down from very high to high. No other changes. This is with AMD frame gen on"
+    }
+  ]
+}
+[2025-10-31 16:49:37] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
+[2025-10-31 16:50:33] TOOL_STATUS: internet_search | Status: WORKING | Details: Tool execution started
+[2025-10-31 16:50:33] TOOL_CALL: internet_search | Args: {
+  "query": "Ghost of Tsushima game settings"
+}
+[2025-10-31 16:50:36] TOOL_RESULT: internet_search | Result: {
+  "status": "success",
+  "query": "Ghost of Tsushima game settings",
+  "answer": "Ghost of Tsushima on PC uses VRAM up to 8.5GB at 4K. Recommended settings include Motion Blur at 0, Texture Quality at Medium, and VSync off. Use FSR for performance.",
+  "results": [
+    {
+      "title": "Ghost of Tsushima Optimized Settings PC: Every Graphics Option ...",
+      "url": "https://pcoptimizedsettings.com/ghost-of-tsushima-pc-optimized-settings/",
+      "content": "Ghost of Tsushima uses close to 8GB of VRAM at 4K \u201cVery Low.\u201d Increasing the settings to \u201cMedium\u201d ups the graphics memory usage to 8.5GB, while"
+    },
+    {
+      "title": "Ghost of Tsushima PC: best settings, FSR 3, and more | Digital Trends",
+      "url": "https://www.digitaltrends.com/computing/ghost-of-tsushima-pc-performance-best-settings/",
+      "content": "Best settings for Ghost of Tsushima on PC \u00b7 Motion Blur Strength: 0 \u00b7 Field of View: 5 \u00b7 Texture Quality: Medium \u00b7 Texture Filtering: 4x Anisotropic"
+    },
+    {
+      "title": "Ghost Of Tsushima - My Optimized Settings - Reddit",
+      "url": "https://www.reddit.com/r/OptimizedGaming/comments/1ctyl1o/ghost_of_tsushima_my_optimized_settings/",
+      "content": "I'd turn off depth of field, set volumetric fog and shadows to low but I definitely wouldn't turn them off. Use FSR performance or maybe"
+    },
+    {
+      "title": "Ghost Of Tsushima Director's Cut Best Settings Guide For PC",
+      "url": "https://twistedvoxel.com/ghost-of-tsushima-directors-cut-best-settings-pc/",
+      "content": "Window Mode: Fullscreen \u00b7 Display Resolution: set as per the max resolution of your display or preference \u00b7 Aspect Ratio: Auto \u00b7 VSync: Off on a"
+    },
+    {
+      "title": "Graphic settings :: Ghost of Tsushima DIRECTOR'S CUT General ...",
+      "url": "https://steamcommunity.com/app/2215430/discussions/0/597409652103304373/",
+      "content": "In NVIDIA's app, go to Settings \u2192 Games & Apps, and disable \u201cAutomatically optimize newly added games and apps\u201d. Or manually blacklist Ghost of"
+    }
+  ]
+}
+[2025-10-31 16:50:36] TOOL_STATUS: internet_search | Status: SUCCESS | Details: Tool completed successfully
