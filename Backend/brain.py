@@ -5,34 +5,41 @@ Handles tool routing and advanced feature integration
 """
 
 import os
+import sys
+import json
+import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-
 from dotenv import load_dotenv, set_key
-from google import genai
-
-from .Automation import (
-    CloseApp, Content, GoogleSearch, OpenApp, PlayYoutube, YouTubeSearch,
-    change_windows_theme, click_mouse, create_folder, get_brightness,
-    get_clipboard, get_mouse_position, manage_window, move_mouse, open_website,
-    set_brightness, set_clipboard, set_system_volume, system_power,
-    take_screenshot, type_formatted_text, type_text
-)
-from .contacts_manager import contacts_manager
-from .email_handler import EmailHandler
-from .ExcelGenerator import excel_generator
-from .FileConverter import file_converter
-from .ImageGeneration import image_generation_service
-from .llm_handler import llm_handler
-from .logger import Logger
-from .memory_handler import MemoryHandler
-from .PDFGenerator import pdf_generator
-from .PPTGenerator import ppt_generator
-from .telegram_handler import send_telegram_file, send_telegram_message, telegram_service
-from .weather import WeatherTool
-from .WordGenerator import word_generator
 
 load_dotenv()
+
+from google import genai
+
+# Import all feature modules
+from .weather import WeatherTool
+from .email_handler import EmailHandler
+from .logger import Logger
+from .memory_handler import MemoryHandler
+from .llm_handler import llm_handler
+from .telegram_handler import telegram_service
+from .ImageGeneration import image_generation_service
+from .PDFGenerator import pdf_generator
+from .PPTGenerator import ppt_generator
+from .WordGenerator import word_generator
+from .ExcelGenerator import excel_generator
+from .FileConverter import file_converter # FIXED: Removed 'convert_active_document'
+
+from .contacts_manager import contacts_manager
+# FIXED: Removed import for non-existent advanced_file_converter
+from .Automation import (
+    OpenApp, CloseApp, manage_window, set_system_volume, set_brightness,
+    get_brightness, change_windows_theme, type_text, type_formatted_text,
+    move_mouse, click_mouse, get_mouse_position, set_clipboard, get_clipboard,
+    take_screenshot, system_power, GoogleSearch, YouTubeSearch, PlayYoutube,
+    Content, create_folder, send_telegram_message, send_telegram_file,
+    open_website
+)
 
 # Import automation functions
 try:
@@ -930,26 +937,27 @@ class GeminiBrain:
             
             # Telegram Tools
             elif function_name == "telegram_send_message":
-                try:
-                    result_msg, _ = send_telegram_message(
+                if not AUTOMATION_AVAILABLE: # This check might be wrong; telegram_handler works independently
+                     result = {"status": "error", "message": "Telegram sending needs Automation?"} # Check dependency
+                else:
+                    result_msg, _ = send_telegram_message( # Assuming this uses telegram_service instance
                         args.get("recipient_name"),
                         args.get("message_prompt")
                     )
-                    success = "Failed" not in result_msg and "Error" not in result_msg
+                    # Correctly check success based on the return value of send_telegram_message
+                    success = "Failed" not in result_msg
                     result = {"status": "success" if success else "error", "message": result_msg}
-                except Exception as e:
-                    result = {"status": "error", "message": f"Telegram send failed: {str(e)}"}
 
             elif function_name == "telegram_send_file":
-                try:
-                    result_msg, _ = send_telegram_file(
-                        args.get("recipient_name"),
-                        args.get("file_path")
-                    )
-                    success = "Failed" not in result_msg and "Error" not in result_msg
+                 if not AUTOMATION_AVAILABLE: # Same check as above
+                     result = {"status": "error", "message": "Telegram sending needs Automation?"}
+                 else:
+                    result_msg, _ = send_telegram_file( # Assuming this uses telegram_service instance
+                         args.get("recipient_name"),
+                         args.get("file_path")
+                     )
+                    success = "Failed" not in result_msg
                     result = {"status": "success" if success else "error", "message": result_msg}
-                except Exception as e:
-                    result = {"status": "error", "message": f"Telegram file send failed: {str(e)}"}
 
             elif function_name == "telegram_get_updates":
                 result = telegram_service.get_updates(args.get("limit", 10))
@@ -1010,11 +1018,8 @@ class GeminiBrain:
                 if not AUTOMATION_AVAILABLE:
                     result = {"status": "error", "message": "Automation not available"}
                 else:
-                    try:
-                        result_msg, _ = OpenApp(args.get("app_name"))
-                        result = {"status": "success", "message": result_msg}
-                    except Exception as e:
-                        result = {"status": "error", "message": f"Failed to open app: {str(e)}"}
+                    result_msg, _ = OpenApp(args.get("app_name"))
+                    result = {"status": "success", "message": result_msg}
             elif function_name == "close_app":
                 if not AUTOMATION_AVAILABLE:
                     result = {"status": "error", "message": "Automation not available"}

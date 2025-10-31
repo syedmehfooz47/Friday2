@@ -33,7 +33,6 @@ class MemoryHandler:
         self.data_folder = self.project_root / "Data"
         self.database_folder = self.project_root / "Database"
         self.cached_memory_str = ""  # Store initial memory string to filter it out later
-        self._memory_lock = None  # Will be initialized as asyncio.Lock() when needed
         
         if MEM0_AVAILABLE:
             try:
@@ -51,59 +50,54 @@ class MemoryHandler:
         Add batch of conversations to memory on shutdown (like sample agent)
         Filters out the initial memory context to avoid duplication
         """
-        # Initialize lock if not already done
-        if self._memory_lock is None:
-            self._memory_lock = asyncio.Lock()
+        if not self.mem0_client:
+            Logger.log("Mem0 client not initialized - cannot save memories", "WARNING")
+            return
         
-        async with self._memory_lock:
-            if not self.mem0_client:
-                Logger.log("Mem0 client not initialized - cannot save memories", "WARNING")
-                return
+        if not messages_list:
+            Logger.log("No messages to save to memory", "MEMORY")
+            return
+        
+        try:
+            Logger.log(f"Raw messages list has {len(messages_list)} items", "MEMORY")
             
-            if not messages_list:
-                Logger.log("No messages to save to memory", "MEMORY")
-                return
+            # Filter out any messages that contain the cached memory string
+            # This prevents re-saving the initial context
+            filtered_messages = []
+            for msg in messages_list:
+                content_str = msg.get("content", "")
+                
+                # Skip if this message contains the initial memory context
+                if self.cached_memory_str and self.cached_memory_str in content_str:
+                    Logger.log("Skipping memory context message from being re-saved", "MEMORY")
+                    continue
+                
+                # Only save user and assistant messages
+                if msg.get("role") in ['user', 'assistant']:
+                    filtered_messages.append({
+                        "role": msg["role"],
+                        "content": content_str.strip()
+                    })
             
-            try:
-                Logger.log(f"Raw messages list has {len(messages_list)} items", "MEMORY")
+            if filtered_messages:
+                Logger.log(f"Formatted messages to add to memory: {filtered_messages}", "MEMORY")
+                Logger.log(f"Saving {len(filtered_messages)} messages to memory for user: Boss", "MEMORY")
                 
-                # Filter out any messages that contain the cached memory string
-                # This prevents re-saving the initial context
-                filtered_messages = []
-                for msg in messages_list:
-                    content_str = msg.get("content", "")
-                    
-                    # Skip if this message contains the initial memory context
-                    if self.cached_memory_str and self.cached_memory_str in content_str:
-                        Logger.log("Skipping memory context message from being re-saved", "MEMORY")
-                        continue
-                    
-                    # Only save user and assistant messages
-                    if msg.get("role") in ['user', 'assistant']:
-                        filtered_messages.append({
-                            "role": msg["role"],
-                            "content": content_str.strip()
-                        })
+                # Save to mem0 with user_id="Boss" using latest API (v2, output_format v1.1)
+                await self.mem0_client.add(
+                    filtered_messages, 
+                    user_id="Boss",
+                    version="v2",
+                    output_format="v1.1"
+                )
+                Logger.log("Conversation batch saved to memory successfully", "MEMORY")
+            else:
+                Logger.log("No new messages to save to memory after filtering", "MEMORY")
                 
-                if filtered_messages:
-                    Logger.log(f"Formatted messages to add to memory: {filtered_messages}", "MEMORY")
-                    Logger.log(f"Saving {len(filtered_messages)} messages to memory for user: Boss", "MEMORY")
-                    
-                    # Save to mem0 with user_id="Boss" using latest API (v2, output_format v1.1)
-                    await self.mem0_client.add(
-                        filtered_messages, 
-                        user_id="Boss",
-                        version="v2",
-                        output_format="v1.1"
-                    )
-                    Logger.log("Conversation batch saved to memory successfully", "MEMORY")
-                else:
-                    Logger.log("No new messages to save to memory after filtering", "MEMORY")
-                    
-            except Exception as e:
-                Logger.log(f"Error adding conversation batch to memory: {e}", "ERROR")
-                import traceback
-                Logger.log(traceback.format_exc(), "ERROR")
+        except Exception as e:
+            Logger.log(f"Error adding conversation batch to memory: {e}", "ERROR")
+            import traceback
+            Logger.log(traceback.format_exc(), "ERROR")
     
     async def sync_chatlogs_to_memory(self, limit: int = 100):
         """

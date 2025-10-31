@@ -5,26 +5,27 @@ Supports sending, reading, deleting, and replying to emails
 Uses Gmail API with OAuth2 authentication
 """
 
-import base64
-import json
-import mimetypes
 import os
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+import json
+import base64
+import mimetypes
+from typing import Dict, Any, List, Optional
 from pathlib import Path
-from typing import Any, Dict, List, Optional
-
+from datetime import datetime
 from dotenv import load_dotenv
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-
-from Backend.logger import Logger
 
 load_dotenv()
+
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
+
+from .logger import Logger
 
 # Gmail API scopes
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
@@ -59,7 +60,7 @@ class EmailHandler:
             # Load existing token if available
             if TOKEN_FILE.exists():
                 try:
-                    creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
+                    creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
                     Logger.log("Loaded existing Gmail credentials", "EMAIL")
                 except Exception as e:
                     Logger.log(f"Failed to load existing credentials: {e}", "ERROR")
@@ -86,7 +87,7 @@ class EmailHandler:
                     
                     try:
                         flow = InstalledAppFlow.from_client_secrets_file(
-                            str(CREDENTIALS_FILE), SCOPES)
+                            CREDENTIALS_FILE, SCOPES)
                         creds = flow.run_local_server(port=0)
                         Logger.log("OAuth2 authentication successful", "EMAIL")
                     except Exception as e:
@@ -95,7 +96,7 @@ class EmailHandler:
                 
                 # Save credentials for next time
                 try:
-                    with open(str(TOKEN_FILE), 'w') as token:
+                    with open(TOKEN_FILE, 'w') as token:
                         token.write(creds.to_json())
                     Logger.log("Gmail credentials saved", "EMAIL")
                 except Exception as e:
@@ -104,7 +105,8 @@ class EmailHandler:
             # Build Gmail service
             try:
                 self.service = build('gmail', 'v1', credentials=creds)
-                # pylint: disable=no-member
+                
+                # Get user email
                 profile = self.service.users().getProfile(userId='me').execute()
                 self.user_email = profile.get('emailAddress', 'unknown')
                 Logger.log(f"Gmail service initialized for: {self.user_email}", "EMAIL")
@@ -192,7 +194,6 @@ class EmailHandler:
                 'raw': raw_message
             }
             
-            # pylint: disable=no-member
             result = self.service.users().messages().send(
                 userId='me', 
                 body=send_message
@@ -264,7 +265,6 @@ class EmailHandler:
             Logger.log(f"Query: {query}", "EMAIL")
             
             # Search messages
-            # pylint: disable=no-member
             results = self.service.users().messages().list(
                 userId='me',
                 q=query,
@@ -279,7 +279,6 @@ class EmailHandler:
             for msg in messages:
                 try:
                     # Get full message
-                    # pylint: disable=no-member
                     message = self.service.users().messages().get(
                         userId='me',
                         id=msg['id'],
@@ -341,7 +340,6 @@ class EmailHandler:
         try:
             if email_id:
                 Logger.log(f"Deleting email ID: {email_id}", "EMAIL")
-                # pylint: disable=no-member
                 self.service.users().messages().delete(
                     userId='me',
                     id=email_id
@@ -360,7 +358,6 @@ class EmailHandler:
                 Logger.log(f"Deleting all emails from {folder}", "EMAIL")
                 
                 # Get all emails in folder
-                # pylint: disable=no-member
                 results = self.service.users().messages().list(
                     userId='me',
                     q=f"in:{folder}",
@@ -372,7 +369,6 @@ class EmailHandler:
                 
                 for msg in messages:
                     try:
-                        # pylint: disable=no-member
                         self.service.users().messages().delete(
                             userId='me',
                             id=msg['id']
@@ -422,7 +418,6 @@ class EmailHandler:
             Logger.log(f"Preparing reply to email ID: {email_id}", "EMAIL")
             
             # Get original message
-            # pylint: disable=no-member
             original_message = self.service.users().messages().get(
                 userId='me',
                 id=email_id,
@@ -457,7 +452,6 @@ class EmailHandler:
             
             send_message = {'raw': raw_message}
             
-            # pylint: disable=no-member
             result = self.service.users().messages().send(
                 userId='me',
                 body=send_message

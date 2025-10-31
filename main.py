@@ -3,58 +3,38 @@
 Advanced Gemini Native Audio Assistant - Main Entry Point
 Modular architecture with memory, chatlogs, and advanced features
 """
-# Standard Library Imports
-import asyncio
-import os
-import signal
-import sys
-import traceback
-from datetime import datetime
-from pathlib import Path
-from typing import Set
-
-# Third-Party Imports
-import psutil
-import pyaudio
-import uvicorn
-from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-
-# Local Application Imports
-from Backend.Automation import (
-    CloseApp, GoogleSearch, OpenApp, change_windows_theme, get_brightness,
-    open_website, set_brightness, take_screenshot
-)
-from Backend.brain import GeminiBrain, get_config_with_memory
-from Backend.contacts_manager import contacts_manager
-from Backend.email_handler import EmailHandler
-from Backend.ExcelGenerator import excel_generator
-from Backend.FileConverter import file_converter
-from Backend.ImageGeneration import image_generation_service
-from Backend.logger import Logger
-from Backend.memory_handler import MemoryHandler
-from Backend.PDFGenerator import pdf_generator
-from Backend.PPTGenerator import ppt_generator
-from Backend.telegram_handler import telegram_service
-from Backend.weather import WeatherTool
-from Backend.WordGenerator import word_generator
 
 # Suppress deprecation warnings for cleaner output
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
+from dotenv import load_dotenv
 load_dotenv()
+
+import asyncio
+import sys
+import os
+import signal
+from pathlib import Path
+
+import pyaudio
 
 # Add Backend to path
 sys.path.insert(0, str(Path(__file__).parent))
 
 # --- CORRECTED: Import get_config_with_memory ---
-from Backend.brain import get_config_with_memory, MODEL, client
+from Backend.brain import GeminiBrain, get_config_with_memory, MODEL, client
+from Backend.logger import Logger
+from Backend.memory_handler import MemoryHandler
 
 # FastAPI and WebSocket imports for UI connectivity
 try:
+    from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
+    from fastapi.middleware.cors import CORSMiddleware
+    from fastapi.responses import JSONResponse
+    import uvicorn
+    import psutil
+    from typing import Set
     FASTAPI_AVAILABLE = True
 except ImportError:
     FASTAPI_AVAILABLE = False
@@ -76,7 +56,7 @@ async def notify_websocket(event_type: str, data: dict):
         # This would connect to websocket server if it's running
         # For now, we'll just log the event
         Logger.log(f"WS Event: {event_type}", "WEBSOCKET")
-    except Exception:
+    except Exception as e:
         pass  # Silently fail if websocket server is not running
 
 # Initialize FastAPI app for UI connectivity (if available)

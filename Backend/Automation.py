@@ -5,19 +5,17 @@ Handles apps, windows, system controls, and more
 """
 
 import os
-import subprocess
 import sys
 import time
-from pathlib import Path
-
-import keyboard
+import subprocess
 import psutil
 import pyautogui
 import pyperclip
+import keyboard
+from pathlib import Path
 from dotenv import load_dotenv
-
-from .llm_handler import llm_handler
 from .logger import Logger
+from .llm_handler import llm_handler
 from .telegram_handler import telegram_service
 
 load_dotenv()
@@ -44,12 +42,14 @@ except ImportError:
 
 try:
     from pywhatkit import search, playonyt
+    import webbrowser
     WEB_AVAILABLE = True
 except ImportError:
     WEB_AVAILABLE = False
 
 if sys.platform == "win32":
     try:
+        import win32com.client
         import winreg as reg
         WIN32_AVAILABLE = True
     except ImportError:
@@ -99,28 +99,23 @@ def OpenApp(app_name: str) -> tuple[str, None]:
     
     Logger.log(f"Opening app: {app_name}", "AUTOMATION")
     
+    # Check if it's installed
+    if is_app_installed(app_name):
+        if APPOPENER_AVAILABLE:
+            try:
+                appopen(app_name, match_closest=True, output=False, throw_error=True)
+                return f"Opening {app_name}, Boss.", None
+            except Exception as e:
+                Logger.log(f"AppOpener failed: {e}", "ERROR")
+    
+    # If not installed or failed, open website
     try:
-        # Check if it's installed
-        if is_app_installed(app_name):
-            if APPOPENER_AVAILABLE:
-                try:
-                    appopen(app_name, match_closest=True, output=False, throw_error=True)
-                    return f"Opening {app_name}, Boss.", None
-                except Exception as e:
-                    Logger.log(f"AppOpener failed: {e}", "ERROR")
-        
-        # If not installed or failed, open website
-        try:
-            url_name = app_name.lower().replace(" ", "")
-            import webbrowser
-            webbrowser.open(f"https://{url_name}.com")
-            return f"Opened {app_name} website, Boss.", None
-        except Exception as e:
-            Logger.log(f"Failed to open website: {e}", "ERROR")
-            return f"Sorry Boss, I couldn't open {app_name}.", None
+        url_name = app_name.lower().replace(" ", "")
+        import webbrowser
+        webbrowser.open(f"https://{url_name}.com")
+        return f"Opened {app_name} website, Boss.", None
     except Exception as e:
-        Logger.log(f"Error in OpenApp: {e}", "ERROR")
-        return f"Error opening {app_name}, Boss.", None
+        return f"Sorry Boss, I couldn't open {app_name}.", None
 
 
 def open_website(website_name: str) -> tuple[str, None]:
@@ -160,17 +155,13 @@ def CloseApp(app_name: str) -> tuple[str, None]:
     Logger.log(f"Closing app: {app_name}", "AUTOMATION")
     
     try:
-        try:
-            close(app_name, match_closest=True, output=False, throw_error=True)
-            return f"Closed {app_name}, Boss.", None
-        except Exception:
-            if kill_process(app_name):
-                return f"Forcefully closed {app_name}, Boss.", None
-            else:
-                return f"Couldn't find {app_name} to close, Boss.", None
-    except Exception as e:
-        Logger.log(f"Error in CloseApp: {e}", "ERROR")
-        return f"Error closing {app_name}, Boss.", None
+        close(app_name, match_closest=True, output=False, throw_error=True)
+        return f"Closed {app_name}, Boss.", None
+    except Exception:
+        if kill_process(app_name):
+            return f"Forcefully closed {app_name}, Boss.", None
+        else:
+            return f"Couldn't find {app_name} to close, Boss.", None
 
 
 def kill_process(process_name: str) -> bool:
