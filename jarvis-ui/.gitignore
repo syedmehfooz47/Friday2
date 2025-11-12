@@ -16,8 +16,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env*
+# env files (allowed per user request)
+# .env files will be committed if present
 
 # vercel
 .vercel

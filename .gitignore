@@ -25,20 +25,11 @@ venv/
 ENV/
 env/
 
-# Google Credentials and Tokens - NEVER COMMIT THESE!
-credentials.json
-google_home_credentials.json
-*_token.json
-google_home_token.json
-gmail_token.json
-Database/credentials.json
-Database/google_home_credentials.json
-Database/*_token.json
+# (Allow committing credentials/tokens per user request - repo is private)
+#! Note: Consider moving secrets to a vault or Git LFS/encryption if repo visibility changes.
 
-# Environment Variables
-.env
-.env.local
-.env.*.local
+# Environment Variables (now allowed per user request; removed ignores)
+# NOTE: Committing .env exposes all secrets. Rotate if repo ever becomes public.
 
 # IDE
 .vscode/
@@ -52,16 +43,12 @@ Database/*_token.json
 Thumbs.db
 desktop.ini
 
-# Logs
+# Logs (still ignored to reduce repo size)
 *.log
 Database/TerminalLogs/*
 Database/Chatlogs/*
 
-# Sensitive Data
-Database/credentials.json
-Database/*.json
-!Database/chatlogs.json
-!Database/contacts.json
+# Sensitive Data (no blanket ignores; allow JSON files under Database)
 
 # Generated Content
 Data/GeneratedContent/*
@@ -69,3 +56,13 @@ Data/GeneratedDocuments/*
 Data/GeneratedImages/*
 Data/Screenshots/*
 Data/ConvertedDocuments/*
+
+# Frontend (jarvis-ui) build artifacts
+jarvis-ui/node_modules/
+jarvis-ui/.next/
+jarvis-ui/out/
+jarvis-ui/build/
+jarvis-ui/.vercel/
+jarvis-ui/.turbo/
+jarvis-ui/*.tsbuildinfo
+jarvis-ui/next-env.d.ts
