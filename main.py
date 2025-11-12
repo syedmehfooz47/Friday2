@@ -906,6 +906,8 @@ CHANNELS = 1
 SEND_SAMPLE_RATE = 16000
 RECEIVE_SAMPLE_RATE = 24000
 CHUNK_SIZE = 1024
+# Larger output buffer for smoother playback without breaks
+OUTPUT_CHUNK_SIZE = 4096  # Larger chunks for smoother output
 
 pya = pyaudio.PyAudio()
 
@@ -1608,23 +1610,38 @@ class AudioLoop:
             raise
 
     async def play_audio(self):
-        """Play audio responses from the model and transcribe them"""
+        """Play audio responses from the model and transcribe them - OPTIMIZED for smooth playback"""
         try:
             Logger.log("Starting audio playback", "AUDIO")
+            # Configure PyAudio with larger buffer for smoother playback
             stream = await asyncio.to_thread(
                 pya.open,
                 format=FORMAT,
                 channels=CHANNELS,
                 rate=RECEIVE_SAMPLE_RATE,
                 output=True,
+                frames_per_buffer=OUTPUT_CHUNK_SIZE,  # Larger buffer prevents breaks
+                stream_callback=None,
             )
-            Logger.log("Audio playback started successfully", "AUDIO")
+            Logger.log("Audio playback started successfully with optimized buffering", "AUDIO")
+            
+            # Playback buffer to accumulate audio for smoother output
+            playback_buffer = bytearray()
             
             while not self.shutdown_initiated:
                 bytestream = await self.audio_in_queue.get()
                 
-                # Play the audio
-                await asyncio.to_thread(stream.write, bytestream)
+                # Add to playback buffer
+                playback_buffer.extend(bytestream)
+                
+                # Play audio in larger chunks for smoothness
+                # Only play when we have enough data to fill the output buffer
+                while len(playback_buffer) >= OUTPUT_CHUNK_SIZE:
+                    chunk_to_play = bytes(playback_buffer[:OUTPUT_CHUNK_SIZE])
+                    playback_buffer = playback_buffer[OUTPUT_CHUNK_SIZE:]
+                    
+                    # Write directly without threading for lower latency and smoother output
+                    stream.write(chunk_to_play)
                 
                 # --- TRANSCRIPTION: Buffer assistant audio for transcription ---
                 self.assistant_audio_buffer.extend(bytestream)
@@ -1645,6 +1662,10 @@ class AudioLoop:
                     self.assistant_audio_chunk_count = 0
                 
                 self.audio_in_queue.task_done()
+            
+            # Play any remaining audio in buffer when shutting down
+            if len(playback_buffer) > 0:
+                stream.write(bytes(playback_buffer))
                 
         except Exception as e:
             if not self.shutdown_initiated:
