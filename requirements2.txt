@@ -1,0 +1,309 @@
+# ===================================================================
+# FRIDAY ASSISTANT - COMPLETE REQUIREMENTS FILE
+# All packages will install latest versions
+# Date: 2025-01-12
+# Python Version: 3.13+
+# ===================================================================
+
+# Core Dependencies
+python-dotenv
+requests
+certifi
+urllib3
+charset-normalizer
+
+# Google AI & Gemini (Primary AI Model)
+google-genai
+google-generativeai
+google-ai-generativelanguage
+
+# Google API Services (Gmail, OAuth, etc.)
+google-api-python-client
+google-api-core
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+googleapis-common-protos
+
+# Groq API (Alternative LLM)
+groq
+
+# OpenAI API (Alternative LLM)
+openai
+
+# Audio Processing & Recording
+PyAudio
+pydub
+audioop-lts
+av
+
+# Audio Transcription - Faster Whisper (Offline, Most Accurate)
+faster-whisper
+ctranslate2
+
+# Audio Transcription - Google Speech Recognition (Online Fallback)
+SpeechRecognition
+
+# Search & AI Tools
+tavily-python
+mem0ai
+
+# Telegram Integration
+python-telegram-bot
+
+# Document Generation - PDF
+reportlab
+
+# Document Generation - Word
+python-docx
+
+# Document Generation - PowerPoint
+python-pptx
+
+# Document Generation - Excel
+openpyxl
+xlsxwriter
+et_xmlfile
+
+# Document Conversion - PDF to DOCX
+pdf2docx
+PyMuPDF
+
+# Document Conversion - Images
+img2pdf
+pdf2image
+Pillow
+
+# Document Conversion - PDF Manipulation
+pypdf
+PyPDF2
+pikepdf
+
+# Document Conversion - SVG
+CairoSVG
+cairocffi
+cssselect2
+tinycss2
+webencodings
+
+# Windows Specific - COM & Office Automation
+pywin32; sys_platform == 'win32'
+pypiwin32; sys_platform == 'win32'
+comtypes; sys_platform == 'win32'
+
+# Automation - App Control
+AppOpener
+
+# Automation - GUI Automation
+pyautogui
+PyGetWindow
+PyScreeze
+PyRect
+PyMsgBox
+pytweening
+MouseInfo
+
+# Automation - Keyboard Control
+keyboard
+
+# Automation - Clipboard
+pyperclip
+
+# Automation - Screen Brightness
+screen-brightness-control
+
+# Automation - System Control
+psutil
+WMI
+
+# Automation - Web & YouTube
+pywhatkit
+wikipedia
+
+# Home Automation - Google Home
+glocaltokens
+ghome
+ghome-foyer-api
+gpsoauth
+zeroconf
+
+# FastAPI & WebSocket Server (UI Integration)
+fastapi
+uvicorn[standard]
+starlette
+websockets
+httptools
+watchfiles
+
+# Async I/O
+aiofiles
+aiohttp
+aiohappyeyeballs
+aiosignal
+asyncio-mqtt
+
+# HTTP Clients
+httpcore
+httpx
+h11
+h2
+hpack
+hyperframe
+httplib2
+
+# AI/ML Dependencies
+huggingface-hub
+tokenizers
+tiktoken
+onnxruntime
+numpy
+opencv-python-headless
+flatbuffers
+
+# Database & Storage
+SQLAlchemy
+qdrant-client
+
+# Data Processing
+beautifulsoup4
+soupsieve
+lxml
+
+# Utilities
+fire
+click
+colorama
+coloredlogs
+humanfriendly
+termcolor
+tqdm
+backoff
+retrying
+tenacity
+
+# Validation & Types
+pydantic
+pydantic-core
+annotated-types
+typing-extensions
+typing-inspection
+
+# Protocol & Encoding
+protobuf
+proto-plus
+grpcio
+grpcio-status
+
+# Security & Auth
+pyasn1
+pyasn1-modules
+rsa
+oauthlib
+requests-oauthlib
+cachetools
+pycryptodomex
+defusedxml
+
+# File Management
+filelock
+portalocker
+hf-xet
+
+# Configuration & CLI
+typer-slim
+shellingham
+pyyaml
+tomlkit
+
+# Math & Science
+sympy
+mpmath
+
+# Image Processing
+fonttools
+cffi
+pycparser
+
+# XML & Markup
+pyparsing
+
+# Networking
+ifaddr
+paho-mqtt
+
+# Logging & Monitoring
+posthog
+blinker
+
+# Web Framework Dependencies
+Flask
+Jinja2
+MarkupSafe
+itsdangerous
+Werkzeug
+
+# Date & Time
+python-dateutil
+pytz
+
+# Other Utilities
+six
+sniffio
+anyio
+Deprecated
+wrapt
+dill
+distro
+simplejson
+packaging
+platformdirs
+regex
+attrs
+frozenlist
+fsspec
+greenlet
+idna
+jiter
+multidict
+propcache
+uritemplate
+yarl
+
+# Standard Library Backports
+standard-aifc
+standard-chunk
+pyreadline3
+
+# Office Document Conversion (Windows)
+docx2pdf; sys_platform == 'win32'
+
+# Network Scanning (Optional)
+python-nmap
+
+# ===================================================================
+# INSTALLATION NOTES:
+# ===================================================================
+# 1. Create virtual environment: python -m venv .venv
+# 2. Activate: .venv\Scripts\activate (Windows) or source .venv/bin/activate (Linux/Mac)
+# 3. Upgrade pip: pip install --upgrade pip
+# 4. Install all packages: pip install -r requirements2.txt
+# 5. For Windows users: Install Microsoft Office for document conversion features
+# 6. For pdf2image: Download Poppler binaries and add to PATH
+# 7. For CairoSVG: Install GTK+ runtime on Windows
+# 8. PyAudio on Windows: May require manual installation of wheel file
+#
+# OPTIONAL SYSTEM DEPENDENCIES:
+# - Poppler (for pdf2image): https://github.com/oschwartz10612/poppler-windows
+# - GTK+ Runtime (for CairoSVG): https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer
+# - Microsoft Office (for office document conversion)
+# - PortAudio (for PyAudio, usually included in PyAudio wheels)
+#
+# NOTE: This file installs LATEST versions of all packages.
+# If you encounter compatibility issues, refer to the original
+# requirements.txt for tested version numbers.
+#
+# TESTED ON:
+# - Windows 11
+# - Python 3.13
+# - Virtual Environment: .venv
+# ===================================================================
