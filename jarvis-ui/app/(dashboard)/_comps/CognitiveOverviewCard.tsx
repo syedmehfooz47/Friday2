@@ -11,25 +11,29 @@ import { FrostedCard } from "./ui/FrostedCard";
 import { CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 
-// PulsingBorderShader component remains the same
+// PulsingBorderShader component - wrap shader props properly
 function PulsingBorderShader(props: any) {
+  // Filter out props that should not be passed to DOM elements
+  const shaderProps = {
+    colors: ["#5800FF", "#BEECFF", "#E77EDC", "#FF4C3E"],
+    colorBack: "#00000000",
+    speed: 1.5,
+    roundness: 1,
+    thickness: 0.05,
+    softness: 0.1,
+    intensity: 1,
+    spotspercolor: 5, // Use lowercase for DOM compatibility
+    spotSize: 0.1,
+    pulse: 0.2,
+    smoke: 0.5,
+    smokeSize: 2,
+    scale: 0.65,
+    rotation: 0,
+  };
+
   return (
     <PulsingBorder
-      colors={["#5800FF", "#BEECFF", "#E77EDC", "#FF4C3E"]}
-      colorBack="#00000000"
-      speed={1.5}
-      roundness={1}
-      thickness={0.05}
-      softness={0.1}
-      intensity={1}
-      spotsPerColor={5}
-      spotSize={0.1}
-      pulse={0.2}
-      smoke={0.5}
-      smokeSize={2}
-      scale={0.65}
-      rotation={0}
-      // frame={9161408.251009725} // Frame can be dynamic if needed
+      {...shaderProps}
       {...props}
       style={{
         width: "100%",
@@ -54,8 +58,8 @@ export const CognitiveOverviewCard = memo(function CognitiveOverviewCard() {
     setIsMuted(newMutedState);
 
     try {
-      // Use REST API as primary method (faster and more reliable)
-      const response = await fetch('http://localhost:8000/api/mic-state', {
+      // Use Next.js API route for reliability (same-origin)
+      const response = await fetch('/api/mic-state', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ is_muted: newMutedState })
@@ -105,8 +109,8 @@ export const CognitiveOverviewCard = memo(function CognitiveOverviewCard() {
     }
     
     try {
-      // Use REST API for fast stop
-      const response = await fetch('http://localhost:8000/api/stop-speaking', {
+      // Use Next.js API route for fast stop
+      const response = await fetch('/api/stop-speaking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });

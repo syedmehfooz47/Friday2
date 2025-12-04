@@ -121,7 +121,8 @@ export default function ChatClient() {
         const loadChatHistory = async () => {
             setIsLoadingHistory(true);
             try {
-                const response = await fetch('http://localhost:8000/api/chatlogs?limit=1000');
+                // Use Next.js API route for reliability (same-origin)
+                const response = await fetch('/api/chatlogs?limit=1000');
                 const data = await response.json();
                 
                 if (data.chatlogs && Array.isArray(data.chatlogs)) {
@@ -340,8 +341,8 @@ export default function ChatClient() {
         setIsMuted(newMutedState);
         
         try {
-            // Use REST API as primary method (faster and more reliable)
-            const response = await fetch('http://localhost:8000/api/mic-state', {
+            // Use Next.js API route for reliability (same-origin)
+            const response = await fetch('/api/mic-state', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ is_muted: newMutedState })
@@ -393,8 +394,8 @@ export default function ChatClient() {
         }
         
         try {
-            // Use REST API for fast stop
-            const response = await fetch('http://localhost:8000/api/stop-speaking', {
+            // Use Next.js API route for fast stop
+            const response = await fetch('/api/stop-speaking', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }
             });

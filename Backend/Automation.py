@@ -415,6 +415,76 @@ def take_screenshot(send_to_recipient: str = None) -> tuple[str, str]:
         return f"Screenshot error: {e}", None
 
 
+# --- Open File with Default Application ---
+
+def open_file_with_default_app(file_path: str) -> tuple[str, str]:
+    """
+    Open a file using the system's default application.
+    Works for any file type: PDF, images, documents, videos, etc.
+    
+    Args:
+        file_path: Path to the file to open
+    
+    Returns:
+        Tuple of (message, file_path or None)
+    """
+    username = os.getenv("Username", "Boss")
+    
+    try:
+        # Resolve path and check existence
+        path = Path(file_path).resolve()
+        
+        if not path.exists():
+            # Try searching in common data folders
+            project_root = Path(__file__).parent.parent
+            search_folders = [
+                project_root / "Data" / "GeneratedDocuments",
+                project_root / "Data" / "GeneratedImages",
+                project_root / "Data" / "ConvertedDocuments",
+                project_root / "Data" / "CompressedFiles",
+                project_root / "Data" / "Screenshots",
+            ]
+            
+            # Search by filename
+            filename = Path(file_path).name
+            found = None
+            for folder in search_folders:
+                if folder.exists():
+                    potential = folder / filename
+                    if potential.exists():
+                        found = potential
+                        break
+                    # Also search for partial matches
+                    for f in folder.iterdir():
+                        if filename.lower() in f.name.lower():
+                            found = f
+                            break
+                if found:
+                    break
+            
+            if found:
+                path = found
+            else:
+                Logger.log(f"File not found: {file_path}", "ERROR")
+                return f"File not found: {file_path}, Boss.", None
+        
+        Logger.log(f"Opening file with default app: {path}", "AUTOMATION")
+        
+        # Open with system default application
+        if sys.platform == "win32":
+            os.startfile(str(path))
+        elif sys.platform == "darwin":
+            subprocess.run(["open", str(path)], check=True)
+        else:
+            subprocess.run(["xdg-open", str(path)], check=True)
+        
+        return f"Opened {path.name}, Boss.", str(path)
+        
+    except Exception as e:
+        Logger.log(f"Error opening file: {e}", "ERROR")
+        return f"Failed to open file: {e}, Boss.", None
+
+
 # --- System Power (Password Protected) ---
 
 def system_power(action: str, password: str = None) -> tuple[str, None]:

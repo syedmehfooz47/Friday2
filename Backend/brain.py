@@ -29,6 +29,8 @@ from .PPTGenerator import ppt_generator
 from .WordGenerator import word_generator
 from .ExcelGenerator import excel_generator
 from .FileConverter import file_converter # FIXED: Removed 'convert_active_document'
+from .SmartCompressor import smart_compressor
+from .WebsiteGenerator import website_generator
 
 from .contacts_manager import contacts_manager
 # FIXED: Removed import for non-existent advanced_file_converter
@@ -38,7 +40,7 @@ from .Automation import (
     move_mouse, click_mouse, get_mouse_position, set_clipboard, get_clipboard,
     take_screenshot, system_power, GoogleSearch, YouTubeSearch, PlayYoutube,
     Content, create_folder, send_telegram_message, send_telegram_file,
-    open_website
+    open_website, open_file_with_default_app
 )
 
 # Import automation functions
@@ -48,7 +50,8 @@ try:
         get_brightness, change_windows_theme, type_text, move_mouse, click_mouse,
         get_mouse_position, set_clipboard, get_clipboard, take_screenshot,
         system_power, GoogleSearch, YouTubeSearch, PlayYoutube, Content,
-        create_folder, send_telegram_message, send_telegram_file
+        create_folder, send_telegram_message, send_telegram_file,
+        open_file_with_default_app
     )
     AUTOMATION_AVAILABLE = True
 except ImportError as e:
@@ -122,6 +125,26 @@ FILE & DOCUMENT AWARENESS:
 - When a user asks to "send that file to John", you **MUST** use `get_last_converted_file()` or `get_last_generated_file()` to identify the path, then use `telegram_send_file` or `email_send`.
 - Use `search_data_folder` to find files if the user is vague.
 
+SMART FILE SEARCH (CRITICAL):
+- When user refers to a file by partial name, description, or keywords (e.g., "the product listing file", "that excel catalog", "the car image"), use `search_generated_files(keyword='...')` to find it.
+- Examples:
+  * "send the product catalog" → `search_generated_files(keyword='product catalog')` → get best_match path → send
+  * "the excel file about products" → `search_generated_files(keyword='product', file_type='excel')` → get best_match path
+  * "that car image I generated" → `search_generated_files(keyword='car', file_type='image')` → get best_match path
+- If you're unsure which file, use `list_recent_files(limit=5)` to see what's available and ask user to clarify.
+- NEVER say "file not found" without first trying `search_generated_files` with relevant keywords extracted from user's request.
+
+SEARCH-ONLY FILE REQUESTS (IMPORTANT):
+- When user says "search for", "find", "look for", "do you have", "where is" a file/image:
+  1. Call `search_generated_files(keyword='...')` with relevant keywords
+  2. If found: Report back "I found [filename] at [path], Boss. Would you like me to open it or do something with it?"
+  3. If not found: "I couldn't find any files matching '[keyword]', Boss. Would you like me to list recent files?"
+- Examples:
+  * "search for the car image" → `search_generated_files(keyword='car', file_type='image')` → Report findings
+  * "do you have the product catalog?" → `search_generated_files(keyword='product catalog')` → Report findings
+  * "find my water conservation PDF" → `search_generated_files(keyword='water conservation', file_type='pdf')` → Report findings
+  * "what files do I have?" → `list_recent_files(limit=10)` → List all files
+
 CONTACT MANAGEMENT:
 - Use `add_contact`, `update_contact`, `find_contact`, `list_contacts`, `delete_contact`.
 
@@ -134,11 +157,18 @@ POWER OPERATIONS SECURITY:
 - Shutdown, restart, logoff require password via `system_power_secure`. Ask for password if missing.
 - Lock, sleep via `system_power_secure` do not require password.
 
-APP & WEBSITE MANAGEMENT:
-- "Open X": Use `open_app`. It smartly checks for apps first, then websites.
-- "Open X website": Use `open_website_direct`.
+APP, FILE & WEBSITE MANAGEMENT:
+- "Open X app": Use `open_app`. For opening applications like Chrome, Word, Excel, etc.
+- "Open X website": Use `open_website_direct`. For opening URLs/websites in browser.
+- **"Open this file" / "Open the PDF" / "Open that image"**: Use `open_file`. Opens local files with their DEFAULT system application (Adobe for PDF, Photos for images, Excel for .xlsx, Word for .docx, etc.)
+- **CRITICAL**: When user says "open" + a FILE PATH or FILE REFERENCE, ALWAYS use `open_file`, NOT `open_website_direct`.
+- Examples of `open_file` usage:
+  * "open that pdf" → `get_last_generated_file(file_type='pdf')` then `open_file(file_path=...)`
+  * "open the converted document" → `open_file(file_path=<path>)`
+  * "open E:\Friday\...\file.pdf" → `open_file(file_path='E:\\Friday\\...\\file.pdf')`
 - "Search X on Google": Use `Google Search`.
 - DO NOT confuse `open_app` with `Google Search`.
+- **NEVER treat file paths as URLs. File paths contain backslashes (\) or forward slashes (/) and refer to local files.**
 
 TOOL USAGE - CRITICAL:
 You MUST use the available tools when appropriate.
@@ -148,17 +178,94 @@ You MUST use the available tools when appropriate.
 - **Telegram**: `telegram_send_message`, `telegram_send_file`, `telegram_get_updates`.
 - **Images**: `generate_image`.
 - **Docs**: `generate_pdf`, `generate_word`, `generate_ppt`, `generate_excel`.
-- **File Conversion**: `convert_file_format` (the advanced one), `convert_document` (the basic one).
-- **File Compression**: `compress_file`.
+- **Websites/HTML**: `generate_website` - Creates polished, modern, complete HTML websites.
+  * Types: 'landing', 'portfolio', 'business', 'product', 'blog'
+  * Uses internet research to create accurate, premium content
+  * Includes: hero, features, stats, testimonials, about, contact, footer
+  * Examples:
+    - "create a website for a coffee shop" → `generate_website(topic='coffee shop', website_type='business')`
+    - "make a portfolio website for a photographer" → `generate_website(topic='photographer portfolio', website_type='portfolio')`
+    - "create a landing page for an AI startup" → `generate_website(topic='AI startup', website_type='landing')`
+- **File Conversion**: `convert_file_format` - Supports:
+  * Documents: PDF↔DOCX, PPTX→PDF, PPT→PDF, XLSX→PDF, XLS→PDF
+  * Images: JPG↔PNG, JPG↔PDF, PNG↔PDF, JPG↔BMP, JPG↔TIFF, PNG↔BMP, PNG↔TIFF, etc.
+  * SVG: SVG→PNG, SVG→JPG, SVG→PDF
+  * Examples: "convert image.jpg to png", "convert presentation.pptx to pdf", "convert photo.png to pdf"
+- **File Compression**: `compress_file` (basic) or `smart_compress_file` (advanced).
+  * **ALWAYS prefer `smart_compress_file`** - it handles ALL file types with intelligent quality
+  * Supports: Images (JPG, PNG, WEBP, GIF), PDFs, Office docs (DOCX, XLSX, PPTX), ZIP
+  * Compression modes:
+    - `auto` (default): Smart compression, balances quality and size
+    - `percentage`: "Reduce by 50%" → `smart_compress_file(input_path, mode='percentage', target_percentage=50)`
+    - `target_size`: "Compress to 500KB" → `smart_compress_file(input_path, mode='target_size', target_size='500KB')`
+    - `preset`: Use preset levels → `smart_compress_file(input_path, mode='preset', preset='balanced')`
+      * Presets: 'maximum' (best quality), 'high', 'balanced', 'medium', 'aggressive' (smallest size)
+  * Use `get_compression_info` to analyze a file before compression
+  * **CRITICAL - NATURAL LANGUAGE PARSING FOR COMPRESSION**:
+    - "reduce 10% size" / "reduce by 10%" / "make it 10% smaller" → mode='percentage', target_percentage=10
+    - "reduce 30%" / "compress 30%" / "make it 30% less" → mode='percentage', target_percentage=30
+    - "make it 67% less" / "reduce 67%" → mode='percentage', target_percentage=67
+    - "reduce to 20mb" / "compress to 20mb" / "make it 20mb" → mode='target_size', target_size='20MB'
+    - "compress to 500kb" / "reduce to 500kb" → mode='target_size', target_size='500KB'
+    - "compress this" / "make it smaller" → mode='auto' (let system decide)
+    - "compress without losing quality" / "high quality compression" → mode='preset', preset='high'
+    - "maximum compression" / "smallest possible" → mode='preset', preset='aggressive'
 - **System Automation**: `open_app`, `close_app`, `type_text`, etc.
 - **Memory**: `recall_chat_history`.
-- **File System**: `access_file_content`, `search_data_folder`.
+- **File System**: `access_file_content`, `search_data_folder`, `search_generated_files`, `list_recent_files`.
 - **Contacts**: Contact tools.
 - **API Keys**: `switch_groq_key`, `switch_google_key`.
 
 INTERNET SEARCH PRIORITY:
 - For ANY real-time information (news, weather, prices, dates, current events), ALWAYS use `internet_search`.
 - When user says "use internet tool" or "search online", you MUST use `internet_search`.
+
+CRITICAL CLARIFICATION & MULTI-STEP BEHAVIOR:
+
+1. **ALWAYS ASK FOR MISSING INFORMATION**:
+   - If user says "send file to X" without specifying which file → Ask: "Which file should I send to X, Boss?"
+   - If user says "generate image and send to X" but generation fails → Inform: "I couldn't generate the image, Boss. The image generation service encountered an error."
+   - If user says "send that to X" → Use `get_last_generated_file()` or `get_last_converted_file()` to identify the file
+   - If user says "send to telegram/email" without recipient → Ask: "Who would you like me to send this to, Boss?"
+   - **NEVER silently skip steps or fail without informing the user**
+
+2. **MULTI-STEP OPERATION CHAINING** (CRITICAL):
+   When user requests multiple operations (e.g., "generate PDF on colleges and send to MK on Telegram"), you MUST:
+   
+   **Step 1**: Call `generate_pdf(topic='colleges', pages=10)`
+   **Step 2**: Extract the `file_path` from the tool result
+   **Step 3**: Call `find_contact(name='MK')` to verify contact exists and get Telegram ID
+   **Step 4**: Call `telegram_send_file(recipient_name='MK', file_path=<path_from_step2>)`
+   **Step 5**: Respond with complete confirmation: "I've generated a 10-page PDF on colleges and sent it to MK on Telegram, Boss."
+   
+   **You MUST execute ALL steps in the request. Do NOT stop after the first step.**
+
+3. **FILE PATH AWARENESS & SMART SEARCH**:
+   - After ANY file generation (PDF, Word, PPT, Excel, Image), remember the file path from the tool result
+   - When user says "send that to X", automatically use the last generated file path
+   - When user says "convert that PDF", use `get_last_generated_file(file_type='pdf')` to find it
+   - When user says "the file I just created", use `get_last_generated_file()` to identify it
+   - **CRITICAL**: When user refers to a file by name/description (e.g., "the product listing excel", "that catalog file"):
+     1. Extract keywords from user's description (e.g., "product", "listing", "catalog")
+     2. Call `search_generated_files(keyword='product listing')` or similar
+     3. Use the `best_match` path from the result
+     4. If no match, try `list_recent_files()` and ask user to clarify
+   - **Example Flow for "send the product catalog to MK"**:
+     1. `search_generated_files(keyword='product catalog', file_type='excel')` → finds Product_Listing_Catalog...xlsx
+     2. `find_contact(name='MK')` → verifies MK exists
+     3. `telegram_send_file(recipient_name='MK', file_path=<found_path>)` → sends file
+     4. Confirm: "I found and sent the Product Listing Catalog Excel file to MK on Telegram, Boss."
+
+4. **ERROR HANDLING IN CHAINS**:
+   - If ANY step in a chain fails, inform user immediately with specific details
+   - Do NOT attempt the next step if the previous one failed
+   - Example: "I generated the PDF successfully, Boss, but I couldn't send it to MK because I don't have their Telegram ID. Would you like to add MK as a contact?"
+   - Example: "I tried to generate the image, Boss, but the image generation service is currently unavailable."
+
+5. **CONFIRMATION RESPONSES**:
+   - After completing ALL steps in multi-step operations, confirm EVERY action taken
+   - Be specific about what was done
+   - Example: "I've generated a 10-page PDF on artificial intelligence, converted it to Word format, and sent it to John via email, Boss."
 
 NOTIFICATION AWARENESS:
 - You monitor incoming emails and telegram messages.
@@ -389,6 +496,25 @@ tools = [
                     "properties": {
                         "topic": {"type": "string", "description": "Spreadsheet topic/purpose"},
                         "rows": {"type": "integer", "description": "Approximate data rows (default: 20)", "default": 20}
+                    },
+                    "required": ["topic"]
+                }
+            },
+            # Website/HTML Generation
+            {
+                "name": "generate_website",
+                "description": "Generate a complete, polished, modern HTML website. Creates professional landing pages, portfolios, business sites with responsive design, animations, and beautiful styling. Uses internet research for accurate content.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "topic": {"type": "string", "description": "Website topic (e.g., 'AI startup', 'coffee shop', 'portfolio for photographer')"},
+                        "website_type": {"type": "string", "description": "Type: 'landing', 'portfolio', 'business', 'product', 'blog'", "default": "landing"},
+                        "use_internet": {"type": "boolean", "description": "Research online for better content (default: true)", "default": True},
+                        "sections": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "Sections to include: 'hero', 'stats', 'features', 'about', 'testimonials', 'cta', 'contact'. Default: all"
+                        }
                     },
                     "required": ["topic"]
                 }
@@ -708,16 +834,55 @@ tools = [
                     "required": ["input_path"]
                 }
             },
+            # Smart Compression Tool (Advanced)
+            {
+                "name": "smart_compress_file",
+                "description": "Smartly compress any file (images, PDFs, Office documents) with intelligent quality settings. Supports auto-compression, target percentage, target size, or preset. Compression modes: 'auto' (smart), 'percentage' (reduce by X%), 'target_size' (compress to specific size like '500KB'), 'preset' (maximum/high/balanced/medium/aggressive).",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "input_path": {"type": "string", "description": "File path to compress"},
+                        "mode": {"type": "string", "description": "Compression mode: 'auto', 'percentage', 'target_size', 'quality', 'preset'", "default": "auto"},
+                        "target_percentage": {"type": "integer", "description": "For 'percentage' mode: reduce by this percentage (e.g., 50 = reduce by 50%)"},
+                        "target_size": {"type": "string", "description": "For 'target_size' mode: target size (e.g., '500KB', '2MB')"},
+                        "quality": {"type": "integer", "description": "For 'quality' mode: specific quality level 1-100"},
+                        "preset": {"type": "string", "description": "For 'preset' mode: 'maximum', 'high', 'balanced', 'medium', 'aggressive'"}
+                    },
+                    "required": ["input_path"]
+                }
+            },
+            {
+                "name": "get_compression_info",
+                "description": "Get compression recommendations for a file before compressing",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "file_path": {"type": "string", "description": "File path to analyze"}
+                    },
+                    "required": ["file_path"]
+                }
+            },
             # Enhanced Automation
             {
                 "name": "open_website_direct",
-                "description": "Open a website directly without search (use when user says 'open X website')",
+                "description": "Open a website directly without search (use when user says 'open X website'). ONLY use for websites/URLs, NOT for local files.",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "website_name": {"type": "string", "description": "Website name or URL"}
                     },
                     "required": ["website_name"]
+                }
+            },
+            {
+                "name": "open_file",
+                "description": "Open a local file using the system's default application. Use for opening PDFs, images, documents, videos, etc. The file will open in the appropriate app (Adobe for PDF, Photos for images, Word for .docx, Excel for .xlsx, etc.)",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "file_path": {"type": "string", "description": "Full path to the file to open"}
+                    },
+                    "required": ["file_path"]
                 }
             },
             {
@@ -792,6 +957,29 @@ tools = [
                     "type": "object",
                     "properties": {
                         "file_type": {"type": "string", "description": "Optional: 'pdf', 'word', 'ppt', 'excel', 'image', 'content'. Default is all.", "default": "all"}
+                    },
+                    "required": []
+                }
+            },
+            {
+                "name": "search_generated_files",
+                "description": "Search for files in GeneratedDocuments, GeneratedImages, ConvertedDocuments by keyword. Use this when user refers to a file by name, description, or partial keywords like 'product listing', 'catalog', 'car image', etc. Returns matching files sorted by relevance and recency.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "keyword": {"type": "string", "description": "Search keyword (e.g., 'product', 'catalog', 'car', 'water conservation')"},
+                        "file_type": {"type": "string", "description": "Optional filter: 'pdf', 'word', 'ppt', 'excel', 'image', 'all'. Default is 'all'.", "default": "all"}
+                    },
+                    "required": ["keyword"]
+                }
+            },
+            {
+                "name": "list_recent_files",
+                "description": "List all recently generated/converted files with their names, types, and paths. Use this to show the user what files are available or to find a file when search keyword is unclear.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {"type": "integer", "description": "Maximum number of files to return. Default is 10.", "default": 10}
                     },
                     "required": []
                 }
@@ -884,6 +1072,127 @@ class GeminiBrain:
         last_file_path = str(all_files[0].resolve())
         Logger.log(f"Last file found: {last_file_path}", "BRAIN_HELPER")
         return last_file_path # Return absolute path
+
+    def _search_files_by_keyword(self, keyword: str, file_type: str = "all") -> List[Dict[str, Any]]:
+        """
+        Search for files by keyword in filename. 
+        Supports fuzzy matching - finds files even with partial keywords.
+        Returns list of matching files sorted by relevance and recency.
+        """
+        folders = [
+            self.project_root / "Data" / "GeneratedDocuments",
+            self.project_root / "Data" / "GeneratedImages",
+            self.project_root / "Data" / "ConvertedDocuments",
+            self.project_root / "Data" / "GeneratedContent",
+        ]
+        
+        ext_map = {
+            "pdf": [".pdf"],
+            "word": [".docx"],
+            "ppt": [".pptx"],
+            "excel": [".xlsx"],
+            "image": [".jpg", ".jpeg", ".png"],
+            "content": [".txt"],
+            "all": None
+        }
+        allowed_extensions = ext_map.get(file_type.lower())
+        
+        all_files = []
+        for folder in folders:
+            if folder.exists():
+                all_files.extend(folder.glob("*.*"))
+        
+        if not all_files:
+            return []
+        
+        # Filter by extension if specified
+        if allowed_extensions:
+            all_files = [f for f in all_files if f.suffix.lower() in allowed_extensions]
+        
+        # Prepare keyword variations for fuzzy matching
+        keyword_lower = keyword.lower()
+        keyword_parts = keyword_lower.replace("_", " ").replace("-", " ").split()
+        
+        # Score and filter files
+        matched_files = []
+        for file_path in all_files:
+            filename_lower = file_path.stem.lower().replace("_", " ").replace("-", " ")
+            
+            # Calculate match score
+            score = 0
+            
+            # Exact keyword match in filename
+            if keyword_lower in filename_lower:
+                score += 100
+            
+            # Partial matches for each keyword part
+            for part in keyword_parts:
+                if len(part) >= 3 and part in filename_lower:
+                    score += 30
+            
+            # Check for common word matches (product, catalog, listing, etc.)
+            common_matches = ["product", "catalog", "listing", "excel", "report", "invoice", "water", "car", "image"]
+            for match_word in common_matches:
+                if match_word in keyword_lower and match_word in filename_lower:
+                    score += 50
+            
+            if score > 0:
+                try:
+                    stat = file_path.stat()
+                    matched_files.append({
+                        "name": file_path.name,
+                        "path": str(file_path.resolve()),
+                        "score": score,
+                        "modified": stat.st_mtime,
+                        "size": stat.st_size,
+                        "type": file_path.suffix.lower().replace(".", "")
+                    })
+                except Exception:
+                    pass
+        
+        # Sort by score (descending), then by modified time (newest first)
+        matched_files.sort(key=lambda x: (-x["score"], -x["modified"]))
+        
+        Logger.log(f"Found {len(matched_files)} files matching keyword '{keyword}'", "BRAIN_HELPER")
+        return matched_files
+    
+    def _list_recent_files(self, limit: int = 10) -> List[Dict[str, Any]]:
+        """List all recent files from generated/converted folders."""
+        folders = [
+            self.project_root / "Data" / "GeneratedDocuments",
+            self.project_root / "Data" / "GeneratedImages",
+            self.project_root / "Data" / "ConvertedDocuments",
+            self.project_root / "Data" / "GeneratedContent",
+        ]
+        
+        all_files = []
+        for folder in folders:
+            if folder.exists():
+                all_files.extend(folder.glob("*.*"))
+        
+        if not all_files:
+            return []
+        
+        # Sort by modification time, newest first
+        all_files.sort(key=lambda f: f.stat().st_mtime, reverse=True)
+        
+        # Limit and format results
+        result_files = []
+        for file_path in all_files[:limit]:
+            try:
+                stat = file_path.stat()
+                result_files.append({
+                    "name": file_path.name,
+                    "path": str(file_path.resolve()),
+                    "modified": stat.st_mtime,
+                    "size": stat.st_size,
+                    "type": file_path.suffix.lower().replace(".", "")
+                })
+            except Exception:
+                pass
+        
+        Logger.log(f"Listed {len(result_files)} recent files", "BRAIN_HELPER")
+        return result_files
 
 
     def execute_tool(self, function_name: str, args: Dict[str, Any]) -> Dict[str, Any]:
@@ -997,6 +1306,21 @@ class GeminiBrain:
                     rows=args.get("rows", 20)
                 )
                 result = {"status": "success" if file_path else "error", "message": result_msg, "file_path": file_path}
+            
+            # Website/HTML Generation
+            elif function_name == "generate_website":
+                result_msg, file_path, stats = website_generator.generate(
+                    topic=args.get("topic"),
+                    website_type=args.get("website_type", "landing"),
+                    use_internet=args.get("use_internet", True),
+                    sections=args.get("sections")
+                )
+                result = {
+                    "status": "success" if file_path else "error",
+                    "message": result_msg,
+                    "file_path": file_path,
+                    "stats": stats
+                }
             
             # --- FIXED: Use file_converter instance for this call ---
             elif function_name == "convert_document":
@@ -1161,6 +1485,26 @@ class GeminiBrain:
                 result_msg, file_path = file_converter.compress_file(**args)
                 result = {"status": "success" if file_path else "error", "message": result_msg, "file_path": file_path}
             
+            # Smart Compression Tools
+            elif function_name == "smart_compress_file":
+                result_msg, file_path, stats = smart_compressor.compress(
+                    input_path=args.get("input_path"),
+                    mode=args.get("mode", "auto"),
+                    target_percentage=args.get("target_percentage"),
+                    target_size=args.get("target_size"),
+                    quality=args.get("quality"),
+                    preset=args.get("preset")
+                )
+                result = {
+                    "status": "success" if file_path else "error",
+                    "message": result_msg,
+                    "file_path": file_path,
+                    "stats": stats
+                }
+            elif function_name == "get_compression_info":
+                info = smart_compressor.get_compression_info(args.get("file_path"))
+                result = {"status": "success", "info": info}
+            
             # Enhanced Automation
             elif function_name == "open_website_direct":
                 if not AUTOMATION_AVAILABLE:
@@ -1168,6 +1512,12 @@ class GeminiBrain:
                 else:
                     result_msg, _ = open_website(args.get("website_name"))
                     result = {"status": "success", "message": result_msg}
+            elif function_name == "open_file":
+                if not AUTOMATION_AVAILABLE:
+                    result = {"status": "error", "message": "Automation not available"}
+                else:
+                    result_msg, file_path = open_file_with_default_app(args.get("file_path"))
+                    result = {"status": "success" if file_path else "error", "message": result_msg, "file_path": file_path}
             elif function_name == "type_formatted_text":
                 if not AUTOMATION_AVAILABLE:
                     result = {"status": "error", "message": "Automation not available"}
@@ -1203,6 +1553,26 @@ class GeminiBrain:
                     file_type
                 )
                 result = {"status": "success", "file_path": path or "No files found."}
+            
+            elif function_name == "search_generated_files":
+                keyword = args.get("keyword", "")
+                file_type = args.get("file_type", "all")
+                files = self._search_files_by_keyword(keyword, file_type)
+                if files:
+                    result = {
+                        "status": "success",
+                        "files": files,
+                        "count": len(files),
+                        "best_match": files[0] if files else None
+                    }
+                else:
+                    result = {"status": "not_found", "message": f"No files found matching '{keyword}'."}
+            
+            elif function_name == "list_recent_files":
+                limit = args.get("limit", 10)
+                files = self._list_recent_files(limit)
+                result = {"status": "success", "files": files, "count": len(files)}
+            
             elif function_name == "get_last_converted_file":
                 path = self._get_last_file_from_folders(
                     [self.project_root / "Data" / "ConvertedDocuments"],

@@ -34,7 +34,6 @@ openai
 # Audio Processing & Recording
 PyAudio
 pydub
-audioop-lts
 av
 
 # Audio Transcription - Faster Whisper (Offline, Most Accurate)
@@ -88,7 +87,6 @@ webencodings
 
 # Windows Specific - COM & Office Automation
 pywin32; sys_platform == 'win32'
-pypiwin32; sys_platform == 'win32'
 comtypes; sys_platform == 'win32'
 
 # Automation - App Control
@@ -114,7 +112,6 @@ screen-brightness-control
 
 # Automation - System Control
 psutil
-WMI
 
 # Automation - Web & YouTube
 pywhatkit
@@ -122,7 +119,7 @@ wikipedia
 
 # Home Automation - Google Home
 glocaltokens
-ghome
+# ghome  # Commented out: has broken dependency on old python-nmap package
 ghome-foyer-api
 gpsoauth
 zeroconf
@@ -278,7 +275,7 @@ pyreadline3
 docx2pdf; sys_platform == 'win32'
 
 # Network Scanning (Optional)
-python-nmap
+python3-nmap
 
 # ===================================================================
 # INSTALLATION NOTES:

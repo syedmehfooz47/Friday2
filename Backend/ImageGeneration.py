@@ -17,7 +17,8 @@ from .logger import Logger
 load_dotenv()
 
 API_KEY = os.getenv("HuggingFaceAPIKey")
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
+# FIXED: Updated to new Hugging Face Router endpoint (old endpoint returned 410 error)
+API_URL = "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0"
 headers = {"Authorization": f"Bearer {API_KEY}"} if API_KEY else {}
 
 
@@ -66,7 +67,20 @@ class ImageGenerationService:
                         await asyncio.sleep(5 * (attempt + 1))
                     continue
                 else:
-                    Logger.log(f"API request failed with status {response.status_code}: {response.text}", "ERROR")
+                    error_detail = response.text
+                    Logger.log(f"API request failed with status {response.status_code}: {error_detail}", "ERROR")
+                    
+                    # Provide user-friendly error message
+                    if response.status_code == 410:
+                        Logger.log("Hugging Face API endpoint deprecated. Please update the API_URL.", "ERROR")
+                    elif response.status_code == 401:
+                        Logger.log("Invalid Hugging Face API key. Please check your HuggingFaceAPIKey in .env", "ERROR")
+                    elif response.status_code == 503:
+                        Logger.log("Hugging Face model is loading. This can take 20-30 seconds. Retrying...", "WARNING")
+                        if attempt < max_retries - 1:
+                            await asyncio.sleep(20)
+                            continue
+                    
                     return None
             except requests.exceptions.RequestException as e:
                 Logger.log(f"API request failed on attempt {attempt + 1}/{max_retries}: {e}", "ERROR")

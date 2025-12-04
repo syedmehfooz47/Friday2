@@ -1,0 +1,10 @@
+[2025-11-12 11:43:55] TOOL_STATUS: telegram_send_message | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:43:55] TOOL_CALL: telegram_send_message | Args: {
+  "message_prompt": "Hi",
+  "recipient_name": "MK"
+}
+[2025-11-12 11:43:56] TOOL_RESULT: telegram_send_message | Result: {
+  "status": "success",
+  "message": "Message sent to MK on Telegram, Boss."
+}
+[2025-11-12 11:43:56] TOOL_STATUS: telegram_send_message | Status: SUCCESS | Details: Tool completed successfully

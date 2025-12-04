@@ -79,7 +79,8 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (activeTab === "Settings") {
-      fetch("http://localhost:8000/api/settings")
+      // Use Next.js API route for reliability (same-origin)
+      fetch("/api/settings")
         .then(res => res.json())
         .then(data => setSettings(data))
     }
@@ -120,8 +121,8 @@ export default function Dashboard() {
       color: string
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * canvas!.width
+        this.y = Math.random() * canvas!.height
         this.size = Math.random() * 3 + 1
         this.speedX = (Math.random() - 0.5) * 0.5
         this.speedY = (Math.random() - 0.5) * 0.5

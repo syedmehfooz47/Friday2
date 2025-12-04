@@ -1,0 +1,94 @@
+[2025-11-12 11:30:09] TOOL_STATUS: generate_image | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:30:09] TOOL_CALL: generate_image | Args: {
+  "prompt": "car"
+}
+[2025-11-12 11:30:27] TOOL_RESULT: generate_image | Result: {
+  "status": "success",
+  "message": "I've generated 1 image(s) for 'car' and opened them, Boss.",
+  "image_paths": [
+    "E:\\Friday\\Friday2\\Data\\GeneratedImages\\car_20251112_113026.jpg"
+  ]
+}
+[2025-11-12 11:30:27] TOOL_STATUS: generate_image | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:00] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:00] TOOL_CALL: find_contact | Args: {
+  "name": "MK"
+}
+[2025-11-12 11:31:00] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "MK"
+    ],
+    "phone": null,
+    "telegram_id": "5371331879",
+    "email": null
+  }
+}
+[2025-11-12 11:31:00] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:00] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:00] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "image"
+}
+[2025-11-12 11:31:00] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "E:\\Friday\\Friday2\\Data\\GeneratedImages\\car_20251112_113026.jpg"
+}
+[2025-11-12 11:31:00] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:02] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:02] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "E:\\Friday\\Friday2\\Data\\GeneratedImages\\car_20251112_113026.jpg",
+  "recipient_name": "MK"
+}
+[2025-11-12 11:31:02] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'car_20251112_113026.jpg' sent to MK, Boss."
+}
+[2025-11-12 11:31:02] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:30] TOOL_STATUS: generate_image | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:30] TOOL_CALL: generate_image | Args: {
+  "prompt": "Ganesha"
+}
+[2025-11-12 11:31:43] TOOL_RESULT: generate_image | Result: {
+  "status": "success",
+  "message": "I've generated 1 image(s) for 'Ganesha' and opened them, Boss.",
+  "image_paths": [
+    "E:\\Friday\\Friday2\\Data\\GeneratedImages\\Ganesha_20251112_113142.jpg"
+  ]
+}
+[2025-11-12 11:31:43] TOOL_STATUS: generate_image | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:43] TOOL_STATUS: find_contact | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:43] TOOL_CALL: find_contact | Args: {
+  "name": "MK"
+}
+[2025-11-12 11:31:43] TOOL_RESULT: find_contact | Result: {
+  "status": "success",
+  "contact": {
+    "names": [
+      "MK"
+    ],
+    "phone": null,
+    "telegram_id": "5371331879",
+    "email": null
+  }
+}
+[2025-11-12 11:31:43] TOOL_STATUS: find_contact | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:44] TOOL_STATUS: get_last_generated_file | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:44] TOOL_CALL: get_last_generated_file | Args: {
+  "file_type": "image"
+}
+[2025-11-12 11:31:44] TOOL_RESULT: get_last_generated_file | Result: {
+  "status": "success",
+  "file_path": "E:\\Friday\\Friday2\\Data\\GeneratedImages\\Ganesha_20251112_113142.jpg"
+}
+[2025-11-12 11:31:44] TOOL_STATUS: get_last_generated_file | Status: SUCCESS | Details: Tool completed successfully
+[2025-11-12 11:31:45] TOOL_STATUS: telegram_send_file | Status: WORKING | Details: Tool execution started
+[2025-11-12 11:31:45] TOOL_CALL: telegram_send_file | Args: {
+  "file_path": "E:\\Friday\\Friday2\\Data\\GeneratedImages\\Ganesha_20251112_113142.jpg",
+  "recipient_name": "MK"
+}
+[2025-11-12 11:31:45] TOOL_RESULT: telegram_send_file | Result: {
+  "status": "success",
+  "message": "File 'Ganesha_20251112_113142.jpg' sent to MK, Boss."
+}
+[2025-11-12 11:31:45] TOOL_STATUS: telegram_send_file | Status: SUCCESS | Details: Tool completed successfully

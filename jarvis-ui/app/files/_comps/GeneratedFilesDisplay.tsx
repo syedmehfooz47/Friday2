@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { formatDistanceToNow } from 'date-fns';
 
-const API_BASE_URL = "http://localhost:8000/api";
+// Use Next.js API routes (same-origin, more reliable than direct FastAPI calls)
+const API_BASE_URL = "/api";
 
 interface GeneratedFile {
     name: string;
@@ -137,9 +138,10 @@ export default function GeneratedFilesDisplay() {
     const fetchFiles = async () => {
         setIsLoading(true);
         setError(null);
-        console.log("Fetching generated files...");
+        console.log("Fetching generated files via Next.js API...");
         try {
-            const response = await fetch(`${API_BASE_URL}/generated-files`);
+            // Use Next.js API route (same-origin, more reliable)
+            const response = await fetch(`${API_BASE_URL}/files`);
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({ error: `HTTP error ${response.status}` }));
                 throw new Error(errorData.error || 'Failed to fetch files');
@@ -185,7 +187,8 @@ export default function GeneratedFilesDisplay() {
         const fileName = filePath.split('/').pop() || filePath.split('\\').pop() || filePath;
         toast.info("Opening file...", { description: `Requesting to open: ${fileName}` });
         try {
-            const response = await fetch(`${API_BASE_URL}/open-file`, {
+            // Use Next.js API route (more reliable, same-origin)
+            const response = await fetch(`${API_BASE_URL}/files/open`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ path: filePath })

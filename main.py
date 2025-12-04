@@ -873,6 +873,98 @@ if FASTAPI_AVAILABLE:
             Logger.log(f"Error getting assistant state: {e}", "ERROR")
             return JSONResponse(content={"error": str(e)}, status_code=500)
     
+    @app.get("/api/generated-files")
+    async def get_generated_files_api():
+        """Get list of all generated and converted files"""
+        try:
+            import os
+            from pathlib import Path
+            
+            project_root = Path(__file__).parent
+            
+            # Define directories to scan
+            directories = [
+                project_root / "Data" / "GeneratedDocuments",
+                project_root / "Data" / "GeneratedImages",
+                project_root / "Data" / "GeneratedWebsites",
+                project_root / "Data" / "ConvertedDocuments",
+                project_root / "Data" / "CompressedFiles",
+                project_root / "Data" / "GeneratedContent",
+                project_root / "Data" / "Screenshots",
+            ]
+            
+            files = []
+            
+            for directory in directories:
+                if directory.exists() and directory.is_dir():
+                    for file_path in directory.iterdir():
+                        if file_path.is_file():
+                            try:
+                                stat = file_path.stat()
+                                files.append({
+                                    "name": file_path.name,
+                                    "path": str(file_path.resolve()),
+                                    "size": stat.st_size,
+                                    "modified": datetime.fromtimestamp(stat.st_mtime).isoformat()
+                                })
+                            except Exception as e:
+                                Logger.log(f"Error reading file stats for {file_path}: {e}", "WARNING")
+            
+            # Sort by modified time (newest first)
+            files.sort(key=lambda x: x["modified"], reverse=True)
+            
+            Logger.log(f"Found {len(files)} generated files", "API")
+            return JSONResponse(content={"files": files, "count": len(files)})
+            
+        except Exception as e:
+            Logger.log(f"Error getting generated files: {e}", "ERROR")
+            return JSONResponse(content={"error": str(e), "files": []}, status_code=500)
+    
+    @app.post("/api/open-file")
+    async def open_file_api(request_data: dict):
+        """Open a file with the system default application"""
+        try:
+            import subprocess
+            import sys
+            
+            file_path = request_data.get("path")
+            if not file_path:
+                return JSONResponse(content={"success": False, "error": "No path provided"}, status_code=400)
+            
+            file_path = Path(file_path)
+            if not file_path.exists():
+                return JSONResponse(content={"success": False, "error": f"File not found: {file_path}"}, status_code=404)
+            
+            Logger.log(f"Opening file: {file_path}", "API")
+            
+            # Open with system default application
+            if sys.platform == "win32":
+                os.startfile(str(file_path))
+            elif sys.platform == "darwin":
+                subprocess.run(["open", str(file_path)])
+            else:
+                subprocess.run(["xdg-open", str(file_path)])
+            
+            return JSONResponse(content={"success": True, "path": str(file_path)})
+            
+        except Exception as e:
+            Logger.log(f"Error opening file: {e}", "ERROR")
+            return JSONResponse(content={"success": False, "error": str(e)}, status_code=500)
+    
+    @app.get("/api/status")
+    async def get_status():
+        """Health check endpoint for backend status"""
+        try:
+            return JSONResponse(content={
+                "status": "healthy",
+                "server": "Friday Backend",
+                "version": "2.0",
+                "websocket_clients": len(ws_manager.active_connections),
+                "timestamp": datetime.now().isoformat()
+            })
+        except Exception as e:
+            return JSONResponse(content={"status": "error", "error": str(e)}, status_code=500)
+    
     @app.on_event("startup")
     async def startup_event():
         Logger.log("UI WebSocket server starting on port 8000", "SYSTEM")
@@ -1605,8 +1697,15 @@ class AudioLoop:
             self.shutdown_initiated = True
             raise
         except Exception as e:
+            error_str = str(e)
             if not self.shutdown_initiated:
                 Logger.log(f"Error in receive_audio: {e}", "ERROR")
+                
+                # Handle specific service unavailable errors - these should trigger reconnect, not crash
+                if "1011" in error_str or "service" in error_str.lower() or "unavailable" in error_str.lower():
+                    Logger.log("Service temporarily unavailable - will trigger reconnect", "CONNECTION")
+                    # Don't re-raise, let it fall through to reconnect logic
+                    return
             raise
 
     async def play_audio(self):
@@ -1784,9 +1883,14 @@ class AudioLoop:
 
 
     async def run(self):
-        """Main execution loop"""
+        """Main execution loop with auto-reconnection"""
         username = os.getenv("Username", "Boss")
         assistantname = os.getenv("Assistantname", "Friday")
+        
+        # Reconnection settings
+        MAX_RECONNECT_ATTEMPTS = 10
+        RECONNECT_DELAY_BASE = 2  # seconds
+        reconnect_attempts = 0
         
         print("\n" + "="*70)
         print(f"🤖 Advanced {assistantname} - Unified Voice & Chat Assistant")
@@ -1824,6 +1928,7 @@ class AudioLoop:
         print("  - Ask me to recall previous chats")
         print("  - Voice AND chat use the SAME Gemini model")
         print("  - All features work in both voice and chat")
+        print("  - Auto-reconnects if connection drops")
         print("  - Press Ctrl+C to exit")
         print("\n" + "="*70)
         
@@ -1844,84 +1949,139 @@ class AudioLoop:
 
         print(f"\n🎤 Listening, Boss... Start speaking!\n")
 
-        try:
-            from Backend.brain import client, MODEL
-            
-            Logger.log("Connecting to Gemini Live API...", "CONNECTION")
-            
-            # --- ADDED: Load config with memory ---
-            live_config = await get_config_with_memory()
+        # Main connection loop with auto-reconnection
+        while not self.shutdown_initiated:
+            should_break = False
+            should_continue = False
             
             try:
-                async with (
-                    # --- FIXED: Pass config as a single argument ---
-                    client.aio.live.connect(model=MODEL, config=live_config) as session,
-                    asyncio.TaskGroup() as tg,
-                ):
-                    self.session = session
-                    Logger.log("Connected to Gemini Live API successfully", "CONNECTION")
-
-                    self.audio_in_queue = asyncio.Queue()
-                    self.out_queue = asyncio.Queue(maxsize=5)
-
-                    Logger.log("Starting task group...", "SYSTEM")
-                    tg.create_task(self.send_realtime())
-                    tg.create_task(self.listen_audio())
-                    tg.create_task(self.receive_audio())
-                    tg.create_task(self.play_audio())
-                    tg.create_task(self.monitor_connection())
-                    tg.create_task(self.periodic_memory_sync())  # NEW: Auto-sync memory
-                    Logger.log("All tasks started successfully", "SYSTEM")
+                from Backend.brain import client, MODEL
+                
+                if reconnect_attempts > 0:
+                    print(f"\n🔄 Reconnection attempt {reconnect_attempts}/{MAX_RECONNECT_ATTEMPTS}...")
+                    Logger.log(f"Reconnection attempt {reconnect_attempts}/{MAX_RECONNECT_ATTEMPTS}", "CONNECTION")
                     
-            # --- FIXED: Python 3.13+ exception group syntax ---
-            except* Exception as eg: 
-                Logger.log("Exception group caught from TaskGroup", "ERROR")
-                print("\n❌ Error occurred:")
-                for exc in eg.exceptions:
-                    if not isinstance(exc, (KeyboardInterrupt, asyncio.CancelledError)):
-                        print(f"  - {type(exc).__name__}: {exc}")
-                        Logger.log(f"Exception: {type(exc).__name__}: {exc}", "ERROR")
+                Logger.log("Connecting to Gemini Live API...", "CONNECTION")
                 
-                # Re-raise KeyboardInterrupt if it was part of the group
-                if any(isinstance(e, KeyboardInterrupt) for e in eg.exceptions):
-                    raise KeyboardInterrupt
+                # --- ADDED: Load config with memory ---
+                live_config = await get_config_with_memory()
                 
-        except KeyboardInterrupt:
-            Logger.log("User interrupted session (Ctrl+C or Shutdown Command)", "SESSION")
-            print(f"\n\n👋 Goodbye, Boss! Saving memory...")
-        except asyncio.CancelledError:
-            Logger.log("Session cancelled", "SESSION")
-        except Exception as e:
-            Logger.log(f"Unexpected error: {e}", "ERROR")
-            import traceback
-            Logger.log(traceback.format_exc(), "ERROR")
-            print(f"\n❌ Unexpected error: {e}")
-        finally:
-            self.shutdown_initiated = True
-            
-            print(f"\n[DEBUG] In finally block - preparing shutdown")
-            
-            # --- BULLETPROOF: Save any remaining chatlogs FIRST ---
-            Logger.log("Executing final chatlog save...", "CLEANUP")
-            await self._save_final_chatlogs()
-            
-            # --- ALWAYS save transcribed chatlogs to memory on shutdown ---
-            print(f"\n[DEBUG] Syncing chatlogs to memory")
-            Logger.log(f"Syncing transcribed conversations to memory", "MEMORY")
-            await self._save_session_memory()
-                
-            if self.audio_stream:
                 try:
-                    if self.audio_stream.is_active():
-                        self.audio_stream.stop_stream()
-                    self.audio_stream.close()
-                    Logger.log("Audio stream closed", "CLEANUP")
-                except Exception as e:
-                     Logger.log(f"Error closing audio stream: {e}", "WARNING")
+                    async with (
+                        # --- FIXED: Pass config as a single argument ---
+                        client.aio.live.connect(model=MODEL, config=live_config) as session,
+                        asyncio.TaskGroup() as tg,
+                    ):
+                        self.session = session
+                        Logger.log("Connected to Gemini Live API successfully", "CONNECTION")
+                        print("✅ Connected to Gemini Live API")
+                        
+                        # Reset reconnect counter on successful connection
+                        reconnect_attempts = 0
+
+                        self.audio_in_queue = asyncio.Queue()
+                        self.out_queue = asyncio.Queue(maxsize=5)
+
+                        Logger.log("Starting task group...", "SYSTEM")
+                        tg.create_task(self.send_realtime())
+                        tg.create_task(self.listen_audio())
+                        tg.create_task(self.receive_audio())
+                        tg.create_task(self.play_audio())
+                        tg.create_task(self.monitor_connection())
+                        tg.create_task(self.periodic_memory_sync())  # NEW: Auto-sync memory
+                        Logger.log("All tasks started successfully", "SYSTEM")
+                        
+                # --- FIXED: Python 3.13+ exception group syntax ---
+                except* Exception as eg: 
+                    Logger.log("Exception group caught from TaskGroup", "ERROR")
+                    print("\n❌ Error occurred:")
+                    should_reconnect = True
+                    
+                    for exc in eg.exceptions:
+                        if isinstance(exc, (KeyboardInterrupt, asyncio.CancelledError)):
+                            should_reconnect = False
+                        else:
+                            print(f"  - {type(exc).__name__}: {exc}")
+                            Logger.log(f"Exception: {type(exc).__name__}: {exc}", "ERROR")
+                    
+                    # Re-raise KeyboardInterrupt if it was part of the group
+                    if any(isinstance(e, KeyboardInterrupt) for e in eg.exceptions):
+                        raise KeyboardInterrupt
+                    
+                    # Attempt reconnection if not a deliberate shutdown
+                    if should_reconnect and not self.shutdown_initiated:
+                        reconnect_attempts += 1
+                        if reconnect_attempts < MAX_RECONNECT_ATTEMPTS:
+                            delay = min(RECONNECT_DELAY_BASE * (2 ** reconnect_attempts), 60)
+                            print(f"\n⏳ Connection lost. Reconnecting in {delay} seconds...")
+                            Logger.log(f"Connection lost. Reconnecting in {delay} seconds...", "CONNECTION")
+                            await asyncio.sleep(delay)
+                            should_continue = True  # Flag to continue the loop
+                        else:
+                            print(f"\n❌ Max reconnection attempts ({MAX_RECONNECT_ATTEMPTS}) reached. Shutting down.")
+                            Logger.log(f"Max reconnection attempts reached", "ERROR")
+                            should_break = True  # Flag to break the loop
+                    
+            except KeyboardInterrupt:
+                Logger.log("User interrupted session (Ctrl+C or Shutdown Command)", "SESSION")
+                print(f"\n\n👋 Goodbye, Boss! Saving memory...")
+                should_break = True
+            except asyncio.CancelledError:
+                Logger.log("Session cancelled", "SESSION")
+                should_break = True
+            except Exception as e:
+                Logger.log(f"Unexpected error: {e}", "ERROR")
+                import traceback
+                Logger.log(traceback.format_exc(), "ERROR")
+                print(f"\n❌ Unexpected error: {e}")
+                
+                # Attempt reconnection on unexpected errors
+                if not self.shutdown_initiated:
+                    reconnect_attempts += 1
+                    if reconnect_attempts < MAX_RECONNECT_ATTEMPTS:
+                        delay = min(RECONNECT_DELAY_BASE * (2 ** reconnect_attempts), 60)
+                        print(f"\n⏳ Error occurred. Reconnecting in {delay} seconds...")
+                        Logger.log(f"Error occurred. Reconnecting in {delay} seconds...", "CONNECTION")
+                        await asyncio.sleep(delay)
+                        should_continue = True
+                    else:
+                        print(f"\n❌ Max reconnection attempts reached. Shutting down.")
+                        should_break = True
+                else:
+                    should_break = True
             
-            Logger.log("=== SESSION END ===", "SESSION")
-            Logger.close() # Close log files
-            print("\n🔇 Session ended.")
+            # Handle the loop control after except* block
+            if should_break:
+                break
+            if should_continue:
+                continue
+        
+        # Cleanup section (always runs after loop ends)
+        self.shutdown_initiated = True
+        
+        print(f"\n[DEBUG] In cleanup section - preparing shutdown")
+        
+        # --- BULLETPROOF: Save any remaining chatlogs FIRST ---
+        Logger.log("Executing final chatlog save...", "CLEANUP")
+        await self._save_final_chatlogs()
+        
+        # --- ALWAYS save transcribed chatlogs to memory on shutdown ---
+        print(f"\n[DEBUG] Syncing chatlogs to memory")
+        Logger.log(f"Syncing transcribed conversations to memory", "MEMORY")
+        await self._save_session_memory()
+            
+        if self.audio_stream:
+            try:
+                if self.audio_stream.is_active():
+                    self.audio_stream.stop_stream()
+                self.audio_stream.close()
+                Logger.log("Audio stream closed", "CLEANUP")
+            except Exception as e:
+                 Logger.log(f"Error closing audio stream: {e}", "WARNING")
+        
+        Logger.log("=== SESSION END ===", "SESSION")
+        Logger.close() # Close log files
+        print("\n🔇 Session ended.")
 
 
 def signal_handler(sig, frame):

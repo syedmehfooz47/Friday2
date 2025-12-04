@@ -153,25 +153,40 @@ class FileConverter:
 
         try:
             # --- Conversion Routing ---
+            # Define image extensions for easier checking
+            image_exts = ['jpg', 'jpeg', 'png', 'webp', 'bmp', 'tiff', 'gif']
+            
             if input_ext == 'pdf' and output_format == 'docx':
                 message, output_path = self._pdf_to_docx(str(input_file))
             elif input_ext == 'docx' and output_format == 'pdf':
                 message, output_path = self._docx_to_pdf(str(input_file))
             elif input_ext == 'pptx' and output_format == 'pdf':
                 message, output_path = self._pptx_to_pdf(str(input_file))
+            elif input_ext == 'ppt' and output_format == 'pdf':
+                # PPT (older format) to PDF
+                message, output_path = self._pptx_to_pdf(str(input_file))
             elif input_ext == 'xlsx' and output_format == 'pdf':
                  message, output_path = self._xlsx_to_pdf(str(input_file))
-            elif input_ext in ['jpg', 'jpeg', 'png', 'webp', 'bmp', 'tiff'] and output_format == 'pdf':
+            elif input_ext == 'xls' and output_format == 'pdf':
+                 # XLS (older format) to PDF
+                 message, output_path = self._xlsx_to_pdf(str(input_file))
+            # Image to PDF
+            elif input_ext in image_exts and output_format == 'pdf':
                 message, output_path = self._image_to_pdf(str(input_file))
-            elif input_ext == 'pdf' and output_format in ['jpg', 'png', 'jpeg', 'tiff', 'bmp']:
+            # PDF to Image
+            elif input_ext == 'pdf' and output_format in image_exts:
                 message, output_path = self._pdf_to_image(str(input_file), output_format)
-            elif input_ext in ['jpg', 'jpeg', 'webp', 'bmp', 'tiff'] and output_format == 'png':
-                 message, output_path = self._image_to_image(str(input_file), 'png')
-            elif input_ext == 'png' and output_format in ['jpg', 'jpeg', 'webp', 'bmp', 'tiff']:
-                message, output_path = self._image_to_image(str(input_file), output_format)
+            # Image to Image (any image format to any other)
+            elif input_ext in image_exts and output_format in image_exts:
+                if input_ext == output_format or (input_ext in ['jpg', 'jpeg'] and output_format in ['jpg', 'jpeg']):
+                    message = f"The file is already in {output_format.upper()} format, Boss."
+                    output_path = None
+                else:
+                    message, output_path = self._image_to_image(str(input_file), output_format)
+            # SVG conversions
             elif input_ext == 'svg' and output_format in ['jpg', 'png', 'pdf', 'jpeg']:
                  message, output_path = self._svg_to_format(str(input_file), output_format)
-            elif input_ext in ['jpg', 'png', 'jpeg'] and output_format == 'svg':
+            elif input_ext in image_exts and output_format == 'svg':
                  message = f"Raster image ({input_ext}) to SVG conversion requires vectorization (not supported), Boss."
                  output_path = None
             else:
@@ -302,7 +317,44 @@ class FileConverter:
         return self._office_to_pdf_win32(docx_path, "Word", 17) # 17 = wdFormatPDF
 
     def _pptx_to_pdf(self, pptx_path: str) -> tuple:
-        return self._office_to_pdf_win32(pptx_path, "PowerPoint", 32) # 32 = ppSaveAsPDF
+        """Convert PowerPoint to PDF - requires Visible=True for PowerPoint"""
+        username = os.getenv("Username", "Boss")
+        if not WIN32_AVAILABLE:
+            return f"PowerPoint to PDF requires Windows with PowerPoint and pywin32, Boss.", None
+
+        output_path = self.data_folder / f"{Path(pptx_path).stem}_converted.pdf"
+        ppt = None
+        presentation = None
+        try:
+            ppt = win32com.client.Dispatch("PowerPoint.Application")
+            # PowerPoint REQUIRES Visible=True for SaveAs operations
+            ppt.Visible = True
+            
+            abs_ppt_path = str(Path(pptx_path).resolve())
+            presentation = ppt.Presentations.Open(abs_ppt_path, WithWindow=False)
+            
+            # Export to PDF (32 = ppSaveAsPDF)
+            output_path_str = str(output_path.resolve())
+            presentation.SaveAs(output_path_str, 32)
+            
+            Logger.log(f"Converted PowerPoint to PDF: {output_path}", "CONVERTER")
+            return f"Converted to PDF, Boss.", str(output_path)
+        except Exception as e:
+            Logger.log(f"PowerPoint to PDF failed: {e}", "ERROR")
+            import traceback
+            Logger.log(traceback.format_exc(), "ERROR")
+            return f"PowerPoint to PDF conversion failed: {e}", None
+        finally:
+            if presentation:
+                try:
+                    presentation.Close()
+                except Exception as close_e:
+                    Logger.log(f"Error closing PowerPoint presentation: {close_e}", "WARNING")
+            if ppt:
+                try:
+                    ppt.Quit()
+                except Exception as quit_e:
+                    Logger.log(f"Error quitting PowerPoint application: {quit_e}", "WARNING")
 
     def _xlsx_to_pdf(self, xlsx_path: str) -> tuple:
          # Excel uses ExportAsFixedFormat

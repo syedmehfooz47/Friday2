@@ -38,6 +38,7 @@ pdf2docx
 img2pdf
 pdf2image
 pypdf
+pikepdf  # Advanced PDF compression
 CairoSVG
 
 # Windows specific (Document Conversion & Automation)

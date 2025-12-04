@@ -1,12 +1,17 @@
 // jarvis-ui/app/services/api.ts
 
-// Use the WebSocket server's base URL for REST API calls
-const API_BASE_URL = "http://localhost:8000/api"; // Updated URL
+// Use Next.js API routes (same-origin, more reliable than direct backend calls)
+// Next.js routes proxy to the backend at localhost:8000
+const API_BASE_URL = "/api";
+
+// Backend URL for weather (can be proxied later if needed)
+const BACKEND_URL = "http://localhost:8000/api";
 
 // Fetch weather data via REST (for initial load or manual refresh)
 export const fetchWeather = async (city: string = "Bengaluru") => { // Add city parameter
   try {
-    const response = await fetch(`${API_BASE_URL}/weather?city=${encodeURIComponent(city)}`);
+    // Weather still uses direct backend call (can be proxied if needed)
+    const response = await fetch(`${BACKEND_URL}/weather?city=${encodeURIComponent(city)}`);
     if (!response.ok) {
         const errorData = await response.json().catch(() => ({ error: `HTTP error ${response.status}` }));
         console.error("Weather fetch failed:", errorData);
@@ -28,6 +33,7 @@ export const fetchWeather = async (city: string = "Bengaluru") => { // Add city 
 // Fetch all settings
 export const getSettings = async () => {
   try {
+    // Use Next.js API route for reliability
     const response = await fetch(`${API_BASE_URL}/settings`);
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ error: `HTTP error ${response.status}` }));
