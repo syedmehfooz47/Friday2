@@ -63,6 +63,7 @@ async def notify_websocket(event_type: str, data: dict):
 if FASTAPI_AVAILABLE:
     from Backend.weather import WeatherTool
     from Backend.email_handler import EmailHandler
+    from Backend.calendar_handler import CalendarHandler
     from Backend.telegram_handler import telegram_service
     from Backend.contacts_manager import contacts_manager
     from Backend.ImageGeneration import image_generation_service
@@ -130,6 +131,7 @@ if FASTAPI_AVAILABLE:
     brain_for_ui = GeminiBrain()
     weather_tool = WeatherTool()
     email_handler = EmailHandler()
+    calendar_handler = CalendarHandler()
     
     # Global AudioLoop instance for voice assistant control
     global_audio_loop = None

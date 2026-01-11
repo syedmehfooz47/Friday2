@@ -19,6 +19,7 @@ from google import genai
 # Import all feature modules
 from .weather import WeatherTool
 from .email_handler import EmailHandler
+from .calendar_handler import CalendarHandler
 from .logger import Logger
 from .memory_handler import MemoryHandler
 from .llm_handler import llm_handler
@@ -398,6 +399,92 @@ tools = [
                         "reply_all": {"type": "boolean", "description": "Reply to all recipients", "default": False}
                     },
                     "required": ["email_id", "body"]
+                }
+            },
+            # Google Calendar Tools
+            {
+                "name": "calendar_list_events",
+                "description": "List upcoming calendar events. View scheduled meetings and appointments.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "max_results": {"type": "integer", "description": "Maximum number of events to return", "default": 10},
+                        "time_min": {"type": "string", "description": "Start time in ISO format (YYYY-MM-DDTHH:MM:SSZ), defaults to now"},
+                        "time_max": {"type": "string", "description": "End time in ISO format (optional)"},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": []
+                }
+            },
+            {
+                "name": "calendar_create_event",
+                "description": "Create a new calendar event/meeting. Schedule appointments and meetings.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "summary": {"type": "string", "description": "Event title/summary"},
+                        "start_time": {"type": "string", "description": "Start time in ISO format (YYYY-MM-DDTHH:MM:SS)"},
+                        "end_time": {"type": "string", "description": "End time in ISO format (YYYY-MM-DDTHH:MM:SS)"},
+                        "description": {"type": "string", "description": "Event description (optional)"},
+                        "location": {"type": "string", "description": "Event location (optional)"},
+                        "attendees": {"type": "array", "items": {"type": "string"}, "description": "List of attendee emails (optional)"},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": ["summary", "start_time", "end_time"]
+                }
+            },
+            {
+                "name": "calendar_update_event",
+                "description": "Update an existing calendar event. Modify event details, time, location.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "event_id": {"type": "string", "description": "ID of event to update"},
+                        "summary": {"type": "string", "description": "New event title (optional)"},
+                        "start_time": {"type": "string", "description": "New start time (optional)"},
+                        "end_time": {"type": "string", "description": "New end time (optional)"},
+                        "description": {"type": "string", "description": "New description (optional)"},
+                        "location": {"type": "string", "description": "New location (optional)"},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": ["event_id"]
+                }
+            },
+            {
+                "name": "calendar_delete_event",
+                "description": "Delete a calendar event. Remove scheduled meetings and appointments.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "event_id": {"type": "string", "description": "ID of event to delete"},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": ["event_id"]
+                }
+            },
+            {
+                "name": "calendar_search_events",
+                "description": "Search for calendar events by keyword. Find events by title, description, or location.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "query": {"type": "string", "description": "Search query (matches title, description, location)"},
+                        "max_results": {"type": "integer", "description": "Maximum results", "default": 10},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": ["query"]
+                }
+            },
+            {
+                "name": "calendar_get_event",
+                "description": "Get detailed information about a specific calendar event.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "event_id": {"type": "string", "description": "ID of event to retrieve"},
+                        "calendar_id": {"type": "string", "description": "Calendar ID", "default": "primary"}
+                    },
+                    "required": ["event_id"]
                 }
             },
             # Telegram Tools
@@ -1031,6 +1118,7 @@ class GeminiBrain:
     def __init__(self):
         self.weather_tool = WeatherTool()
         self.email_handler = EmailHandler()
+        self.calendar_handler = CalendarHandler()
         self.memory_handler = memory_handler # Use the global instance
         self.project_root = Path(__file__).parent.parent
         Logger.log("GeminiBrain initialized with all advanced features", "BRAIN")
@@ -1242,6 +1330,51 @@ class GeminiBrain:
                     email_id=args.get("email_id"),
                     body=args.get("body"),
                     reply_all=args.get("reply_all", False)
+                )
+            
+            # Google Calendar Tools
+            elif function_name == "calendar_list_events":
+                result = self.calendar_handler.list_events(
+                    max_results=args.get("max_results", 10),
+                    time_min=args.get("time_min"),
+                    time_max=args.get("time_max"),
+                    calendar_id=args.get("calendar_id", "primary")
+                )
+            elif function_name == "calendar_create_event":
+                result = self.calendar_handler.create_event(
+                    summary=args.get("summary"),
+                    start_time=args.get("start_time"),
+                    end_time=args.get("end_time"),
+                    description=args.get("description"),
+                    location=args.get("location"),
+                    attendees=args.get("attendees"),
+                    calendar_id=args.get("calendar_id", "primary")
+                )
+            elif function_name == "calendar_update_event":
+                result = self.calendar_handler.update_event(
+                    event_id=args.get("event_id"),
+                    summary=args.get("summary"),
+                    start_time=args.get("start_time"),
+                    end_time=args.get("end_time"),
+                    description=args.get("description"),
+                    location=args.get("location"),
+                    calendar_id=args.get("calendar_id", "primary")
+                )
+            elif function_name == "calendar_delete_event":
+                result = self.calendar_handler.delete_event(
+                    event_id=args.get("event_id"),
+                    calendar_id=args.get("calendar_id", "primary")
+                )
+            elif function_name == "calendar_search_events":
+                result = self.calendar_handler.search_events(
+                    query=args.get("query"),
+                    max_results=args.get("max_results", 10),
+                    calendar_id=args.get("calendar_id", "primary")
+                )
+            elif function_name == "calendar_get_event":
+                result = self.calendar_handler.get_event(
+                    event_id=args.get("event_id"),
+                    calendar_id=args.get("calendar_id", "primary")
                 )
             
             # Telegram Tools
