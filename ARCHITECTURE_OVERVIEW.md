@@ -19,10 +19,10 @@ flowchart TB
     WSHandler --> Brain
     RESTEndpoints --> Brain
     
-    Brain --> Gemini[Gemini 2.5 Flash<br/>Native Audio]
-    Gemini --> FunctionCalling[Function Calling<br/>Tool Selection]
+    Brain --> AIModel[🤖 AI Model<br/>Gemini 2.5 Flash]
+    AIModel --> DMM[🎯 Decision Making Model<br/>DMM]
     
-    FunctionCalling --> Tools[🛠️ Tool Execution Layer]
+    DMM --> Tools[🛠️ Tool Execution Layer]
     
     Tools --> SystemTools[System Tools<br/>- Automation<br/>- Screenshot<br/>- App Control<br/>- Brightness/Theme]
     Tools --> ContentTools[Content Generation<br/>- PDF/Word/PPT/Excel<br/>- Image Generation<br/>- Website Generator<br/>- File Converter]
@@ -46,7 +46,8 @@ flowchart TB
     External -.->|OAuth/API| Tools
     
     style Brain fill:#ff6b6b,stroke:#c92a2a,color:#fff
-    style Gemini fill:#4dabf7,stroke:#1971c2,color:#fff
+    style AIModel fill:#4dabf7,stroke:#1971c2,color:#fff
+    style DMM fill:#a78bfa,stroke:#7c3aed,color:#fff
     style Tools fill:#51cf66,stroke:#2f9e44,color:#fff
     style FastAPI fill:#ffd43b,stroke:#f08c00,color:#000
     style User fill:#e599f7,stroke:#9c36b5,color:#fff
@@ -61,8 +62,8 @@ flowchart TB
 
 ### 2. **Processing Core**
 - **main.py:** Entry point, initializes all handlers
-- **brain.py:** Central intelligence router
-- **Gemini AI:** Processes requests with function calling
+- **AI Model:** Gemini 2.5 Flash for natural language processing
+- **DMM (Decision Making Model):** Proprietary AI model for tool selection and routingng
 - **Tool Selection:** AI decides which tools to execute
 
 ### 3. **Tool Execution Layer**
@@ -87,8 +88,10 @@ flowchart TB
 | Layer | Technology |
 |-------|------------|
 | **AI Model** | Gemini 2.5 Flash (Native Audio) |
+| **Decision Engine** | DMM (Decision Making Model) - Proprietary |
 | **Backend** | Python + FastAPI |
 | **Frontend** | Next.js + React + TypeScript |
+| **UI Framework** | shadcn/ui + Tailwind CSS |
 | **Voice** | PyAudio (Input/Output) |
 | **Memory** | Mem0 (Long-term) |
 | **Database** | JSON files |
@@ -100,23 +103,30 @@ flowchart TB
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant I as Input
+    participant UI as Next.js UI
     participant B as Brain
-    participant G as Gemini AI
+    participant AI as AI Model
+    participant DMM as DMM
     participant T as Tools
     participant O as Output
     
     U->>I: Voice/Text Request
+    U->>UI: UI Interaction
     I->>B: Process Input
-    B->>G: Send to AI Model
-    G->>G: Analyze & Function Calling
-    G->>B: Tool Selection
+    UI->>B: WebSocket Message
+    B->>AI: Send to AI Model
+    AI->>DMM: Analyze Intent
+    DMM->>DMM: Tool Selection
+    DMM->>B: Selected Tools
     B->>T: Execute Tool(s)
     T->>T: Perform Action
     T->>B: Return Result
-    B->>G: Send Result to AI
-    G->>B: Generate Response
+    B->>AI: Send Result to AI
+    AI->>B: Generate Response
     B->>O: Format Output
+    O->>U: Voice/Text Response
+    O->>UI: Update UI
+    UI->>U: Visual Feedback
     O->>U: Voice/Text/File Response
 ```
 
@@ -170,11 +180,16 @@ sequenceDiagram
 - **Async I/O:** Non-blocking operations
 - **Modular Tools:** Easy to add new capabilities
 - **Multiple API Keys:** 15 Google + 10 Groq slots
-- **Load Distribution:** Frontend/backend separation
-
-## File Structure
-
-```
+- **LoadDMM/               # Decision Making Model (AI)
+│   │   ├── decision_model.py
+│   │   ├── tool_classifier.py
+│   │   ├── intent_analyzer.py
+│   │   └── models/        # Trained model weights
+│   ├── *_handler.py       # Tool handlers (email, calendar, memory, etc.)
+│   └── *Generator.py      # Content generators (PDF, Word, PPT, etc.)
+├── Database/              # Chatlogs, contacts, OAuth tokens
+├── Data/                  # Generated files (PDF, images, websites)
+└── jarvis-ui/            # Next.js frontend (shadcn/ui + Tailwind)
 Friday2/
 ├── main.py                 # Entry point + FastAPI server
 ├── Backend/
