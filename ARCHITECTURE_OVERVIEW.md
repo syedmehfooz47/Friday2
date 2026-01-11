@@ -19,7 +19,7 @@ flowchart TB
     WSHandler --> Brain
     RESTEndpoints --> Brain
     
-    Brain --> AIModel[🤖 AI Model<br/>Gemini 2.5 Flash]
+    Brain --> AIModel[🤖 AI Model]
     AIModel --> DMM[🎯 Decision Making Model<br/>DMM]
     
     DMM --> Tools[🛠️ Tool Execution Layer]
@@ -87,7 +87,7 @@ flowchart TB
 
 | Layer | Technology |
 |-------|------------|
-| **AI Model** | Gemini 2.5 Flash (Native Audio) |
+| **AI Model** | Advanced Language Model (Native Audio) |
 | **Decision Engine** | DMM (Decision Making Model) - Proprietary |
 | **Backend** | Python + FastAPI |
 | **Frontend** | Next.js + React + TypeScript |

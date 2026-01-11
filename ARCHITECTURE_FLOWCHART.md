@@ -25,7 +25,7 @@ graph TB
     end
 
     subgraph "AI Models & APIs"
-        D1[Gemini 2.5 Flash - Native Audio]
+        D1[AI Model - Native Audio]
         D2[Groq API - Fallback LLM]
         D3[Mem0 - Long-term Memory]
         D4[Tavily - Internet Search]
