@@ -25,11 +25,11 @@ venv/
 ENV/
 env/
 
-# (Allow committing credentials/tokens per user request - repo is private)
-#! Note: Consider moving secrets to a vault or Git LFS/encryption if repo visibility changes.
-
-# Environment Variables (now allowed per user request; removed ignores)
-# NOTE: Committing .env exposes all secrets. Rotate if repo ever becomes public.
+# Environment Variables - Contains sensitive API keys and credentials
+.env
+.env.local
+.env.production
+.env.development
 
 # IDE
 .vscode/
