@@ -6,8 +6,8 @@
 graph TB
     subgraph "User Interface Layer"
         A1[Voice Input - Microphone]
-        A2[Web UI - React/Next.js]
-        A3[Text Input - Chat]
+        A2[Next.js UI - jarvis-ui]
+        A3[Text Input - WebSocket/REST]
     end
 
     subgraph "Main Application - main.py"
@@ -144,13 +144,18 @@ graph TB
     E6 --> G3
     D4 --> G4
 
-    %% Frontend Components
+    %% Frontend to Backend
+    A2 --> H1
     H1 --> H2
     H2 --> H3
     H2 --> H5
     H2 --> H6
     H2 --> H7
     H3 --> B3
+    
+    %% Backend responses to Frontend
+    B3 --> H3
+    B2 --> H3
 
     style C1 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px
     style D1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
@@ -160,12 +165,13 @@ graph TB
 
 ## Detailed Component Flow
 
-```mermaid
-flowchart TD
-    START[User Input] --> INPUT_TYPE{Input Type?}
+```mermaidNext.js UI| UI[Next.js UI - jarvis-ui]
+    INPUT_TYPE -->|Text/REST| REST_API[REST API]
     
-    INPUT_TYPE -->|Voice| VOICE[Voice Input via PyAudio]
-    INPUT_TYPE -->|Text/UI| WEBSOCKET[WebSocket Connection]
+    VOICE --> AUDIO_LOOP[Audio Loop Processing]
+    UI --> WEBSOCKET[WebSocket Connection]
+    REST_API --> FASTAPI[FastAPI Server]
+    WEBSOCKETYPE -->|Text/UI| WEBSOCKET[WebSocket Connection]
     INPUT_TYPE -->|Chat| UI_CHAT[Web UI Chat Interface]
     
     VOICE --> AUDIO_LOOP[Audio Loop Processing]
@@ -212,12 +218,14 @@ flowchart TD
     
     OUTPUT --> OUTPUT_TYPE{Output Type?}
     OUTPUT_TYPE -->|Voice| AUDIO_OUT[Audio Response via PyAudio]
-    OUTPUT_TYPE -->|UI| WS_BROADCAST[WebSocket Broadcast]
-    OUTPUT_TYPE -->|Both| BOTH_OUT[Audio + UI Sync]
+    OUTPUT_TYPE -->|Next.js UI| UI_UPDATE[UI Update via WebSocket]
+    OUTPUT_TYPE -->|REST API| API_RESPONSE[JSON Response]
+    OUTPUT_TYPE -->|Both| MULTI_OUT[Audio + UI + API]
     
     AUDIO_OUT --> END[User Receives Response]
-    WS_BROADCAST --> END
-    BOTH_OUT --> END
+    UI_UPDATE --> END
+    API_RESPONSE --> END
+    MULTI_OUT --> END
     
     style BRAIN fill:#4CAF50,stroke:#2E7D32,stroke-width:4px
     style GEMINI_STREAM fill:#2196F3,stroke:#1565C0,stroke-width:3px
@@ -231,8 +239,8 @@ flowchart TD
 flowchart LR
     subgraph "Input Layer"
         I1[Microphone]
-        I2[Web Browser]
-        I3[Terminal]
+        I2[Next.js UI Browser]
+        I3[REST API Client]
     end
     
     subgraph "Processing Layer"
